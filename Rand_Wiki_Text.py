@@ -62,7 +62,11 @@ def cln(st):
              'span', 'th', 'p', 'i', 'b', 'small', 'label', 'dd', 'dl', 'dt', 'blockquote',
              'center', )
     postcull = ('</abbr>', '[edit]')
-    replacement = (('\n\n','\n'), ('&nbsp;',' '), ('&amp;','&'), )
+    replacement = (('\n\n','\n'), ('&lt;','<'), ('&gt;','>'), ('&amp;','&'), 
+    ('&euro;','€'), ('&pound;','£'), ('&quot;','"'), ('&apos;',"'"), 
+    ('&nbsp;',' '), ('&ensp;',' '), ('&emsp;',' '), ('&emsp13;',' '), 
+    ('&numsp;',' '), ('&puncsp;',' '), ('&thinsp;',' '), ('&hairsp;',' '), 
+    )
     for tg in precull:
         st = st.replace(tg,'')
     for tg in excice:
@@ -85,7 +89,7 @@ while True:
         break
     idx = choice(range(len(rem_pgs)))
     chosen_page = rem_pgs[idx]
-    chosen_page = 'Atlanersa'
+    #chosen_page = 'Atlanersa'
     with urllib.request.urlopen(SITE + chosen_page) as response:
         html = response.read()
     page = html.decode("utf-8")
