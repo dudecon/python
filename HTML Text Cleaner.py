@@ -34,7 +34,11 @@ def cln(st):
              'span', 'th', 'p', 'i', 'b', 'small', 'label', 'dd', 'dl', 'dt', 'blockquote',
              'textarea')
     postcull = ('</abbr>', '[edit]')
-    replacement = (('\n\n','\n'), ('&nbsp;',' '), ('&amp;','&'), )
+    replacement = (('\n\n','\n'), ('&lt;','<'), ('&gt;','>'), ('&amp;','&'), 
+    ('&euro;','€'), ('&pound;','£'), ('&quot;','"'), ('&apos;',"'"), 
+    ('&nbsp;',' '), ('&ensp;',' '), ('&emsp;',' '), ('&emsp13;',' '), 
+    ('&numsp;',' '), ('&puncsp;',' '), ('&thinsp;',' '), ('&hairsp;',' '), 
+    )
     for tg in precull:
         st = st.replace(tg, '')
     for tg in excice:
