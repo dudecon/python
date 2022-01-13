@@ -21,5 +21,7 @@ def feet(s):
             
         new_words += [CapFirst + word[offset:]]
     new_string = " ".join(new_words)
-    print(new_string)
-    #return new_string
+    # print(new_string)
+    return new_string
+    
+print(feet(input("enter the mangle string")))
