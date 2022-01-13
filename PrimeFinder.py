@@ -1,5 +1,7 @@
 savefile = 'primes.txt'
 
+from time import time as tm
+
 try:
     # initialize with a list of primes
     # Interesting results if we leave some out?
@@ -12,10 +14,12 @@ except:
 increment = primes[0]
 candidate = primes[-1] + increment
 # Generate primes in batches
-batch = 2027
+# batch = 2027
+
 while True:
-    found = 0
-    while found < batch:
+    # save every couple minutes
+    t = tm() + 120
+    while tm() < t:
         #print(candidate)
         # halfcand = candidate / 2
         primecheck = True
@@ -28,7 +32,7 @@ while True:
         if primecheck:
             print(candidate, "is prime")
             primes.append(candidate)
-            found += 1
+            # found += 1
         candidate += increment
 
     f = open(savefile, "w")
