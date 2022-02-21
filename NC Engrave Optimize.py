@@ -2,7 +2,7 @@
 # Replace newline characters with space
 # except when immediately following a > symbol
 
-FILEIN = 'Choir Sign Laser1 Words.nc'
+FILEIN = '1sm.nc'
 FILEOUT = FILEIN.replace('.',' Optimum.',1)
 
 LASERFEED = 1000
@@ -22,12 +22,13 @@ laserstr = "X{0} Y{0} M03 S{0} F{1}\n".format('{}',LASERFEED)
 f = open(FILEIN, 'r')
 data = f.read()
 f.close()
-header_end_str = "G01\nM03 S0\n"
+header_end_str = "M03 S0\n"
 pos_found = data.find(header_end_str,0)
 header = data[:pos_found+len(header_end_str)]
 # find the origin
 XYOr = header.split()[-3:-1]
-origin = (float(XYOr[0][1:]),float(XYOr[1][1:]))
+try: origin = (float(XYOr[0][1:]),float(XYOr[1][1:]))
+except: origin = (0,0)
 #print(origin)
 # import all the points
 points = []
@@ -36,20 +37,26 @@ loop = []
 search_from = pos_found +1
 footer_pos = data.find("M03 S0\nM05",search_from)
 Y_end = 0
+X = 0.
+Y = 0.
+S = 0
 X_found = data.find("X",search_from)
 while True:
+    #X_found = data.find("X",Y_end)
+    X_end = data.find(" ",X_found)
+    X = float(data[X_found+1:X_end])
     Y_found = data.find("Y",X_found)
-    if Y_found == -1: break
-    X = float(data[X_found+1:Y_found-1])
-    Y_end = data.find(" ",Y_found)
-    if Y_end == -1: break
-    Y = float(data[Y_found+1:Y_end])
+    nextX = data.find("X",X_found+1)
+    if nextX == -1: break
+    if Y_found < nextX:
+        Y_end = data.find(" ",Y_found)
+        if Y_end == -1: break
+        Y = float(data[Y_found+1:Y_end])
     s_found = data.find("S",X_found)
-    s_end = data.find("\n",s_found)
-    if s_end == -1: break
-    S = int(data[s_found+1:s_end])
-    X_found = data.find("X",Y_end)
-    if X_found == -1: break
+    if s_found < nextX:
+        s_end = data.find("\n",s_found)
+        if s_end == -1: break
+        S = int(data[s_found+1:s_end])
     p = [X,Y,loop,S]
     if (S == 0) and (len(loop) == 1):
         loop = [p]
@@ -61,7 +68,8 @@ while True:
         points.append(loop[0])
         loop = [p]
         p[2] = loop
-    if X_found > footer_pos: break
+    if nextX > footer_pos: break
+    else: X_found = nextX
 
 footer = data[footer_pos:]
 

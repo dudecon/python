@@ -2,7 +2,7 @@
 # Replace newline characters with space
 # except when immediately following a > symbol
 
-FILEIN = 'pawn.nc'
+FILEIN = '1smotl.nc'
 FILEOUT = FILEIN.replace('.',' Optimum.',1)
 
 LASERFEED = 1200
@@ -27,7 +27,8 @@ pos_found = data.find("G01 ",0)
 header = data[:pos_found]
 # find the origin
 XYOr = header.split()[-3:-1]
-origin = (float(XYOr[0][1:]),float(XYOr[1][1:]))
+try: origin = (float(XYOr[0][1:]),float(XYOr[1][1:]))
+except: origin = (0,0)
 #print(origin)
 # import all the points
 points = []
