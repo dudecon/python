@@ -1,19 +1,24 @@
-# Ancestor_Compiler_WikiPedia.py Version 0.1
+# Ancestor_Compiler_WikiPedia.py Version 0.8
 # Grabs ancestor data from WikiPedia
 # The site to query
 SITE = "https://en.wikipedia.org/wiki/"
 # the page on the site to query
-ROOT_NAME = "John_Howard,_1st_Duke_of_Norfolk"
+# ROOT_NAME = "John_Howard,_1st_Duke_of_Norfolk"
 # ROOT_NAME = "Yaroslav_the_Wise"
+ROOT_NAME = "Paul Daniel Spooner"
 URL = SITE + ROOT_NAME
-DEPTH = 75
+DEPTH = 60
 # note that if you want to change either of these, you'll probably
 # have to update the parsing code in the "except" below
 PLAIN_NAME = ROOT_NAME.replace("_"," ")
 CLEAN_NAME = PLAIN_NAME.replace(",","")
 SAVEFILE = F'Pedigree_{CLEAN_NAME}.txt'
 SAVEFILE = "Pedigree_John Howard 1st Duke of Norfolk.txt"
+SAVEIT = False
 
+
+INTERFACEHINT = "No or Unknown ancestor (and next), Obscure (and next)"
+INTERFACEHINT += "\nSave (and exit)\nFather, Mother, Born, Died"
 
 
 # Version History
@@ -21,6 +26,7 @@ SAVEFILE = "Pedigree_John Howard 1st Duke of Norfolk.txt"
 
 
 from urllib.request import urlopen
+import webbrowser
 
 def tgx(st, strt, endt):
     # excise all text between all occurrances of the tag pairs
@@ -196,7 +202,105 @@ def getwikiperson(URL):
     
     return PIF
 
-def RecurPedigree(d=0, u="", Ped = {}):
+def dataentry(p):
+    saveandexit = False
+    if p['nm'][-7:] == "bscure)":
+        print("Obscure Figure")
+        p['nm_f'] = 'unknown'
+        if 'url' in p: del(p['url'])
+        return saveandexit
+    print(p['nm'])
+    while not (saveandexit):
+        choice = input(">:").lower()
+        if choice == "n" or choice == "u":
+            print("Unknown Parentage")
+            p['nm_f'] = 'unknown'
+            break
+        elif choice == "o":
+            print("Obscure Figure")
+            p['nm'] = p['nm'] + " (obscure)"
+            p['nm_f'] = 'unknown'
+            if 'url' in p: del(p['url'])
+            break
+        elif choice == "s":
+            print("Save and Exit")
+            saveandexit = True
+        elif choice == "f":
+            p['nm_f'] = input("Father:")
+        elif choice == "m":
+            p['nm_m'] = input("Mother:")
+        elif choice == "b":
+            p['b'] = input("Born:")
+        elif choice == "d":
+            p['d'] = input("Died:")
+        elif choice == "": print(INTERFACEHINT)
+        else: break
+        if (('b' in p) and ('d' in p) and ('nm_f' in p) and ('nm_m' in p)):
+            # we've got all the data we could resonably expect
+            break
+    return saveandexit
+
+
+def prinfo(p, gen):
+    st = ''
+    fst = ''
+    if 's' in p:
+        if p['s'] != 'n':
+            st = 'Saint '
+            fst = " (" + p['s'] + ")"
+    nm = p['nm']
+    if gen == 0: return
+    if p['g']: gt = 'Father'
+    else: gt = 'Mother'
+    ttl = ""
+    if gen > 1: ttl = "Grand"
+    if gen > 2: ttl = "Great-" + ttl
+    if gen > 3: ttl = str(gen-2) +' '+ ttl
+    url = SITE + p['url']
+    print(f"{st}{nm}{fst} is {ROOT_NAME}'s {ttl}{gt}\n{url}")
+
+
+def FindInPedigree(u, Ped, name='', d=0, children = set(), found={}):
+    if DEPTH < d:
+        print("recurse limit reached for", u)
+        return None
+    if u == 'unknown': return None
+    if len(u) < 2: return None
+    if u not in Ped: return None
+    p = Ped[u]
+    nm = p['nm']
+
+    def recinfo():
+        gen = len(children)
+        if u not in found: found[u] = gen
+        else: found[u] = min(gen, found[u])
+        
+    if len(name):
+        # find the search string in the name
+        if name in nm:
+            recinfo()
+    else:
+        # search for saints
+        if 's' in p:
+            if p['s'] != 'n':
+                recinfo()
+    
+    newchildren = children.copy()
+    newchildren.add(u)
+    if "nm_f" in p:
+        FindInPedigree(p["nm_f"], Ped, name, d+1, newchildren, found)
+    if "nm_m" in p:
+        FindInPedigree(p["nm_m"], Ped, name, d+1, newchildren, found)
+    
+    if d == 0:
+        # we're back to the root level
+        for u in found:
+            gen = found[u]
+            p = Ped[u]
+            prinfo(p, gen)
+
+
+def RecurPedigree(u="", Ped = {}, d=0, children = set(), curgender=1):
     if DEPTH < d:
         print("recurse limit reached for", u)
         return None
@@ -205,15 +309,91 @@ def RecurPedigree(d=0, u="", Ped = {}):
     if u in Ped:
         # just use the cached data
         p = Ped[u]
+        # aggressive data entry query
+        if (('nm_f' not in p) and ('nm_m' not in p)):
+            if 'url' in p:
+                webbrowser.open(SITE + p['url'])
+                dataentry(p)
     else:
-        p = getwikiperson(u)
-        if 'url' in p:
-            u = p['url']
-        Ped[u] = p
+        if ' ' in u:
+            # it's not a wiki page address
+            # and it isn't cached
+            p = {}
+            p['nm'] = u
+            dataentry(p)
+            Ped[u] = p
+            #return None
+        else:
+            p = getwikiperson(u)
+            Ped[u] = p
+    if 'g' not in p:
+        p['g'] = curgender
+    if u in children:
+        print("Causality loop detected for ", u)
+        print(children)
+        return None
+    newchildren = children.copy()
+    newchildren.add(u)
     if "nm_f" in p:
-        RecurPedigree(d+1, p["nm_f"], Ped)
+        RecurPedigree(p["nm_f"], Ped, d+1, newchildren, curgender=1)
     if "nm_m" in p:
-        RecurPedigree(d+1, p["nm_m"], Ped)
+        RecurPedigree(p["nm_m"], Ped, d+1, newchildren, curgender=0)
+
+
+def gatherdata(tp):
+    RecurPedigree(ROOT_NAME, tp, 0, set())
+    print(len(tp), "people recorded")
+    print("hand-check the following dead-ends")
+    print(INTERFACEHINT)
+    saveandexit = False
+    while True:
+        needdata = False
+        for nm in tp:
+            p = tp[nm]
+            if (('nm_f' not in p) and ('nm_m' not in p)):
+                if 'url' in p: webbrowser.open(SITE + p['url'])
+                else: continue
+                needdata = True
+                saveandexit = dataentry(p)
+            if saveandexit: break
+        if needdata: RecurPedigree(ROOT_NAME, tp, 0, set())
+        else: saveandexit = True
+        if saveandexit: break
+
+
+def checksaints(tp):
+    for nm in tp:
+        p = tp[nm]
+        if 'saint' in p: continue
+        if 'url' not in p: continue
+        URL = p['url']
+        try:
+            with urlopen(SITE + URL) as f: html = f.read()
+        except:
+            p['s'] = 'n'
+            continue
+        page = html.decode("utf-8")
+        page = cln(page).lower()
+        if ('saint' in page) and (('canoni' in page) or ('patron' in page) or ('venerat' in page)) and ('catholic' in page):
+            webbrowser.open(SITE + URL)
+            check = input(f"If {nm} is a saint, what is their feast day? ")
+            if check == 's': return
+            if len(check) > 4:
+                p['s'] = check
+            else: p['s'] = 'n'
+        else: p['s'] = 'n'
+
+
+def reprocess(tp):
+    for nm in tp:
+        p = tp[nm]
+        if False:#'saint' in p:
+            p['s'] = p['saint']
+            del(p['saint'])
+        if False:#'g' in p:
+            if p['g'] == 'm': p['g'] = 1
+            else: p['g'] = 0
+
 
 try:
     f = open(SAVEFILE, 'r')
@@ -221,19 +401,17 @@ try:
     f.close()
 except:
     Total_Pedigree = {}
-RecurPedigree(0, ROOT_NAME, Total_Pedigree)
-print(len(Total_Pedigree), "people recorded")
-print("hand-check the following dead-ends")
-for nm in Total_Pedigree:
-    p = Total_Pedigree[nm]
-    if 'url' not in p: continue
-    if(('nm_f' not in p) and ('nm_f' not in p)):
-        if (('b' in p) or ('d' in p)): p['nm_f'] = 'unknown'
-        else: print(p['url'])
-out = str(Total_Pedigree)
-out = out.replace("}, ","},\n\n")
-out = out.encode('ascii', 'ignore')
-f = open(SAVEFILE, 'wb')
-f.write(out)
-f.close()
+
+# gatherdata(Total_Pedigree)
+# checksaints(Total_Pedigree)
+# reprocess(Total_Pedigree)
+FindInPedigree(ROOT_NAME, Total_Pedigree, '')
+
+if SAVEIT:
+    out = str(Total_Pedigree)
+    out = out.replace("}, ","},\n\n")
+    out = out.encode('ascii', 'ignore')
+    f = open(SAVEFILE, 'wb')
+    f.write(out)
+    f.close()
 
