@@ -7,19 +7,17 @@ SITE = "https://en.wikipedia.org/wiki/"
 # ROOT_NAME = "Yaroslav_the_Wise"
 ROOT_NAME = "Paul Daniel Spooner"
 URL = SITE + ROOT_NAME
-DEPTH = 60
+DEPTH = 67  # this should be plenty
 # note that if you want to change either of these, you'll probably
 # have to update the parsing code in the "except" below
-PLAIN_NAME = ROOT_NAME.replace("_"," ")
-CLEAN_NAME = PLAIN_NAME.replace(",","")
+PLAIN_NAME = ROOT_NAME.replace("_", " ")
+CLEAN_NAME = PLAIN_NAME.replace(",", "")
 SAVEFILE = F'Pedigree_{CLEAN_NAME}.txt'
-SAVEFILE = "Pedigree_John Howard 1st Duke of Norfolk.txt"
-SAVEIT = False
-
+# SAVEFILE = "Pedigree_John Howard 1st Duke of Norfolk.txt"
+VERBOSE = True
 
 INTERFACEHINT = "No or Unknown ancestor (and next), Obscure (and next)"
 INTERFACEHINT += "\nSave (and exit)\nFather, Mother, Born, Died"
-
 
 # Version History
 # V 0.1 2021-11-29  Worked on it
@@ -27,6 +25,7 @@ INTERFACEHINT += "\nSave (and exit)\nFather, Mother, Born, Died"
 
 from urllib.request import urlopen
 import webbrowser
+
 
 def tgx(st, strt, endt):
     # excise all text between all occurrances of the tag pairs
@@ -39,6 +38,7 @@ def tgx(st, strt, endt):
         st = st[:stpos] + st[edpos:]
     return st
 
+
 def tgcts(st, tg):
     # return the text enclosed by a tag
     strt = f"<{tg}"
@@ -48,11 +48,12 @@ def tgcts(st, tg):
     edpos = st.find(endt, stpos)
     if edpos == -1: return ""
     stpos = st.find(">", stpos)
-    substr = st[1+stpos:edpos]
+    substr = st[1 + stpos:edpos]
     return substr
 
+
 def alltgcts(st, tg):
-    # return a list of all the text enclosed by tags
+    # return a list of all the text enclosed by the specified tag
     strt = f"<{tg}"
     endt = f"</{tg}>"
     stpos = st.find(strt)
@@ -61,27 +62,28 @@ def alltgcts(st, tg):
         edpos = st.find(endt, stpos)
         if edpos == -1: return allcontents
         stpos = st.find(">", stpos)
-        substr = st[1+stpos:edpos]
+        substr = st[1 + stpos:edpos]
         allcontents.append(substr)
         stpos = st.find(strt, edpos)
     return allcontents
 
+
 def cln(st):
     # clean out markup elements
-    precull = ('\t', )
+    precull = ('\t',)
     excice = ('head', 'script', 'footer', 'sup', 'noscript', 'nav', 'form', 'cite', 'ol')
-    detag = ('html','div', 'body', '!DOCTYPE', 'a', '!--', 'img', 'style',
+    detag = ('html', 'div', 'body', '!DOCTYPE', 'a', '!--', 'img', 'style',
              'li', 'td', 'ul', 'tr', 'tbody', 'table', 'h1', 'h2', 'h3', 'h4',
              'span', 'th', 'p', 'i', 'b', 'small', 'label', 'dd', 'dl', 'dt', 'blockquote',
-             'center', )
+             'center',)
     postcull = ('</abbr>', '[edit]')
-    replacement = (('\n\n','\n'), ('&lt;','<'), ('&gt;','>'), ('&amp;','&'), 
-    ('&euro;','€'), ('&pound;','£'), ('&quot;','"'), ('&apos;',"'"), 
-    ('&nbsp;',' '), ('&ensp;',' '), ('&emsp;',' '), ('&emsp13;',' '), 
-    ('&numsp;',' '), ('&puncsp;',' '), ('&thinsp;',' '), ('&hairsp;',' '), 
-    )
+    replacement = (('\n\n', '\n'), ('&lt;', '<'), ('&gt;', '>'), ('&amp;', '&'),
+                   ('&euro;', '€'), ('&pound;', '£'), ('&quot;', '"'), ('&apos;', "'"),
+                   ('&nbsp;', ' '), ('&ensp;', ' '), ('&emsp;', ' '), ('&emsp13;', ' '),
+                   ('&numsp;', ' '), ('&puncsp;', ' '), ('&thinsp;', ' '), ('&hairsp;', ' '),
+                   )
     for tg in precull:
-        st = st.replace(tg,'')
+        st = st.replace(tg, '')
     for tg in excice:
         strt = f'<{tg}'
         endt = f'</{tg}>'
@@ -91,18 +93,19 @@ def cln(st):
         st = tgx(st, f'<{tg}', '>')
         st = st.replace(f'</{tg}>', '')
     for tg in postcull:
-        st = st.replace(tg,'')
+        st = st.replace(tg, '')
     for (rpl1, rpl2) in replacement:
         while rpl1 in st:
-            st = st.replace(rpl1,rpl2)
+            st = st.replace(rpl1, rpl2)
     return st
 
-def getwikiperson(URL):
-    PIF = {}
+
+def getwikiperson(Url_Name):
+    PIF = {'nm': Url_Name}
     # placeholder in case the site search fails for some reason
-    PIF['nm'] = URL
     try:
-        with urlopen(SITE + URL) as f: html = f.read()
+        with urlopen(SITE + Url_Name) as wkpg:
+            html = wkpg.read()
     except:
         return PIF
     page = html.decode("utf-8")
@@ -111,11 +114,11 @@ def getwikiperson(URL):
     loc = page.find(srch)
     if loc == -1: return PIF
     tg = "h1"
-    nametxt = tgcts(page[loc-10:], tg)
+    nametxt = tgcts(page[loc - 10:], tg)
     if len(nametxt) == 0: return PIF
     PIF['nm'] = nametxt
     # if we got this far, the URL is good, so let's save that
-    PIF['url'] = URL
+    PIF['url'] = Url_Name
     # find the infobox
     srch = 'class="infobox vcard"'
     loc = page.find(srch)
@@ -123,7 +126,7 @@ def getwikiperson(URL):
         # no infobox! guess we don't have any dates or parents?
         return PIF
     tg = "table"
-    infoboxtxt = tgcts(page[loc-10:], tg)
+    infoboxtxt = tgcts(page[loc - 10:], tg)
     # now we should be able to just deal with the infobox without
     # worrying about the rest of the page
     # get key dates, birth and death
@@ -142,44 +145,50 @@ def getwikiperson(URL):
         dtatxt = cln(tgcts(infoboxtxt[loc:], tg))
         PIF['d'] = dtatxt
         anydates = True
-    if False:#anydates:# turns out, I don't like the long names
-        # update the name with the dates
-        brn = ""
-        if 'b' in PIF: brn = PIF['b']
-        did = ""
-        if 'd' in PIF: did = PIF['d']
-        if ((len(brn)>0) and (len(did)>0)):
-            PIF['nm'] = PIF['nm'] + f" ({brn} to {did})"
-        elif (len(brn)>0):
-            PIF['nm'] = PIF['nm'] + f" ({brn})"
-        else: PIF['nm'] = PIF['nm'] + f" ({did})"
+
+    clnpage = cln(page).lower()
+    if ('saint' in clnpage) and (
+            ('canoni' in clnpage) or ('patron' in clnpage) or ('venerat' in clnpage)) and (
+            'catholic' in clnpage):
+        webbrowser.open(SITE + EntryUrl)
+        check = input(f"If {nm} is a saint, what is their feast day? ")
+        if check == 's': return PIF
+        if len(check) > 4:
+            p['s'] = check
+        else:
+            p['s'] = 'n'
+    else:
+        p['s'] = 'n'
+
     # find the parents
     # try Father and Mother first
-    def grabname(ptx, pid):
-        # print(ptx, pid)
-        if (('href="' in ptx) and ("redlink=1" not in ptx)):
-            # get the href so we can follow up on the ancestor
-            loc = ptx.find(srch)
-            urlstart = ptx.find('"', loc+1)+1+6
-            urlend = ptx.find('"', urlstart)
-            url = ptx[urlstart:urlend]
-            PIF[pid] = url
+    def grabname(proptxt, propid):
+        # print(proptxt, propid)
+        if ('href="' in proptxt) and ("redlink=1" not in proptxt):
+            # get the href, so we can follow up on the ancestor
+            lo = proptxt.find(srch)
+            urlstart = proptxt.find('"', lo + 1) + 1 + 6
+            urlend = proptxt.find('"', urlstart)
+            newurl = proptxt[urlstart:urlend]
+            PIF[propid] = newurl
         else:
-            name = tgx(ptx, '(', ')')
+            # no link, so strip it down and use it as the name
+            name = tgx(proptxt, '(', ')')
             name = tgx(name, '<', '>')
             name = name.strip()
             if name.lower() == "unknown": name = "unknown"
-            PIF[pid] = name
+            PIF[propid] = name
+
     fsrch = ">Father<"
     msrch = ">Mother<"
-    if ((fsrch in infoboxtxt) or (msrch in infoboxtxt)):
+    if (fsrch in infoboxtxt) or (msrch in infoboxtxt):
         # pull the data
-        if (fsrch in infoboxtxt):
+        if fsrch in infoboxtxt:
             loc = infoboxtxt.find(fsrch)
             ptx = tgcts(infoboxtxt[loc:], "td")
             pid = "nm_f"
             grabname(ptx, pid)
-        if (msrch in infoboxtxt):
+        if msrch in infoboxtxt:
             loc = infoboxtxt.find(msrch)
             ptx = tgcts(infoboxtxt[loc:], "td")
             pid = "nm_m"
@@ -195,22 +204,35 @@ def getwikiperson(URL):
         parentdta = tgcts(infoboxtxt[loc:], "td")
         parents = alltgcts(parentdta, "li")
         for ptx in parents:
-            if "mother" in ptx: pid = "nm_m"
-            elif "father" in ptx: pid = "nm_f"
-            else: continue
+            if "mother" in ptx:
+                pid = "nm_m"
+            elif "father" in ptx:
+                pid = "nm_f"
+            else:
+                continue
             grabname(ptx, pid)
-    
+
     return PIF
 
+
 def dataentry(p):
-    saveandexit = False
+    validkeys = ("f", "m", "b", "d", "yb", "yd", "nm")
+
+    def processkey(k, desc, numeric=False):
+        if k in p: print(p[k])
+        intermediate = input(desc + ":")
+        if intermediate == '': return  # no entry maintains existing data
+        if numeric: intermediate = int(intermediate)
+        p[k] = intermediate
+
+    saveandexit = ''
     if p['nm'][-7:] == "bscure)":
         print("Obscure Figure")
         p['nm_f'] = 'unknown'
-        if 'url' in p: del(p['url'])
-        return saveandexit
+        if 'url' in p: del (p['url'])
+        return 'n'
     print(p['nm'])
-    while not (saveandexit):
+    while not saveandexit == 'y':
         choice = input(">:").lower()
         if choice == "n" or choice == "u":
             print("Unknown Parentage")
@@ -220,22 +242,19 @@ def dataentry(p):
             print("Obscure Figure")
             p['nm'] = p['nm'] + " (obscure)"
             p['nm_f'] = 'unknown'
-            if 'url' in p: del(p['url'])
+            if 'url' in p: del (p['url'])
             break
         elif choice == "s":
             print("Save and Exit")
-            saveandexit = True
-        elif choice == "f":
-            p['nm_f'] = input("Father:")
-        elif choice == "m":
-            p['nm_m'] = input("Mother:")
-        elif choice == "b":
-            p['b'] = input("Born:")
-        elif choice == "d":
-            p['d'] = input("Died:")
-        elif choice == "": print(INTERFACEHINT)
-        else: break
-        if (('b' in p) and ('d' in p) and ('nm_f' in p) and ('nm_m' in p)):
+            saveandexit = 'y'
+        elif choice in validkeys:
+            num = (choice in ('yb', 'yd'))
+            processkey(choice, choice, num)
+        elif (choice == "") or (choice == "?"):
+            print(INTERFACEHINT)
+        else:
+            break
+        if ('b' in p) and ('d' in p) and ('nm_f' in p) and ('nm_m' in p):
             # we've got all the data we could resonably expect
             break
     return saveandexit
@@ -244,25 +263,68 @@ def dataentry(p):
 def prinfo(p, gen):
     st = ''
     fst = ''
+    nm = p['nm']
     if 's' in p:
         if p['s'] != 'n':
-            st = 'Saint '
+            if 'Saint ' not in nm: st = 'Saint '
             fst = " (" + p['s'] + ")"
-    nm = p['nm']
     if gen == 0: return
-    if p['g']: gt = 'Father'
-    else: gt = 'Mother'
+    if p['g']:
+        gt = 'Father'
+    else:
+        gt = 'Mother'
     ttl = ""
     if gen > 1: ttl = "Grand"
     if gen > 2: ttl = "Great-" + ttl
-    if gen > 3: ttl = str(gen-2) +' '+ ttl
-    url = SITE + p['url']
-    print(f"{st}{nm}{fst} is {ROOT_NAME}'s {ttl}{gt}\n{url}")
+    if gen > 3: ttl = str(gen - 2) + ' ' + ttl
+    if 'url' in p: url = '\n' + SITE + p['url']
+    else: url = ''
+    print(f"{st}{nm}{fst} is {ROOT_NAME}'s {ttl}{gt}{url}")
 
 
-def FindInPedigree(u, Ped, name='', d=0, children = set(), found={}):
+def DepthOfPedigree(u, Ped, d=0):
+    totaldepth = d
+    deepu = u
+    if u == 'unknown': return 'u', 0
+    if len(u) < 2: return 'n', 0
+    if u not in Ped: return deepu, totaldepth
+    p = Ped[u]
+    nmkys = ("nm_f", "nm_m")
+    for nmk in nmkys:
+        if nmk in p:
+            otheru, otherdepth = DepthOfPedigree(p[nmk], Ped, d + 1)
+            if otherdepth > totaldepth:
+                deepu = otheru
+                totaldepth = otherdepth
+    return deepu, totaldepth
+
+
+def OldestInPedigree(u, Ped):
+    dtks = ('yb', 'yd')
+    smallest_date = 9999
+    if u not in Ped: return u, smallest_date
+    p = Ped[u]
+    deepest_u = ''  # I think this is okay, we will clobber it later
+    for dtk in dtks:
+        if dtk in p:
+            if p[dtk] < smallest_date:
+                smallest_date = p[dtk]
+                deepest_u = u
+    acks = ("nm_f", "nm_m")
+    for ack in acks:
+        if ack in p:
+            deeper_u, deeperdate = OldestInPedigree(p[ack], Ped)
+            if deeperdate < smallest_date:
+                smallest_date = deeperdate
+                deepest_u = deeper_u
+    return deepest_u, smallest_date
+
+
+def FindInPedigree(u, Ped, name='', d=0, children=None, found=None):
+    if children is None: children = set()
+    if found is None: found = {}
     if DEPTH < d:
-        print("recurse limit reached for", u)
+        if VERBOSE: print("recurse limit reached for", u)
         return None
     if u == 'unknown': return None
     if len(u) < 2: return None
@@ -271,36 +333,41 @@ def FindInPedigree(u, Ped, name='', d=0, children = set(), found={}):
     nm = p['nm']
 
     def recinfo():
-        gen = len(children)
-        if u not in found: found[u] = gen
-        else: found[u] = min(gen, found[u])
-        
+        # record the entry info in the "found" log
+        num_generations = len(children)
+        if u not in found: found[u] = num_generations
+        else: found[u] = min(num_generations, found[u])
+
     if len(name):
         # find the search string in the name
-        if name in nm:
+        if (name in nm) or (name in u):
             recinfo()
     else:
         # search for saints
         if 's' in p:
             if p['s'] != 'n':
                 recinfo()
-    
+
     newchildren = children.copy()
     newchildren.add(u)
     if "nm_f" in p:
-        FindInPedigree(p["nm_f"], Ped, name, d+1, newchildren, found)
+        FindInPedigree(p["nm_f"], Ped, name, d + 1, newchildren, found)
     if "nm_m" in p:
-        FindInPedigree(p["nm_m"], Ped, name, d+1, newchildren, found)
-    
+        FindInPedigree(p["nm_m"], Ped, name, d + 1, newchildren, found)
+
     if d == 0:
         # we're back to the root level
+        fdln = len(found)
+        print(f'{fdln} records found')
         for u in found:
             gen = found[u]
             p = Ped[u]
             prinfo(p, gen)
 
 
-def RecurPedigree(u="", Ped = {}, d=0, children = set(), curgender=1):
+def RecurPedigree(u="", Ped=None, d=0, children=None, curgender=1):
+    if Ped is None: Ped = {}
+    if children is None: children = set()
     if DEPTH < d:
         print("recurse limit reached for", u)
         return None
@@ -310,19 +377,18 @@ def RecurPedigree(u="", Ped = {}, d=0, children = set(), curgender=1):
         # just use the cached data
         p = Ped[u]
         # aggressive data entry query
-        if (('nm_f' not in p) and ('nm_m' not in p)):
+        if ('nm_f' not in p) and ('nm_m' not in p):
             if 'url' in p:
                 webbrowser.open(SITE + p['url'])
                 dataentry(p)
     else:
         if ' ' in u:
             # it's not a wiki page address
-            # and it isn't cached
-            p = {}
-            p['nm'] = u
+            # it isn't cached
+            p = {'nm': u}
             dataentry(p)
             Ped[u] = p
-            #return None
+            # return None
         else:
             p = getwikiperson(u)
             Ped[u] = p
@@ -330,14 +396,14 @@ def RecurPedigree(u="", Ped = {}, d=0, children = set(), curgender=1):
         p['g'] = curgender
     if u in children:
         print("Causality loop detected for ", u)
-        print(children)
+        if VERBOSE: print(children)
         return None
     newchildren = children.copy()
     newchildren.add(u)
     if "nm_f" in p:
-        RecurPedigree(p["nm_f"], Ped, d+1, newchildren, curgender=1)
+        RecurPedigree(p["nm_f"], Ped, d + 1, newchildren, curgender=1)
     if "nm_m" in p:
-        RecurPedigree(p["nm_m"], Ped, d+1, newchildren, curgender=0)
+        RecurPedigree(p["nm_m"], Ped, d + 1, newchildren, curgender=0)
 
 
 def gatherdata(tp):
@@ -350,15 +416,18 @@ def gatherdata(tp):
         needdata = False
         for nm in tp:
             p = tp[nm]
-            if (('nm_f' not in p) and ('nm_m' not in p)):
-                if 'url' in p: webbrowser.open(SITE + p['url'])
-                else: continue
+            if ('nm_f' not in p) and ('nm_m' not in p):
+                if 'url' in p:
+                    webbrowser.open(SITE + p['url'])
+                else:
+                    continue
                 needdata = True
                 saveandexit = dataentry(p)
-            if saveandexit: break
-        if needdata: RecurPedigree(ROOT_NAME, tp, 0, set())
-        else: saveandexit = True
-        if saveandexit: break
+            if saveandexit == 'y': return True
+        if needdata:
+            RecurPedigree(ROOT_NAME, tp, 0, set())
+        else:
+            return False
 
 
 def checksaints(tp):
@@ -366,52 +435,195 @@ def checksaints(tp):
         p = tp[nm]
         if 'saint' in p: continue
         if 'url' not in p: continue
-        URL = p['url']
+        EntryUrl = p['url']
         try:
-            with urlopen(SITE + URL) as f: html = f.read()
+            with urlopen(SITE + EntryUrl) as wkpg:
+                html = wkpg.read()
         except:
             p['s'] = 'n'
             continue
         page = html.decode("utf-8")
-        page = cln(page).lower()
-        if ('saint' in page) and (('canoni' in page) or ('patron' in page) or ('venerat' in page)) and ('catholic' in page):
-            webbrowser.open(SITE + URL)
+        clnpage = cln(page).lower()
+        if ('saint' in clnpage) and (
+                ('canoni' in clnpage) or ('patron' in clnpage) or ('venerat' in clnpage)) and (
+                'catholic' in clnpage):
+            webbrowser.open(SITE + EntryUrl)
             check = input(f"If {nm} is a saint, what is their feast day? ")
             if check == 's': return
             if len(check) > 4:
                 p['s'] = check
-            else: p['s'] = 'n'
-        else: p['s'] = 'n'
+            else:
+                p['s'] = 'n'
+        else:
+            p['s'] = 'n'
+
+
+def cleandate(datea):
+    datea = datea.strip()
+    datea = tgx(datea, '(', ')')
+    datea = datea.replace('&#8211;', '-')
+    datea = datea.replace('&#8201;', ' ')
+    datea = datea.replace('&#160;', ' ')
+    if len(datea) < 3: return '', ''
+    if not datea[-3:].isnumeric():
+        e = len(datea)
+        s = e - 3
+        while s > 0:
+            e -= 1
+            s -= 1
+            if datea[s:e].isnumeric(): break
+            # found the last place there were three digits in a row
+        if datea[s:e].isnumeric():
+            pre = datea[e:].strip('.,;:?').strip() + ', '
+            if len(pre) < 4: pre = ''
+            newdatea = pre + datea[:e].strip('.,;:?').strip()
+        ##            print(newdatea)
+        ##            return newdatea
+        else:
+            newdatea = datea
+    ##            print(datea)
+    ##            newdatea = input(':')
+    ##            return newdatea
+    # now we have what we hope is a valid date at the end.
+    # extract the number and do some more checks.
+    else:
+        newdatea = datea
+    e = len(newdatea)
+    s = e - 3
+    while s > 0:
+        s -= 1
+        if not newdatea[s:e].isnumeric():
+            s += 1
+            break
+    try:
+        year = int(newdatea[s:e])
+    except:
+        year = 9999
+    if year > 1990:
+        print((newdatea, year))
+        revised_datea = input('new data:')
+        if revised_datea == '':
+            return newdatea, ''
+        newdatea = revised_datea
+        year = input('new year:')
+        if year != '':
+            try:
+                year = int(year)
+            except:
+                year = ''
+    return newdatea, year
+
+
+def finddatesinname(p):
+    searchstrings = {'died': 'yd', 'born': 'yb'}
+    searchinfo = [p['nm']]
+    if 'url' in p: searchinfo.append(p['url'])
+    for s in searchinfo:
+        for ss in searchstrings:
+            if ss in s:
+                if searchstrings[ss] in p:
+                    print(p[searchstrings[ss]], s)
+                    continue
+                else:
+                    print(s)
+                return dataentry(p)
+    return False
 
 
 def reprocess(tp):
-    for nm in tp:
-        p = tp[nm]
-        if False:#'saint' in p:
-            p['s'] = p['saint']
-            del(p['saint'])
-        if False:#'g' in p:
-            if p['g'] == 'm': p['g'] = 1
-            else: p['g'] = 0
+    AllNames = {}
+    for u in tp:
+        p = tp[u]
+        nm = p['nm']
+        if nm in AllNames:
+            AllNames[nm].append(u)
+        else:
+            AllNames[nm] = [u, ]
+        # continue
+        if finddatesinname(p): return True
+        # continue
+        if ('b' in p) and ('yb' not in p):
+            p['b'], p['yb'] = cleandate(p['b'])
+            if len(p['b']) < 3: del (p['b'])
+            if p['yb'] == '': del (p['yb'])
+        if ('d' in p) and ('yd' not in p):
+            p['d'], p['yd'] = cleandate(p['d'])
+            if len(p['d']) < 3: del (p['d'])
+            if p['yd'] == '': del (p['yd'])
+
+    for nm in AllNames:
+        us = AllNames[nm]
+        if len(us) > 1:
+            print(us)
+            for u in us: print(tp[u])
+            print('\n')
 
 
-try:
-    f = open(SAVEFILE, 'r')
-    Total_Pedigree = eval(f.read())
-    f.close()
-except:
-    Total_Pedigree = {}
+def randcestor(tp):
+    allurls = []
+    for u in tp:
+        p = tp[u]
+        if 'url' in p: allurls.append(p['url'])
+    from random import choice
+    numchoices = len(allurls)
+    chosenurl = choice(allurls)
+    print(f'{chosenurl} selected from {numchoices} options')
+    webbrowser.open(SITE + chosenurl)
+    FindInPedigree(ROOT_NAME, tp, chosenurl)
 
-# gatherdata(Total_Pedigree)
-# checksaints(Total_Pedigree)
-# reprocess(Total_Pedigree)
-FindInPedigree(ROOT_NAME, Total_Pedigree, '')
 
-if SAVEIT:
+Total_Pedigree = {}
+
+
+def loadfile():
+    global Total_Pedigree
+    try:
+        f = open(SAVEFILE, 'r')
+        alldata = f.read()
+        f.close()
+        Total_Pedigree = eval(alldata)
+        if VERBOSE: print('file loaded')
+    except:
+        if VERBOSE: print('exception found')
+        Total_Pedigree = {}
+    if VERBOSE:
+        lnpd = len(Total_Pedigree)
+        print(f'{lnpd} entries in pedigree')
+
+
+def savefile():
     out = str(Total_Pedigree)
-    out = out.replace("}, ","},\n\n")
+    out = out.replace("}, ", "},\n\n")
     out = out.encode('ascii', 'ignore')
     f = open(SAVEFILE, 'wb')
     f.write(out)
     f.close()
 
+
+loadfile()
+
+INPUTLOOPHELP = 'Find, Info, Save, Load, eXit, Reprocess, Gather data, rAndom wiki page\n'
+keep_at_it = True
+while keep_at_it:
+    c = input(">:").lower()
+    if c == 's':
+        savefile()
+    elif c == 'l':
+        loadfile()
+    elif c == 'x':
+        break
+    elif c == 'f':
+        srchstr = input('Search for:')
+        if srchstr == 'saint': srchstr = ''
+        FindInPedigree(ROOT_NAME, Total_Pedigree, srchstr)
+    elif c == 'i':
+        lnpd = len(Total_Pedigree)
+        print(f'{lnpd} entries in pedigree')
+        dpnm, dppd = DepthOfPedigree(ROOT_NAME, Total_Pedigree)
+        print(f'deepest ancestor {dpnm} is {dppd} generations deep')
+        oldest_nm, oldest_dt = OldestInPedigree(ROOT_NAME, Total_Pedigree)
+        print(f'the oldest date is {oldest_dt} for {oldest_nm}')
+    elif c == 'r': reprocess(Total_Pedigree)
+    elif c == 'g': gatherdata(Total_Pedigree)
+    elif c == 'a': randcestor(Total_Pedigree)
+    else: print(INPUTLOOPHELP)
