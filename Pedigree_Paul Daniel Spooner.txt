@@ -254,11 +254,11 @@
 
 'Ermentrude_of_Orl%C3%A9ans': {'nm': 'Ermentrude of Orlans', 'url': 'Ermentrude_of_Orl%C3%A9ans', 'b': '27 September 823', 'd': '6 October 869', 'nm_f': 'Odo_I,_Count_of_Orl%C3%A9ans', 'nm_m': 'Engeltrude_de_F%C3%A9zensac', 'g': 0, 's': 'n', 'yb': 823, 'yd': 869},
 
-'Odo_I,_Count_of_Orl%C3%A9ans': {'nm': 'Odo I, Count of Orlans', 'url': 'Odo_I,_Count_of_Orl%C3%A9ans', 'd': '25 May 834', 'nm_f': 'Adrian,_Count_of_Orl%C3%A9ans', 'nm_m': 'Waldrada', 'g': 1, 's': 'n', 'yd': 834},
+'Odo_I,_Count_of_Orl%C3%A9ans': {'nm': 'Odo I, Count of Orlans', 'url': 'Odo_I,_Count_of_Orl%C3%A9ans', 'd': '25 May 834', 'nm_f': 'Adrian,_Count_of_Orl%C3%A9ans', 'nm_m': 'Waldrada (obscure)', 'g': 1, 's': 'n', 'yd': 834},
 
 'Adrian,_Count_of_Orl%C3%A9ans': {'nm': 'Adrian, Count of Orlans', 'url': 'Adrian,_Count_of_Orl%C3%A9ans', 'b': 'c. 755', 'd': 'before November 821', 'nm_f': 'Gerold_of_Vinzgau', 'nm_m': 'Emma of Alemannia', 'g': 1, 's': 'n', 'yb': 755, 'yd': 821},
 
-'Waldrada': {'nm': 'Waldrada', 'url': 'Waldrada', 'b': '531', 'd': '572', 'nm_f': 'Wacho', 'nm_m': 'Austrigusa or Ostrogotha the Gepid', 'g': 0, 's': 'n', 'yb': 531, 'yd': 572},
+'Waldrada (obscure)': {'nm': 'Waldrada (obscure)', 'nm_f': 'unknown', 'g': 0, 's': 'n'},
 
 'Engeltrude_de_F%C3%A9zensac': {'nm': 'Engeltrude de Fzensac', 'url': 'Engeltrude_de_F%C3%A9zensac', 'b': 'c. 799', 'd': '853', 'nm_f': 'Leuthard_I_of_Paris', 'nm_m': 'Grimhilda', 'g': 0, 's': 'n', 'yb': 799, 'yd': 853},
 
@@ -928,7 +928,10 @@
 
 '%C3%81lmos': {'nm': 'lmos', 'url': '%C3%81lmos', 'b': 'c. 820', 'd': 'Transylvania, c. 895', 'nm_f': '%C3%9Cgyek', 'nm_m': 'Emese', 'g': 1, 's': 'n', 'yb': 820, 'yd': 895},
 
-'%C3%9Cgyek': {'nm': 'gyek', 'url': '%C3%9Cgyek', 'd': 'after 818', 'nm_f': 'Prince_Csaba', 'nm_m': 'Aracsilla of Emese', 'g': 1, 's': 'n', 'yd': 818},
+'Edemen': {'nm': 'Edemen', 'nm_f': 'Prince_Csaba', 'g': 1, 's': 'n'},
+
+'%C3%9Cgyek': {'nm': 'gyek', 'url': '%C3%9Cgyek', 'd': 'after 818', 'nm_f': 'Edemen', 'nm_m': 'Aracsilla of Emese', 'g': 1, 's': 'n', 'yd': 818},
+
 
 'Prince_Csaba': {'nm': 'Prince Csaba', 'url': 'Prince_Csaba', 'nm_f': 'Attila', 'g': 1, 's': 'n'},
 

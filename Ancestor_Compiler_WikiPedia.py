@@ -289,8 +289,7 @@ def DepthOfPedigree(u, Ped, d=0):
     if len(u) < 2: return 'n', 0
     if u not in Ped: return deepu, totaldepth
     p = Ped[u]
-    nmkys = ("nm_f", "nm_m")
-    for nmk in nmkys:
+    for nmk in ("nm_m", "nm_f"):
         if nmk in p:
             otheru, otherdepth = DepthOfPedigree(p[nmk], Ped, d + 1)
             if otherdepth > totaldepth:
@@ -310,8 +309,7 @@ def OldestInPedigree(u, Ped):
             if p[dtk] < smallest_date:
                 smallest_date = p[dtk]
                 deepest_u = u
-    acks = ("nm_f", "nm_m")
-    for ack in acks:
+    for ack in ("nm_m", "nm_f"):
         if ack in p:
             deeper_u, deeperdate = OldestInPedigree(p[ack], Ped)
             if deeperdate < smallest_date:
@@ -350,10 +348,8 @@ def FindInPedigree(u, Ped, name='', d=0, children=None, found=None):
 
     newchildren = children.copy()
     newchildren.add(u)
-    if "nm_f" in p:
-        FindInPedigree(p["nm_f"], Ped, name, d + 1, newchildren, found)
-    if "nm_m" in p:
-        FindInPedigree(p["nm_m"], Ped, name, d + 1, newchildren, found)
+    for k in ("nm_m", "nm_f"):
+        if k in p: FindInPedigree(p[k], Ped, name, d + 1, newchildren, found)
 
     if d == 0:
         # we're back to the root level
@@ -400,10 +396,8 @@ def RecurPedigree(u="", Ped=None, d=0, children=None, curgender=1):
         return None
     newchildren = children.copy()
     newchildren.add(u)
-    if "nm_f" in p:
-        RecurPedigree(p["nm_f"], Ped, d + 1, newchildren, curgender=1)
-    if "nm_m" in p:
-        RecurPedigree(p["nm_m"], Ped, d + 1, newchildren, curgender=0)
+    for g, k in enumerate(("nm_m", "nm_f")):
+        if k in p: RecurPedigree(p[k], Ped, d + 1, newchildren, curgender=g)
 
 
 def gatherdata(tp):
@@ -572,6 +566,34 @@ def randcestor(tp):
     FindInPedigree(ROOT_NAME, tp, chosenurl)
 
 
+def aveGeneration(TP):
+    dtk = 'yb'
+    entriesbygender = [0, 0, 0, 0]
+    sumbygender = [0, 0, 0, 0]
+    for nm in TP:
+        p = TP[nm]
+        if dtk not in p: continue  # no year born means no point!
+        year_born = p[dtk]
+        selfg = p['g']
+        if 'yd' in p:
+            age = p['yd'] - year_born
+            entriesbygender[2+selfg] += 1
+            sumbygender[2+selfg] += age
+        for g, k in enumerate(("nm_m", "nm_f")):
+            if k in p:
+                ancnm = p[k]
+                if ancnm in TP:
+                    anc = TP[ancnm]
+                    if dtk in anc:
+                        entriesbygender[g] += 1
+                        sumbygender[g] += year_born - anc[dtk]
+    aveagebygender = []
+    # print(entriesbygender)
+    for i, v in enumerate(sumbygender):
+        aveagebygender.append(v / entriesbygender[i])
+    return aveagebygender
+
+
 Total_Pedigree = {}
 
 
@@ -623,6 +645,9 @@ while keep_at_it:
         print(f'deepest ancestor {dpnm} is {dppd} generations deep')
         oldest_nm, oldest_dt = OldestInPedigree(ROOT_NAME, Total_Pedigree)
         print(f'the oldest date is {oldest_dt} for {oldest_nm}')
+        mage, fage, agew, agem = aveGeneration(Total_Pedigree)
+        print(f'average generational spacing is\n{fage:.3} years for fathers\n{mage:.3} years for mothers')
+        print(f'average lifespan is {agew:.3}W and {agem:.3}M')
     elif c == 'r': reprocess(Total_Pedigree)
     elif c == 'g': gatherdata(Total_Pedigree)
     elif c == 'a': randcestor(Total_Pedigree)
