@@ -15,6 +15,7 @@ CLEAN_NAME = PLAIN_NAME.replace(",", "")
 SAVEFILE = F'Pedigree_{CLEAN_NAME}.txt'
 # SAVEFILE = "Pedigree_John Howard 1st Duke of Norfolk.txt"
 VERBOSE = True
+UseWebBrowser = True
 
 INTERFACEHINT = "No or Unknown ancestor (and next), Obscure (and next)"
 INTERFACEHINT += "\nSave (and exit)\nFather, Mother, Born, Died"
@@ -150,7 +151,7 @@ def getwikiperson(Url_Name):
     if ('saint' in clnpage) and (
             ('canoni' in clnpage) or ('patron' in clnpage) or ('venerat' in clnpage)) and (
             'catholic' in clnpage):
-        webbrowser.open(SITE + EntryUrl)
+        if UseWebBrowser: webbrowser.open(SITE + EntryUrl)
         check = input(f"If {nm} is a saint, what is their feast day? ")
         if check == 's': return PIF
         if len(check) > 4:
@@ -277,7 +278,9 @@ def prinfo(p, gen):
     if gen > 1: ttl = "Grand"
     if gen > 2: ttl = "Great-" + ttl
     if gen > 3: ttl = str(gen - 2) + ' ' + ttl
-    if 'url' in p: url = '\n' + SITE + p['url']
+    if 'url' in p:
+        url = '\n' + SITE + p['url']
+        if UseWebBrowser: webbrowser.open(SITE + p['url'])
     else: url = ''
     print(f"{st}{nm}{fst} is {ROOT_NAME}'s {ttl}{gt}{url}")
 
@@ -375,7 +378,7 @@ def RecurPedigree(u="", Ped=None, d=0, children=None, curgender=1):
         # aggressive data entry query
         if ('nm_f' not in p) and ('nm_m' not in p):
             if 'url' in p:
-                webbrowser.open(SITE + p['url'])
+                if UseWebBrowser: webbrowser.open(SITE + p['url'])
                 dataentry(p)
     else:
         if ' ' in u:
@@ -412,7 +415,7 @@ def gatherdata(tp):
             p = tp[nm]
             if ('nm_f' not in p) and ('nm_m' not in p):
                 if 'url' in p:
-                    webbrowser.open(SITE + p['url'])
+                    if UseWebBrowser: webbrowser.open(SITE + p['url'])
                 else:
                     continue
                 needdata = True
@@ -441,7 +444,7 @@ def checksaints(tp):
         if ('saint' in clnpage) and (
                 ('canoni' in clnpage) or ('patron' in clnpage) or ('venerat' in clnpage)) and (
                 'catholic' in clnpage):
-            webbrowser.open(SITE + EntryUrl)
+            if UseWebBrowser: webbrowser.open(SITE + EntryUrl)
             check = input(f"If {nm} is a saint, what is their feast day? ")
             if check == 's': return
             if len(check) > 4:
@@ -562,7 +565,7 @@ def randcestor(tp):
     numchoices = len(allurls)
     chosenurl = choice(allurls)
     print(f'{chosenurl} selected from {numchoices} options')
-    webbrowser.open(SITE + chosenurl)
+    if UseWebBrowser: webbrowser.open(SITE + chosenurl)
     FindInPedigree(ROOT_NAME, tp, chosenurl)
 
 
@@ -624,7 +627,7 @@ def savefile():
 
 loadfile()
 
-INPUTLOOPHELP = 'Find, Info, Save, Load, eXit, Reprocess, Gather data, rAndom wiki page\n'
+INPUTLOOPHELP = 'Find, Info, Save, Load, eXit, Reprocess, Gather data, rAndom wiki page, open Web page\n'
 keep_at_it = True
 while keep_at_it:
     c = input(">:").lower()
@@ -651,4 +654,7 @@ while keep_at_it:
     elif c == 'r': reprocess(Total_Pedigree)
     elif c == 'g': gatherdata(Total_Pedigree)
     elif c == 'a': randcestor(Total_Pedigree)
+    elif c == 'w':
+        UseWebBrowser = not UseWebBrowser
+        print(f'open wiki pages set to {UseWebBrowser}')
     else: print(INPUTLOOPHELP)
