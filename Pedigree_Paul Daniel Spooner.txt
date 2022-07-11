@@ -224,7 +224,9 @@
 
 'Matilda_of_Flanders': {'nm': 'Matilda of Flanders', 'url': 'Matilda_of_Flanders', 'b': 'c. 1031', 'd': '2 November 1083', 'nm_f': 'Baldwin_V,_Count_of_Flanders', 'nm_m': 'Adela_of_France', 'g': 0, 's': 'n', 'yb': 1031, 'yd': 1083},
 
-'Baldwin_V,_Count_of_Flanders': {'nm': 'Baldwin V, Count of Flanders', 'url': 'Baldwin_V,_Count_of_Flanders', 'b': 'Arras, Flanders, 19 August 1012', 'd': 'Lille, Flanders, 1 September 1067', 'nm_f': 'Baldwin_IV,_Count_of_Flanders', 'nm_m': 'Frederick_of_Luxembourg', 'g': 1, 's': 'n', 'yb': 1012, 'yd': 1067},
+'Baldwin_V,_Count_of_Flanders': {'nm': 'Baldwin V, Count of Flanders', 'url': 'Baldwin_V,_Count_of_Flanders', 'b': 'Arras, Flanders, 19 August 1012', 'd': 'Lille, Flanders, 1 September 1067', 'nm_f': 'Baldwin_IV,_Count_of_Flanders', 'nm_m': 'Ogive of Luxembourg', 'g': 1, 's': 'n', 'yb': 1012, 'yd': 1067},
+
+'Ogive of Luxembourg': {'nm': 'Ogive of Luxembourg', 'b': 'c. 993', 'd': '1030', 'nm_f': 'Frederick_of_Luxembourg', 'g': 0, 's': 'n', 'yb': 993, 'yd': 1030},
 
 'Baldwin_IV,_Count_of_Flanders': {'nm': 'Baldwin IV, Count of Flanders', 'url': 'Baldwin_IV,_Count_of_Flanders', 'b': '980', 'd': '30 May 1035', 'nm_f': 'Arnulf_II,_Count_of_Flanders', 'nm_m': 'Rozala_of_Italy', 'g': 1, 's': 'n', 'yb': 980, 'yd': 1035},
 
