@@ -5,7 +5,8 @@ SITE = "https://en.wikipedia.org/wiki/"
 # the page on the site to query
 # ROOT_NAME = "John_Howard,_1st_Duke_of_Norfolk"
 # ROOT_NAME = "Yaroslav_the_Wise"
-ROOT_NAME = "Paul Daniel Spooner"
+ROOT_NAME = "Vladimir_the_Great"
+# ROOT_NAME = "Paul Daniel Spooner"
 URL = SITE + ROOT_NAME
 DEPTH = 67  # this should be plenty
 # note that if you want to change either of these, you'll probably
@@ -101,6 +102,15 @@ def cln(st):
     return st
 
 
+def extract_dates(p):
+    for dk in ('b', 'd'):
+        yk = 'y'+dk
+        if (dk in p) and (yk not in p):
+            p[dk], p[yk] = cleandate(p[dk])
+            if len(p[dk]) < 3: del (p[dk])
+            if p[yk] == '': del (p[yk])
+
+
 def getwikiperson(Url_Name):
     PIF = {'nm': Url_Name}
     # placeholder in case the site search fails for some reason
@@ -147,19 +157,22 @@ def getwikiperson(Url_Name):
         PIF['d'] = dtatxt
         anydates = True
 
+    extract_dates(PIF)
+
     clnpage = cln(page).lower()
     if ('saint' in clnpage) and (
             ('canoni' in clnpage) or ('patron' in clnpage) or ('venerat' in clnpage)) and (
             'catholic' in clnpage):
-        if UseWebBrowser: webbrowser.open(SITE + EntryUrl)
+        if UseWebBrowser: webbrowser.open(SITE + Url_Name)
+        nm = PIF['nm']
         check = input(f"If {nm} is a saint, what is their feast day? ")
         if check == 's': return PIF
         if len(check) > 4:
-            p['s'] = check
+            PIF['s'] = check
         else:
-            p['s'] = 'n'
+            PIF['s'] = 'n'
     else:
-        p['s'] = 'n'
+        PIF['s'] = 'n'
 
     # find the parents
     # try Father and Mother first
@@ -187,12 +200,12 @@ def getwikiperson(Url_Name):
         if fsrch in infoboxtxt:
             loc = infoboxtxt.find(fsrch)
             ptx = tgcts(infoboxtxt[loc:], "td")
-            pid = "nm_f"
+            pid = 'f'
             grabname(ptx, pid)
         if msrch in infoboxtxt:
             loc = infoboxtxt.find(msrch)
             ptx = tgcts(infoboxtxt[loc:], "td")
-            pid = "nm_m"
+            pid = 'm'
             grabname(ptx, pid)
     else:
         # if that doesn't work, try alternate formats
@@ -206,9 +219,9 @@ def getwikiperson(Url_Name):
         parents = alltgcts(parentdta, "li")
         for ptx in parents:
             if "mother" in ptx:
-                pid = "nm_m"
+                pid = 'm'
             elif "father" in ptx:
-                pid = "nm_f"
+                pid = 'f'
             else:
                 continue
             grabname(ptx, pid)
@@ -223,26 +236,31 @@ def dataentry(p):
         if k in p: print(p[k])
         intermediate = input(desc + ":")
         if intermediate == '': return  # no entry maintains existing data
-        if numeric: intermediate = int(intermediate)
+        if numeric:
+            intermediate = int(intermediate)
+        else:
+            intermediate = intermediate.split('/')[-1]
         p[k] = intermediate
 
     saveandexit = ''
     if p['nm'][-7:] == "bscure)":
         print("Obscure Figure")
-        p['nm_f'] = 'unknown'
+        p['f'] = 'unknown'
         if 'url' in p: del (p['url'])
         return 'n'
-    print(p['nm'])
+    for k in validkeys:
+        if k in p: print(k, "is", p[k])
     while not saveandexit == 'y':
+        extract_dates(p)
         choice = input(">:").lower()
         if choice == "n" or choice == "u":
             print("Unknown Parentage")
-            p['nm_f'] = 'unknown'
+            p['f'] = 'unknown'
             break
         elif choice == "o":
             print("Obscure Figure")
             p['nm'] = p['nm'] + " (obscure)"
-            p['nm_f'] = 'unknown'
+            p['f'] = 'unknown'
             if 'url' in p: del (p['url'])
             break
         elif choice == "s":
@@ -253,9 +271,11 @@ def dataentry(p):
             processkey(choice, choice, num)
         elif (choice == "") or (choice == "?"):
             print(INTERFACEHINT)
+            for k in validkeys:
+                if k in p: print(k, "is", p[k])
         else:
             break
-        if ('b' in p) and ('d' in p) and ('nm_f' in p) and ('nm_m' in p):
+        if ('b' in p) and ('d' in p) and ('f' in p) and ('m' in p):
             # we've got all the data we could resonably expect
             break
     return saveandexit
@@ -292,7 +312,7 @@ def DepthOfPedigree(u, Ped, d=0):
     if len(u) < 2: return 'n', 0
     if u not in Ped: return deepu, totaldepth
     p = Ped[u]
-    for nmk in ("nm_m", "nm_f"):
+    for nmk in ('m', 'f'):
         if nmk in p:
             otheru, otherdepth = DepthOfPedigree(p[nmk], Ped, d + 1)
             if otherdepth > totaldepth:
@@ -312,7 +332,7 @@ def OldestInPedigree(u, Ped):
             if p[dtk] < smallest_date:
                 smallest_date = p[dtk]
                 deepest_u = u
-    for ack in ("nm_m", "nm_f"):
+    for ack in ('m', 'f'):
         if ack in p:
             deeper_u, deeperdate = OldestInPedigree(p[ack], Ped)
             if deeperdate < smallest_date:
@@ -351,7 +371,7 @@ def FindInPedigree(u, Ped, name='', d=0, children=None, found=None):
 
     newchildren = children.copy()
     newchildren.add(u)
-    for k in ("nm_m", "nm_f"):
+    for k in ('m', 'f'):
         if k in p: FindInPedigree(p[k], Ped, name, d + 1, newchildren, found)
 
     if d == 0:
@@ -376,16 +396,16 @@ def RecurPedigree(u="", Ped=None, d=0, children=None, curgender=1):
         # just use the cached data
         p = Ped[u]
         # aggressive data entry query
-        if ('nm_f' not in p) and ('nm_m' not in p):
+        if ('f' not in p) and ('m' not in p):
             if 'url' in p:
                 if UseWebBrowser: webbrowser.open(SITE + p['url'])
-                dataentry(p)
+                if dataentry(p) == 'y': return 's'
     else:
         if ' ' in u:
             # it's not a wiki page address
             # it isn't cached
             p = {'nm': u}
-            dataentry(p)
+            if dataentry(p) == 'y': return 's'
             Ped[u] = p
             # return None
         else:
@@ -399,12 +419,14 @@ def RecurPedigree(u="", Ped=None, d=0, children=None, curgender=1):
         return None
     newchildren = children.copy()
     newchildren.add(u)
-    for g, k in enumerate(("nm_m", "nm_f")):
-        if k in p: RecurPedigree(p[k], Ped, d + 1, newchildren, curgender=g)
+    for g, k in enumerate(('m', 'f')):
+        if k in p:
+            if RecurPedigree(p[k], Ped, d + 1, newchildren, curgender=g) == 's':
+                return 's'
 
 
 def gatherdata(tp):
-    RecurPedigree(ROOT_NAME, tp, 0, set())
+    if RecurPedigree(ROOT_NAME, tp, 0, set()) == 's': return True
     print(len(tp), "people recorded")
     print("hand-check the following dead-ends")
     print(INTERFACEHINT)
@@ -413,7 +435,7 @@ def gatherdata(tp):
         needdata = False
         for nm in tp:
             p = tp[nm]
-            if ('nm_f' not in p) and ('nm_m' not in p):
+            if ('f' not in p) and ('m' not in p):
                 if 'url' in p:
                     if UseWebBrowser: webbrowser.open(SITE + p['url'])
                 else:
@@ -422,7 +444,7 @@ def gatherdata(tp):
                 saveandexit = dataentry(p)
             if saveandexit == 'y': return True
         if needdata:
-            RecurPedigree(ROOT_NAME, tp, 0, set())
+            if RecurPedigree(ROOT_NAME, tp, 0, set()) == 's': return True
         else:
             return False
 
@@ -537,16 +559,16 @@ def reprocess(tp):
         else:
             AllNames[nm] = [u, ]
         # continue
+        extract_dates(p)
+        # continue
         if finddatesinname(p): return True
         # continue
-        if ('b' in p) and ('yb' not in p):
-            p['b'], p['yb'] = cleandate(p['b'])
-            if len(p['b']) < 3: del (p['b'])
-            if p['yb'] == '': del (p['yb'])
-        if ('d' in p) and ('yd' not in p):
-            p['d'], p['yd'] = cleandate(p['d'])
-            if len(p['d']) < 3: del (p['d'])
-            if p['yd'] == '': del (p['yd'])
+        for gk in ('f', 'm'):
+            ogk = 'nm_'+gk
+            if ogk in p:
+                p[gk] = p[ogk]
+                del(p[ogk])
+        
 
     for nm in AllNames:
         us = AllNames[nm]
@@ -582,7 +604,7 @@ def aveGeneration(TP):
             age = p['yd'] - year_born
             entriesbygender[2+selfg] += 1
             sumbygender[2+selfg] += age
-        for g, k in enumerate(("nm_m", "nm_f")):
+        for g, k in enumerate(('m', 'f')):
             if k in p:
                 ancnm = p[k]
                 if ancnm in TP:
@@ -652,7 +674,8 @@ while keep_at_it:
         print(f'average generational spacing is\n{fage:.3} years for fathers\n{mage:.3} years for mothers')
         print(f'average lifespan is {agew:.3}W and {agem:.3}M')
     elif c == 'r': reprocess(Total_Pedigree)
-    elif c == 'g': gatherdata(Total_Pedigree)
+    elif c == 'g':
+        if gatherdata(Total_Pedigree): savefile()
     elif c == 'a': randcestor(Total_Pedigree)
     elif c == 'w':
         UseWebBrowser = not UseWebBrowser

@@ -1,0 +1,13 @@
+{'Vladimir_the_Great': {'nm': 'Vladimir the Great', 'url': 'Vladimir_the_Great', 'b': 'Budnik near Pskov  or Budyatychi, c.  958', 'd': 'Berestove, 15 July 1015', 'yb': 958, 'yd': 1015, 's': 'n', 'g': 1, 'f': 'Sviatoslav_I_of_Kiev', 'm': 'Malusha'},
+
+'Malusha': {'nm': 'Malusha', 'url': 'Malusha', 'b': 'Lyubech, Rypky district, Ukraine, 944', 'd': '1000', 'yb': 944, 'yd': 1000, 's': 'n', 'f': 'Malk of Lyubech', 'g': 0},
+
+'Malk of Lyubech': {'nm': 'Malk of Lyubech', 'f': 'unknown', 'g': 1},
+
+'Sviatoslav_I_of_Kiev': {'nm': 'Sviatoslav I', 'url': 'Sviatoslav_I_of_Kiev', 'b': "Kiev, Kievan Rus', March 943", 'd': 'The island of Khortytsia, Dnieper, 26 March 972', 'yb': 943, 'yd': 972, 's': 'n', 'f': 'Igor_of_Kiev', 'm': 'Olga_of_Kiev', 'g': 1},
+
+'Olga_of_Kiev': {'nm': 'Olga of Kiev', 'url': 'Olga_of_Kiev', 'b': "Pleskov, Kievan Rus', c. 890925", 'd': "Kiev, Kievan Rus', 11 July 969", 'yb': 925, 'yd': 969, 's': '11 July', 'g': 0, 'f': 'unknown'},
+
+'Igor_of_Kiev': {'nm': 'Igor of Kiev', 'url': 'Igor_of_Kiev', 'd': 'Iskorosten, 945', 'yd': 945, 's': 'n', 'f': 'Rurik', 'g': 1},
+
+'Rurik': {'nm': 'Rurik', 'url': 'Rurik', 'b': 'Scandinavia, c. 824', 'd': "Novgorod, Kievan Rus', 879", 'yb': 824, 'yd': 879, 's': 'n', 'g': 1, 'f': 'unknown'}}
