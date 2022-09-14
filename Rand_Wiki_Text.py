@@ -100,5 +100,5 @@ while True:
         for thing in ln.split(' '):
             print(thing, end=' ', flush=True)
             sleep(DELAYFACTOR)
-        print(ln) # for the newline
-        sleep(len(ln)*DELAYFACTOR)
+        print('') # for the newline
+        sleep((len(ln)+127)*DELAYFACTOR)
