@@ -4,7 +4,8 @@
 # --------------------------------
 # Tile edge condition key
 # a : any (use only as a spacer for empty edges)
-# f : field (matches with water)
+# g : grassland (matches with water)
+# f : field
 # t : trees and forest
 # c : city and houses
 # v : river (matches water)
@@ -12,10 +13,12 @@
 # w : water (matches field and river)
 # s : water station (matches field, river, rail, and water)
 
-EdgeChrs = "AFTRVWCS"
-EdgeKey = "Field, Tree, City, riVer, Railroad, Water, Station"
+EdgeChrs = "AFTRVWCSG"
+EdgeKey = "Grass, Field, Tree, City, riVer, Railroad, Water, Station"
+CommandKey = "New, Delete, Modify, savE, Load, save and eXit/Quit"
 instructions = f"""record spots with several constrained edges
 {EdgeKey}
+{CommandKey}
 to search against the existing locations
 enter the six character edge key string (clockwise order).
 If less than six are entered, the final character will be repeated to pad it out
@@ -24,33 +27,38 @@ if you want to make a note on the location of the tile, add it after a space
 To delete a location that you have matched, prefix with D and then the
 number of the location.
 To modify a location, prefix with M and then the index number, and then the
-new edge key.
+new edge key, and/or a new description after a space.
 Type X or Q to save and quit
-To list jus the edge keys, type ?
+To list just the edge keys and commands, type ?
 Type anything else to bring up this help text again
 """
 
 SaveFile = "Dorfromantik_Helper.txt"
 
 def isvalidedges(edgstr):
+    if edgstr == '': return False
     for c in edgstr:
         if c not in EdgeChrs: return False
     return True
 
-try:
-    f = open(SaveFile, 'r')
-    allspots = eval(f.read())
-    f.close()
-except:
-    allspots = {}
+def loadit():
+    try:
+        f = open(SaveFile, 'r')
+        allspots = eval(f.read())
+        f.close()
+    except:
+        print("load failed")
+        allspots = {}
+    return allspots
+allspots = loadit()
 
 def compatedge(c1, c2):
     if c1 == c2: return True # like matches like
     if (c1 == "A") | (c2 == "A"): return True
-    if (c1 == "W") & (c2 in "FV"): return True
-    if (c2 == "W") & (c1 in "FV"): return True
-    if (c1 == "S") & (c2 in "WFVR"): return True
-    if (c2 == "S") & (c1 in "WFVR"): return True
+    if (c1 == "W") & (c2 in "GV"): return True
+    if (c2 == "W") & (c1 in "GV"): return True
+    if (c1 == "S") & (c2 in "WGVR"): return True
+    if (c2 == "S") & (c1 in "WGVR"): return True
     return False
 
 def edgesmatch(st1, st2):
@@ -67,6 +75,14 @@ def edgesmatch(st1, st2):
             #for loop exhausted, so we have a match
             return True
     return False
+
+
+def saveit(allspots):
+    f = open(SaveFile, 'w')
+    outstuff = str(allspots)
+    outstuff = outstuff.replace(", '", ",\n'")
+    f.write(outstuff)
+    f.close()
 
 print(instructions)
 # main control loop
@@ -86,7 +102,9 @@ while True:
     FirstIn = SplIn[0].upper()
     if len(SplIn) > 1: LastIn = ' '.join(SplIn[1:])
     else: LastIn = ""
-    if FirstIn == "?": print(EdgeKey)
+    if FirstIn == "?":
+        print(EdgeKey)
+        print(CommandKey)
     elif FirstIn[0] == "D":
         if len(FirstIn) == 1: FirstIn += "0"
         try:
@@ -111,14 +129,26 @@ while True:
         try:
             idx = int(FirstIn[1])
             sqnc = foundspots[idx]
-            key = FirstIn[2:]
+            if len(FirstIn) == 2:
+                key = sqnc
+                newsq = False
+            else:
+                key = FirstIn[2:]
+                newsq = True
             if not isvalidedges(key):
-                print("Not a valid location")
+                print("Not a valid new location")
                 continue
+            if len(LastIn) == 0:
+                newDesc = allspots[sqnc]
+                newds = False
+            else:
+                newDesc = LastIn
+                newds = True
             del(allspots[sqnc])
-            allspots[key] = LastIn
+            allspots[key] = newDesc
             foundspots = []
-            print(f"{sqnc} changed to {key}")
+            if newsq: print(f"{sqnc} changed to {key}")
+            if newds: print(f"description updated")
         except:
             print("That didn't work for some reason")
     elif isvalidedges(FirstIn):
@@ -129,8 +159,13 @@ while True:
         foundspots = [i for i in allspots if edgesmatch(i, FirstIn)]
     elif (FirstIn[0] == "X") | (FirstIn[0] == "Q"):
         print("save and close")
-        f = open(SaveFile, 'w')
-        f.write(str(allspots))
-        f.close()
+        saveit(allspots)
         break
+    elif (FirstIn[0] == "E"):
+        saveit(allspots)
+        print("saved")
+    elif (FirstIn[0] == "L"):
+        allspots = loadit()
+        foundspots = []
+        print("loaded new data")
     else: print(instructions)
