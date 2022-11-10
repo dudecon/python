@@ -56,7 +56,8 @@ def tgx(st, strt, endt):
 
 def cln(st):
     precull = ('\t', )
-    excice = ('head', 'script', 'footer', 'sup', 'noscript', 'nav', 'form', 'cite', 'ol')
+    excice = ('head', 'script', 'footer', 'sup', 'noscript', 'nav', 'form', 'cite', 'ol',
+              'semantics', 'math')
     detag = ('html','div', 'body', '!DOCTYPE', 'a', '!--', 'img', 'style',
              'li', 'td', 'ul', 'tr', 'tbody', 'table', 'h1', 'h2', 'h3', 'h4',
              'span', 'th', 'p', 'i', 'b', 'small', 'label', 'dd', 'dl', 'dt', 'blockquote',
