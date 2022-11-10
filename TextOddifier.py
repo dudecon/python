@@ -1,5 +1,6 @@
 # Similar letter substituter
 # To make text look a bit strange
+# Now with added diacritics
 
 from random import choice
 
@@ -50,7 +51,6 @@ def oddify(text):
     return result
 
 s = input("enter the text you want to oddify: ")
-#s = "I don't even really know how this is going to work any more"
 
 print(oddify(s))
 input("Press enter when done:")
