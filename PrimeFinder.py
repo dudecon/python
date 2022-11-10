@@ -1,4 +1,4 @@
-savefile = 'primes.txt'
+savefile = 'primes_long.txt'
 
 from time import time as tm
 
