@@ -10,5 +10,5 @@ while True:
 	exec(f"rs = {n1}{sign}{n2}",d)
 	rs = d["rs"]
 	print(f" {n1:>5} {sign} {n2:<5} = {rs: >14.7f}")
-	sleep(0.125)
+	sleep(choice((1,1,1,1,2,2,3,4,5,6))/8)
 
