@@ -5,20 +5,26 @@ BASE = 12
 PREC = 8
 GLYPHS = []
 
-def compute_glyphs():
-    global GLYPHS
+def compute_glyphs(BASE):
     GLYPHS = []
-
-    if BASE <= 36:
-        for i in range(BASE):
-            if i < 10: GLYPHS.append(str(i))
-            else: GLYPHS.append(chr(i+55))
-    else:
-        for i in range(BASE):
-            GLYPHS.append(chr(i+192))
+    BASE = min(BASE,1234)
+    offset = 55
+    for i in range(BASE):
+        if i < 10:
+            GLYPHS.append(str(i))
+            continue
+        if i == 36: offset += 101
+        elif i+offset == 888: offset += 2
+        elif i+offset == 896: offset += 5
+        elif i+offset == 907: offset += 4
+        elif i+offset == 930: offset += 2
+        elif i+offset == 1328: offset += 2
+        elif i+offset == 1367: offset += 11
+        GLYPHS.append(chr(i+offset))
+    return GLYPHS
 
 def rebase(num):
-    if len(GLYPHS) != BASE: compute_glyphs()
+    if len(GLYPHS) != BASE: GLYPHS = compute_glyphs(BASE)
     
     if num < 0:
         sign = '-'
@@ -54,7 +60,7 @@ def rebase(num):
                   "".join(frac_parts))
 
 def debase(string):
-    if len(GLYPHS) != BASE: compute_glyphs()
+    if len(GLYPHS) != BASE: GLYPHS = compute_glyphs(BASE)
     VALUES = {}
     for i in range(len(GLYPHS)):
         VALUES[GLYPHS[i]] = i
@@ -93,7 +99,7 @@ def debase(string):
 def b(radix):
     global BASE
     BASE = radix
-    compute_glyphs()
+    GLYPHS = compute_glyphs(BASE)
     print(GLYPHS)
 
 TestConvert = 135.5
