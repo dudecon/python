@@ -95,6 +95,7 @@ while True:
         html = response.read()
     page = html.decode("utf-8")
     page = cln(page)
+    print('\n\n')
     for ln in page.split('\n'):
         ln = ln.strip()
         if len(ln) == 0: continue
