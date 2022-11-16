@@ -7,44 +7,42 @@ SAVEINTERVAL = 120  # seconds
 from time import time as tm
 import os
 
-# Load
+# Load moved inline
 primes = []
-lastprimeperbatch = []
-lastmodifiedbatch = []
-cur_batch = 0
-while True:
-    try:
-        cur_batch += SAVESTRIDE
-        loadfile = f'{BATCHFOLDER}/{PREFIX}{cur_batch}{SUFFIX}'
-        f = open(loadfile, "r")
-        prime_source = f.read()
-        f.close()
-        gathered_primes = sorted([int(p) for p in prime_source.split() if p.isnumeric()])
-        primes += gathered_primes
-        lastprimeperbatch.append(gathered_primes[-1])
-        del gathered_primes
-    except:
-        break
-if len(primes) < 4: primes = [2, 3, 5, 7]
-
 cur_batch = -1
 cur_limit = 0
-increment = primes[0]
+increment = 2
 while True:
     cur_batch += 1
     batch_new = True  # to reserve a save file on the first prime found
     cur_limit = (cur_batch + 1) * SAVESTRIDE
     savefile = f'{BATCHFOLDER}/{PREFIX}{cur_limit}{SUFFIX}'
-    if cur_batch < len(lastprimeperbatch):
-        # skip it if this file is being worked on
-        if (os.stat(savefile).st_mtime + SAVEINTERVAL*1.618) > tm(): continue
-        # otherwise, start at the cached last prime in the file
-        candidate = lastprimeperbatch[cur_batch] + increment
-    else:
+    loaded = False
+    newprimes = []
+    try:
+        f = open(savefile, "r")
+        prime_source = f.read()
+        f.close()
+        gathered_primes = sorted([int(p) for p in prime_source.split() if p.isnumeric()])
+        primes += gathered_primes
+        del gathered_primes
+        loaded = True
+    except:
+        if len(primes) < 4:
+            primes = [2, 3, 5, 7]
+            loaded = True
+            newprimes = primes[:]
+        else: loaded = False
+    if loaded:
+        # skip it if this file is being worked on recently
+        try:
+            if (os.stat(savefile).st_mtime + SAVEINTERVAL*1.618) > tm(): continue
+        except: pass
+        candidate = primes[-1] + increment
+    else:  # The current batch was not loaded, so
         candidate = cur_batch * SAVESTRIDE
         if candidate % 2 == 0: candidate += 1
     t: float = tm() + SAVEINTERVAL
-    newprimes = []
     while candidate < cur_limit:
         primecheck = True
         for factor in primes[1:]:
