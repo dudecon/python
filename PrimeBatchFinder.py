@@ -5,7 +5,7 @@ SUFFIX = '.txt'
 SAVEINTERVAL = 120  # seconds
 
 from time import time as tm
-import os
+from os import stat
 
 # Load moved inline
 primes = []
@@ -26,6 +26,7 @@ while True:
         gathered_primes = sorted([int(p) for p in prime_source.split() if p.isnumeric()])
         primes += gathered_primes
         del gathered_primes
+        del prime_source
         loaded = True
     except:
         if len(primes) < 4:
@@ -36,14 +37,14 @@ while True:
     if loaded:
         # skip it if this file is being worked on recently
         try:
-            if (os.stat(savefile).st_mtime + SAVEINTERVAL*1.618) > tm(): continue
+            if (stat(savefile).st_mtime + SAVEINTERVAL*1.618) > tm(): continue
         except: pass
         candidate = primes[-1] + increment
     else:  # The current batch was not loaded, so
         candidate = cur_batch * SAVESTRIDE
         if candidate % 2 == 0: candidate += 1
     t: float = tm() + SAVEINTERVAL
-    while candidate < cur_limit:
+    while candidate < cur_limit: # prime finder loop
         primecheck = True
         for factor in primes[1:]:
             if (candidate / factor) < factor: break
@@ -65,18 +66,9 @@ while True:
         candidate += increment
     if len(newprimes):
         # save out the last of the new primes
+        # before moving on to the next batch
         f = open(savefile, "a")
         for i in newprimes: f.write(str(i) + '\n')
         f.close()
         newprimes = []
     print(f'Primes in batch {cur_batch} completed')
-
-# find the next batch of primes to work on
-# increment the batch number, starting at zero
-# check if there are remaining primes in this batch
-# this will waste a little time at startup, but it should be okay.
-# if there are, check the file modified time (cache this at load?)
-# if the file has been saved recently, skip to the next batch
-# if the file has not been saved, save out the new prime, and then work on this batch
-# if this is a new batch, save the file with the first found prime
-# to reserve this batch
