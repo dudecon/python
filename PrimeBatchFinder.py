@@ -3,6 +3,7 @@ PREFIX = 'PrimesTo_'
 SAVESTRIDE = 500000
 SUFFIX = '.txt'
 SAVEINTERVAL = 120  # seconds
+BATCHMASK = 70  # no work on batches below this number
 
 from time import time as tm
 from os import stat
@@ -34,10 +35,13 @@ while True:
             loaded = True
             newprimes = primes[:]
         else: loaded = False
+    if cur_batch < BATCHMASK: continue
     if loaded:
         # skip it if this file is being worked on recently
         try:
-            if (stat(savefile).st_mtime + SAVEINTERVAL*1.618) > tm(): continue
+            if (stat(savefile).st_mtime + SAVEINTERVAL*1.618) > tm():
+                print(f'Batch {cur_batch} appears to be already in work')
+                continue
         except: pass
         candidate = primes[-1] + increment
     else:  # The current batch was not loaded, so
