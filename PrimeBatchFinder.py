@@ -3,7 +3,7 @@ PREFIX = 'PrimesTo_'
 SAVESTRIDE = 500000  # re-build the files before changing.
 SUFFIX = '.txt'
 SAVEINTERVAL = 120  # seconds
-BATCHMASK = 70  # no work on batches below this number
+BATCHMASK = 75  # no work on batches below this number
 
 from time import time as tm
 from os import stat
