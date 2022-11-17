@@ -1,6 +1,6 @@
 BATCHFOLDER = 'batch_primes'
 PREFIX = 'PrimesTo_'
-SAVESTRIDE = 500000
+SAVESTRIDE = 500000  # re-build the files before changing.
 SUFFIX = '.txt'
 SAVEINTERVAL = 120  # seconds
 BATCHMASK = 70  # no work on batches below this number
@@ -48,7 +48,7 @@ while True:
         candidate = cur_batch * SAVESTRIDE
         if candidate % 2 == 0: candidate += 1
     t: float = tm() + SAVEINTERVAL
-    while candidate < cur_limit: # prime finder loop
+    while candidate < cur_limit:  # prime finder loop
         primecheck = True
         for factor in primes[1:]:
             if (candidate / factor) < factor: break
