@@ -6,12 +6,13 @@ from time import sleep
 BATCHFOLDER = 'batch_primes'
 PREFIX = 'PrimesTo_'
 SAVESTRIDE = 500000  # re-build the files before changing, or nothing will load.
-STRIDESHARDS = 1000  # how many pieces to break each batch into for processing
 SUFFIX = '.txt'
-SAVEINTERVAL = 60  # seconds
-BATCHMASK = 1270  # no work on batches below this number
-NUMTHREADS = 8  # Number of threads to spawn
+SAVEINTERVAL = 10  # seconds
+BATCHMASK = 2400  # no work on batches below this number
+NUMTHREADS = 12  # Number of threads to spawn
 
+
+STRIDESHARDS = NUMTHREADS * 2 # how many pieces to break each batch into for processing
 SHARDLEN = ((SAVESTRIDE//STRIDESHARDS)//2)*2
 
 
@@ -76,13 +77,13 @@ def prime_main():
         savetm: float = tm() + SAVEINTERVAL
         shardend = shardstrt
         lastsavestart = shardstrt
-        curtm = tm()
 
         def saveit(primestosave, processestowait):
             while len(processestowait):
                 processestowait.pop(0).join()
             sortedprimes = primestosave[:]
             sortedprimes.sort()
+            curtm = tm()
             elapsed = curtm - savetm + SAVEINTERVAL
             numnewprimes = len(primestosave)
             numproced = shardend - lastsavestart
