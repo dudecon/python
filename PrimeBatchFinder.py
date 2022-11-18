@@ -64,6 +64,7 @@ def prime_main():
     cur_batch = BATCHMASK - 1
     while True:
         cur_batch += 1
+        if cur_batch > 8590: break
         cur_limit = (cur_batch + 1) * SAVESTRIDE
         savefile = f'{BATCHFOLDER}/{PREFIX}{cur_limit}{SUFFIX}'
         loaded, loadedprimes = loadbatch(cur_batch)
