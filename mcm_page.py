@@ -4,7 +4,9 @@ import webbrowser
 
 # 3873 fetched on 2017-09-20
 # 3939 fetched on 2018-11-29
-HIGHEST_PAGE_NUMBER = 3939
+# 4239 fetched on 2022-11-21
+HIGHEST_PAGE_NUMBER = 4239
+pre_address = "http://www.mcmaster.com/#catalog/128/"
 
 try:
     f = open('mcm_page_numbers.txt','r')
@@ -48,5 +50,5 @@ while len(rem_pgs) > 0:
             continue
     idx = choice(range(len(rem_pgs)))
     chosen_page = rem_pgs.pop(idx)
-    webbrowser.open('https://www.mcmaster.com/{}'.format(chosen_page))
+    webbrowser.open(f'{pre_address}{chosen_page}')
     inchoice = input('Page {} queued:'.format(chosen_page))
