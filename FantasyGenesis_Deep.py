@@ -40,8 +40,9 @@ Anim_3_Mammal = ["Sheep, cow",
 
 Anim_4_Reptile = ["Crocodile, Gila",
                   "Frog, Newt",
-                  "Lizard, Snake",
-                  "Turtle"]
+                  ["Lizard", "Chameleon", "Gecko", "Iguana", "Frilled Lizard"],
+                  ["Snake", "Cobra", "Python", "Rattlesnake"],
+                  ["Turtle", "Box Turtle", "Sea Turtle"]]
 
 Anim_5_Bird = ["Wild Fowl, Duck, Goose",
                "Farm Fowl, Rooster",
@@ -79,8 +80,8 @@ Vegi_2_Fruit_Vegi = ["Asparagus",
 
 Vegi_3_Fungi = ["Moss",
                 "Slime Fungi: Ooze, Jelly",
-                "Lichen",
-                "Mushroom"]
+                ["Lichen", "Lichen: Crustose", "Lichen: Foliose", "Lichen: Fruticose"],
+                ["Mushroom: Cap and Stem", "Fungus: Bracket or Shelf", "Fungus: Puffball", "Coral Fungus", "Stinkhorn fungus"]]
 
 Vegi_4_Tree = ["Willow",
                "Birch",
@@ -93,10 +94,11 @@ Vegi_4_Tree = ["Willow",
 
 # Elemental & Mineral
 
-Elem_1_Fire_Electric = ["Fire, Vapor",
-                        "Electric Bolt",
-                        "Ember, Hot Coal",
-                        "Molten Lava"]
+Elem_1_Fire_Electric = [["Fire: campfire", "Fire: candle flame", "Fire: forest fire"],
+                        "Steam: Vapor or mist",
+                        ["Forked Lightning", "Sheet Lightning"],
+                        "Glowing Ember, Hot Coal",
+                        ["Flowing Molten Lava", "Lava Fountain"]]
 
 Elem_2_Liquid = ["Icicles",
                  "Fog, Vapor",
@@ -119,14 +121,14 @@ Elem_3_Earth_Metal = ["Malachite",
                       "Cement, Sediment",
                       "Mercury, Chrome"]
 
-Elem_4_Astral_Atmosphere = ["Moon Cycles",
-                            "Starfield",
+Elem_4_Astral_Atmosphere = [["Full Moon", "Crescent Moon", "Gibbous Moon"],
+                            ["Starfield: Constellations", "Starfield: Milky Way"],
                             "Crater, Asteroid",
-                            "Solar Flare",
-                            "Galaxy form",
-                            "Volcano",
-                            "Planets, Saturn's Rings",
-                            "Cloud, Cyclone, Turbulence"]
+                            "Solar Flare: Plasma Loops",
+                            "Galaxy form, spiral or elliptical",
+                            "Volcano: Ash Plume",
+                            ["Planets, Saturn's Rings","Planets, Jupiter's Great Red Spot"],
+                            ["Clouds", "Cyclone", "Turbulence"]]
 
 #Technical
 
