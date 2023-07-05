@@ -33,12 +33,7 @@ Replace `program_name.py` with the actual name of the program you want to run.
 
 ## Programs
 
-Here's a brief overview of the utility programs included in this repository:
-
-## Programs
-
 Here's a list of the utility programs included in this repository:
-
 
 ### Ancestor Pedigree Processing
 See this [YouTube video for more details](https://youtube.com/live/JZTbO9isvXI).
@@ -47,61 +42,71 @@ See this [YouTube video for more details](https://youtube.com/live/JZTbO9isvXI).
 - **Pedigree_Vladimir the Great.txt**: The rather limited available pedigree of Saint Vladimir the Great.
 - **Ancestor_Visualizer - Paul.blend**: A Blender file that visualizes my ancestors.
 - **Ancestor_Visualizer.blend**: A Blender file template for visualizing ancestors.
+
 ### Text Processing
 - **Acronymizer.py**: Converts text to an acronym.
+- **NatoPhoneticAlphabetConvertor.py**: Emits the NATO phonetic alphabet representation of a text input.
 - **AwStatEdit.py**: For reducing the size of the AwStats log files.
 - **FeetConvertor.py**: Take a string and convert it into Feet. This is like 1337, only instead of changing it to numbers, you change the first letter of all words into the letter "f".
+- **OddTextGen.py**: Prints out an endless stream of rather odd looking text.
+- **Oddifier.py**: Converts input text to rather odd looking text using unicode character substitution.
+- **TextOddifier.py**: Same as Oddifier, but adds diacritics as well.
+
+### HTML Processing and Generation
+- **HTML Text Cleaner.py**: Cleans up HTML files and attempts to strip them down to only barebones text.
+- **ffts_ps_cleanup.py**: Cleans up HTML, focused on stripping out extraneous formatting from Microsoft Word HTML exports.
+- **GVK_Source_cleanup.py**: Does some text replacement on an obscure GVK file. Easy to repurpose for general text replacement.
+- **PeripheralArborPageGen.py**: Generates HTML for my website image gallery.
+- **txt_to_html.py**: Converts plain text to minimally formatted HTML.
+
 ### Number Processing (maths)
 - **BaseConverter_py.py**: Converts numbers between arbitrary radix and conventional base 10.
+- **InfiniteMaths.py**: Prints out an endless stream of maths problems.
+- **semiprimesum_ps.py**: Calculates semiprime sums. Works best with a set of [pre-calculated primes](https://github.com/dudecon/PyPrimes).
+- **WedgeShapes.py**: Calculate all the unique configurations of "waffle wedge" circle quadrant shapes. [Blender file of the output available here](https://github.com/dudecon/Blender-Scripts/blob/main/Wedge%20Configurations.blend). [Image available here](https://blenderartists.org/t/paul-spooner-sketchbook/1136797/27?u=dudecon).
+
 ### Blender Processing 
-See the github.com/dudecon/Blender-Scripts repository for more of this kind of stuff.
+See my [Blender-Scripts repository](https://github.com/dudecon/Blender-Scripts) for more of this kind of stuff.
 - **Blender EXP Export.py**: An exporter from Blender to the EXP embroidery file format.
 - **Blender EXP Import.py**: Same as above, but imports.
 - **Diecast_Setup.py**: Video blog setup Blender script. [How to use video](https://youtu.be/xo_9FG6gEZU). [Blender file](https://github.com/dudecon/Blender-Scripts/raw/main/Diecast%20Edit.blend).
+
+### Image Processing
+- **ImageFormatConverter.py**: Converts all the .png files in a directory into .jpg files.
+- **ImageQuadrantBreak.py**: Splits every image in the directory into four quadrant images of equal size.
+
+### Random Content Selection and Generation
+- **Grimm Fairy Tale Choose.py**: Chooses one of Grimms Fairy Tales at random. Great for bedtime stories.
+- **FantasyGenesis_Default.py**: An implementation of the Fantasy Genesis book by Chuck Lukacs.
+- **FantasyGenesis_Deep.py**: Same as above, but I've added more depth and details to the options tree.
+- **InfiniteMaths.py**: Prints out an endless stream of maths problems.
+- **InfiniteMathsGPT.py**: Same as above, but rewritten by ChatGPT.
+- **rand_mcm.py**: Brings up a random page from the McMaster Carr online catalog.
+- **mcm_page.py**: Same as above, but also allows logging so you can draw from a specific set of pages, or work through the whole catalog over a long time period.
+- **rand_name.py**: Generates a random name from a list of phonemes. Results in vaguely fantasy names.
+- **OddTextGen.py**: Prints out an endless stream of rather odd looking text.
+- **Pick_a_thing.py**: Randomly pick an item from a list.
+- **rand_chr.py**: Open the UTF info page for a random UTF-8 character.
+- **Rand_HeroForge.py**: Open the page for a random HeroForge character.
+- **Rand_Wiki.py**: Opens a random featured Wikipedia page.
+- **Rand_Wiki_Text.py**: Prints out an endless stream of text from random featured Wikipedia pages.
+- **wiki_pages.txt**: The save file that caches featured wikipedia pages. Generated if not present.
+- **ShamusHeadlineGen.py**: Headline generator based on DOGHOUSEDIARIES and Shamus Young.
+
 ### Misc IDK
 - **Descriptor.py**: An experimental implementation of sentence structure and description generation.
 - **Dorfromantik Helper.py**: Dorfromantik spot finder and logger thing. [How to use video](https://youtube.com/live/2UYUu4IP974)
-- **FantasyGenesis_Default.py**: An implementation of the Fantasy Genesis book by Chuck Lukacs.
-- **FantasyGenesis_Deep.py**: Same as above, but I've added more depth and details to the options tree.
-- **GVK_Source_cleanup.py**: Description of the program.
-- **Grimm Fairy Tale Choose.py**: Description of the program.
-- **HTML Text Cleaner.py**: Description of the program.
-- **ImageFormatConverter.py**: Description of the program.
-- **ImageQuadrantBreak.py**: Description of the program.
-- **InfiniteMaths.py**: Description of the program.
-- **InfiniteMathsGPT.py**: Description of the program.
-- **LICENSE.txt**: Description of the program.
-- **NC Engrave Optimize.py**: Description of the program.
-- **NC Outline Optimize.py**: Description of the program.
-- **NatoPhoneticAlphabetConvertor.py**: Description of the program.
-- **OddTextGen.py**: Description of the program.
-- **Oddifier.py**: Description of the program.
-- **Once Upon A Time.py**: Description of the program.
-- **Once Upon A Time_functional.py**: Description of the program.
-- **PeripheralArborPageGen.py**: Description of the program.
-- **Pick_a_thing.py**: Description of the program.
-- **README.md**: Description of the program.
-- **Rand_HeroForge.py**: Description of the program.
-- **Rand_Wiki.py**: Description of the program.
-- **Rand_Wiki_Text.py**: Description of the program.
-- **Renamer.py**: Description of the program.
-- **ShamusHeadlineGen.py**: Description of the program.
-- **TextOddifier.py**: Description of the program.
-- **WedgeShapes.py**: Description of the program.
-- **Wood Round Label Exporter.py**: Description of the program.
-- **ffts_ps_cleanup.py**: Description of the program.
-- **glyphguesser Py2.7.py**: Description of the program.
-- **glyphguesser.py**: Description of the program.
-- **linkcull.py**: Description of the program.
-- **mcm_page.py**: Description of the program.
-- **rand_chr.py**: Description of the program.
-- **rand_mcm.py**: Description of the program.
-- **rand_name.py**: Description of the program.
-- **semiprimesum_ps.py**: Description of the program.
-- **serializeTime.py**: Description of the program.
-- **sounds.py**: Description of the program.
-- **txt_to_html.py**: Description of the program.
-
+- **NC Engrave Optimize.py**: Optimizes a G-Code .nc file designed for engraving.
+- **NC Outline Optimize.py**: Optimizes a G-Code .nc file designed for drawing outlines.
+- **Once Upon A Time.py**: A program which is also a short story.
+- **Once Upon A Time_functional.py**: The above short story program stripped down to only the functional code.
+- **Renamer.py**: Rename and move files and directories.
+- **Wood Round Label Exporter.py**: Exports text files for a laser engraver control program.
+- **glyphguesser.py**: A small guessing game.
+- **glyphguesser Py2.7.py**: The above game, but in Python 2.7.
+- **linkcull.py**: Recursively delete windows shortcuts associated with the "Harry potter" virus.
+- **serializeTime.py**: Some time serialization code.
+- **sounds.py**: Python 2 sound generation.
 
 ## Contributing
 
