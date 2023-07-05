@@ -35,11 +35,73 @@ Replace `program_name.py` with the actual name of the program you want to run.
 
 Here's a brief overview of the utility programs included in this repository:
 
-- **Program 1**: A description of what the program does.
-- **Program 2**: A description of what the program does.
-- **Program 3**: A description of what the program does.
+## Programs
 
-Feel free to read the comments in each program's file for more detailed information on how to use them.
+Here's a list of the utility programs included in this repository:
+
+
+### Ancestor Pedigree Processing
+See this [YouTube video for more details](https://youtube.com/live/JZTbO9isvXI).
+- **Ancestor_Compiler_WikiPedia.py**: Grabs ancestor data from WikiPedia in a semi-automated fashion.
+- **Pedigree_Paul Daniel Spooner.txt**: My pedigree.
+- **Pedigree_Vladimir the Great.txt**: The rather limited available pedigree of Saint Vladimir the Great.
+- **Ancestor_Visualizer - Paul.blend**: A Blender file that visualizes my ancestors.
+- **Ancestor_Visualizer.blend**: A Blender file template for visualizing ancestors.
+### Text Processing
+- **Acronymizer.py**: Converts text to an acronym.
+- **AwStatEdit.py**: For reducing the size of the AwStats log files.
+- **FeetConvertor.py**: Take a string and convert it into Feet. This is like 1337, only instead of changing it to numbers, you change the first letter of all words into the letter "f".
+### Number Processing (maths)
+- **BaseConverter_py.py**: Converts numbers between arbitrary radix and conventional base 10.
+### Blender Processing 
+See the github.com/dudecon/Blender-Scripts repository for more of this kind of stuff.
+- **Blender EXP Export.py**: An exporter from Blender to the EXP embroidery file format.
+- **Blender EXP Import.py**: Same as above, but imports.
+- **Diecast_Setup.py**: Video blog setup Blender script. [How to use video](https://youtu.be/xo_9FG6gEZU). [Blender file](https://github.com/dudecon/Blender-Scripts/raw/main/Diecast%20Edit.blend).
+### Misc IDK
+- **Descriptor.py**: An experimental implementation of sentence structure and description generation.
+- **Dorfromantik Helper.py**: Dorfromantik spot finder and logger thing. [How to use video](https://youtube.com/live/2UYUu4IP974)
+- **FantasyGenesis_Default.py**: An implementation of the Fantasy Genesis book by Chuck Lukacs.
+- **FantasyGenesis_Deep.py**: Same as above, but I've added more depth and details to the options tree.
+- **GVK_Source_cleanup.py**: Description of the program.
+- **Grimm Fairy Tale Choose.py**: Description of the program.
+- **HTML Text Cleaner.py**: Description of the program.
+- **ImageFormatConverter.py**: Description of the program.
+- **ImageQuadrantBreak.py**: Description of the program.
+- **InfiniteMaths.py**: Description of the program.
+- **InfiniteMathsGPT.py**: Description of the program.
+- **LICENSE.txt**: Description of the program.
+- **NC Engrave Optimize.py**: Description of the program.
+- **NC Outline Optimize.py**: Description of the program.
+- **NatoPhoneticAlphabetConvertor.py**: Description of the program.
+- **OddTextGen.py**: Description of the program.
+- **Oddifier.py**: Description of the program.
+- **Once Upon A Time.py**: Description of the program.
+- **Once Upon A Time_functional.py**: Description of the program.
+- **PeripheralArborPageGen.py**: Description of the program.
+- **Pick_a_thing.py**: Description of the program.
+- **README.md**: Description of the program.
+- **Rand_HeroForge.py**: Description of the program.
+- **Rand_Wiki.py**: Description of the program.
+- **Rand_Wiki_Text.py**: Description of the program.
+- **Renamer.py**: Description of the program.
+- **ShamusHeadlineGen.py**: Description of the program.
+- **TextOddifier.py**: Description of the program.
+- **WedgeShapes.py**: Description of the program.
+- **Wood Round Label Exporter.py**: Description of the program.
+- **ffts_ps_cleanup.py**: Description of the program.
+- **glyphguesser Py2.7.py**: Description of the program.
+- **glyphguesser.py**: Description of the program.
+- **linkcull.py**: Description of the program.
+- **mcm_page.py**: Description of the program.
+- **rand_chr.py**: Description of the program.
+- **rand_mcm.py**: Description of the program.
+- **rand_name.py**: Description of the program.
+- **semiprimesum_ps.py**: Description of the program.
+- **serializeTime.py**: Description of the program.
+- **sounds.py**: Description of the program.
+- **txt_to_html.py**: Description of the program.
+
 
 ## Contributing
 
