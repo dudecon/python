@@ -2,9 +2,9 @@
 # Open a new browser tab with a random saved HeroForge character
 import random, webbrowser
 # append the page number on the end of this address
-pre_address = "https://www.heroforge.com/load_share%3D"
+pre_address = "https://www.heroforge.com/load_config%3D"
 # the last page number (inclusive), page numbers start at 1
-page_last = 511695067
+page_last = 31516836
 
 random_page_number = random.choice(range(1, page_last + 1))
 full_address = pre_address + str(random_page_number) + '/'
