@@ -45,7 +45,7 @@ def save_quadrants(image_path, output_directory):
             # Save the quadrant as a separate file
             output_path = f"{output_directory}/{image_path}_{i}{j}{newformat}"
             quadrant.save(output_path)
-            print(f"Quadrant {i}{j} saved as {output_path}")
+            # print(f"Quadrant {i}{j} saved as {output_path}")
 
 for f in thesefiles:
     if f[-tlen:] in targets:
@@ -53,3 +53,4 @@ for f in thesefiles:
         m = newdir + f
         rename(f, m)
         print("processed", f)
+
