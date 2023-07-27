@@ -1,6 +1,6 @@
-# Document parsing script
-# Replace newline characters with space
-# except when immediately following a > symbol
+# NC code optimization code
+# Released to the Public Domain by Paul Spooner
+# Designed for driving my laser engraver
 
 FILEIN = 'MooseAlone.nc'
 FILEOUT = FILEIN.replace('.',' Optimum.',1)
@@ -8,20 +8,24 @@ FILEOUT = FILEIN.replace('.',' Optimum.',1)
 LASERFEED = 700
 RAPIDFEED = 1200
 LASERPOWER = 256
+VARIABLEPOWER = False
 
 # from random import randint
 from math import sqrt
 
 traversestr = "X{0} Y{0} M03 S0 F{1}\n".format('{}',RAPIDFEED)
 #print(traversestr)
-laserstr = "X{0} Y{0} M03 S{0} F{1}\n".format('{}',LASERFEED)
-#laserstr = "X{0} Y{0} M03 S{2} F{1}\n".format('{}',LASERFEED,LASERPOWER)
+if VARIABLEPOWER:
+    laserstr = "X{0} Y{0} M03 S{0} F{1}\n".format('{}', LASERFEED)
+else:
+    laserstr = "X{0} Y{0} M03 S{2} F{1}\n".format('{}', LASERFEED, LASERPOWER)
 #print(laserstr)
 
 #open the file and read it into memory as "data"
 f = open(FILEIN, 'r')
 data = f.read()
 f.close()
+
 header_end_strs = ("M03 S0\n","M3 S0\n")
 pos_found = -1
 i = -1
@@ -29,8 +33,10 @@ while pos_found == -1:
     i += 1
     pos_found = data.find(header_end_strs[i],0)
 
-header = data[:pos_found+len(header_end_strs[i])]
-print("header:\n",header)
+header_end = pos_found+len(header_end_strs[i])
+header = data[:header_end]
+
+# print("header:\n",header)
 # find the origin
 XYOr = header.split()[-3:-1]
 try: origin = (float(XYOr[0][1:]),float(XYOr[1][1:]))
@@ -38,8 +44,8 @@ except: origin = (0,0)
 #print(origin)
 # import all the points
 points = []
-loops = []
-loop = []
+splines = []
+spline = []
 search_from = pos_found +1
 footer_end_strs = ("M05 ","M5 ")
 footer_pos = -1
@@ -48,27 +54,54 @@ while footer_pos == -1:
     i += 1
     footer_pos = data.find(footer_end_strs[i],search_from)
 
-Y_end = 0
+footer = data[footer_pos:]
+#print("footer:\n",footer)
+
+def multisplit(text, tokens):
+    results = []
+    while len(text):
+        nxtT = len(text)
+        for t in tokens:
+            found = text.find(t, 1)
+            if found >= 0: nxtT = min(nxtT, found)
+        results.append(text[:nxtT])
+        if nxtT < len(text): text = text[nxtT:]
+        else: text = ""
+    return results
+
+def get_tokens(line):
+    NCTokens = ("X", "Y", "F", "S", "M", "G")
+    token_results = {}
+    splits = multisplit(line, NCTokens)
+    for seg in splits:
+        try:
+            token_results[seg[0]] = float(seg[1:].strip())
+        except:
+            pass
+    return token_results
+
 X = 0.
 Y = 0.
 S = 0
-X_found = data.find("X",search_from)
+
+NC_lines = data[header_end:footer_pos].splitlines()
+
+for NCLine in NC_lines:
+    line_tokens = get_tokens(NCLine)
+    if "X" in line_tokens: X = line_tokens["X"]
+    if "Y" in line_tokens: Y = line_tokens["Y"]
+    p = {"X": X, "Y": Y}
+    if S != 0: p["S_reverse"] = S
+    if "S" in line_tokens:
+        S = int(line_tokens["S"])
+        if S != 0: p["S_forward"] = S
+    if (S == 0) and (len(spline) > 1):
+
+        pass
+
+
 while True:
-    #X_found = data.find("X",Y_end)
-    Y_found = data.find("Y",X_found)
-    X_end = min(data.find(" ",X_found),data.find("\n",X_found),data.find("F",X_found) , Y_found)
-    X = float(data[X_found+1:X_end])
-    nextX = data.find("X",X_found+1)
-    if nextX == -1: break
-    if Y_found < nextX:
-        Y_end = min(data.find(" ",Y_found),data.find("\n",Y_found),data.find("F",Y_found))
-        if Y_end == -1: break
-        Y = float(data[Y_found+1:Y_end])
-    s_found = data.find("S",X_found)
-    if s_found < nextX:
-        s_end = data.find("\n",s_found)
-        if s_end == -1: break
-        S = int(data[s_found+1:s_end])
+
     p = [X,Y,loop,S]
     if (S == 0) and (len(loop) == 1):
         loop = [p]
@@ -82,9 +115,6 @@ while True:
         p[2] = loop
     if nextX > footer_pos: break
     else: X_found = nextX
-
-footer = data[footer_pos:]
-print("footer:\n",footer)
 
 print('collected',len(points),'points in',len(loops),'loops')
 
