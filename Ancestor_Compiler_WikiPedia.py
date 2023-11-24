@@ -5,8 +5,8 @@ SITE = "https://en.wikipedia.org/wiki/"
 # the page on the site to query
 # ROOT_NAME = "John_Howard,_1st_Duke_of_Norfolk"
 # ROOT_NAME = "Yaroslav_the_Wise"
-ROOT_NAME = "Vladimir_the_Great"
-# ROOT_NAME = "Paul Daniel Spooner"
+# ROOT_NAME = "Vladimir_the_Great"
+ROOT_NAME = "Paul Daniel Spooner"
 URL = SITE + ROOT_NAME
 DEPTH = 67  # this should be plenty
 # note that if you want to change either of these, you'll probably
@@ -672,7 +672,7 @@ while keep_at_it:
         print(f'the oldest date is {oldest_dt} for {oldest_nm}')
         mage, fage, agew, agem = aveGeneration(Total_Pedigree)
         print(f'average generational spacing is\n{fage:.3} years for fathers\n{mage:.3} years for mothers')
-        print(f'average lifespan is {agew:.3}W and {agem:.3}M')
+        print(f'average lifespan is {agew:.3} for women and {agem:.3} for men')
     elif c == 'r': reprocess(Total_Pedigree)
     elif c == 'g':
         if gatherdata(Total_Pedigree): savefile()

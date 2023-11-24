@@ -2216,11 +2216,9 @@
 
 'Katherine Mylde': {'nm': 'Katherine Mylde', 'g': 0},
 
-'Paul Daniel Spooner': {'nm': 'Paul Daniel Spooner', 'b': '11 Jan 1984', 'g': 1, 'yb': 1984, 'f': 'Ronald Craig Spooner', 'm': 'Monica Louis Bennett'},
+'Paul Daniel Spooner': {'nm': 'Paul Daniel Spooner', 'b': '11 Jan 1984', 'g': 1, 'yb': 1984, 'f': 'Ronald Craig Spooner', 'm': 'Monica Louise Bennett'},
 
 'Ronald Craig Spooner': {'nm': 'Ronald Craig Spooner', 'b': '16 Sep 1943', 'g': 1, 'yb': 1943, 'f': 'Paul Leon Spooner', 'm': 'Alfa Jean Spooner'},
-
-'Monica Louis Bennett': {'nm': 'Monica Louis Bennett', 'g': 0},
 
 'Paul Leon Spooner': {'nm': 'Paul Leon Spooner', 'b': 'Benton, Arkansas, 17 Dec 1919', 'd': 'Michigan, 10 October 1996', 'g': 1, 'yb': 1919, 'yd': 1996, 'f': 'Claude Alvis Spooner', 'm': 'Cora Esther Pleasant'},
 
@@ -2336,4 +2334,14 @@
 
 'Margaret Gamage': {'nm': 'Margaret Gamage', 'b': '1515', 'd': '1581', 'g': 0, 'yb': 1515, 'yd': 1581, 'f': 'unknown'},
 
-'Thomas_Howard,_2nd_Duke_of_Norfolk': {'nm': 'Thomas Howard, 2nd Duke of Norfolk', 'url': 'Thomas_Howard,_2nd_Duke_of_Norfolk', 'b': 'Stoke-by-Nayland, Suffolk, 1443', 'd': 'Framlingham Castle, Suffolk, 21 May 1524', 'g': 1, 's': 'n', 'yb': 1443, 'yd': 1524, 'f': 'John_Howard,_1st_Duke_of_Norfolk', 'm': 'Katherine Moleyns'}}
+'Thomas_Howard,_2nd_Duke_of_Norfolk': {'nm': 'Thomas Howard, 2nd Duke of Norfolk', 'url': 'Thomas_Howard,_2nd_Duke_of_Norfolk', 'b': 'Stoke-by-Nayland, Suffolk, 1443', 'd': 'Framlingham Castle, Suffolk, 21 May 1524', 'g': 1, 's': 'n', 'yb': 1443, 'yd': 1524, 'f': 'John_Howard,_1st_Duke_of_Norfolk', 'm': 'Katherine Moleyns'},
+
+'Agnes_Howard,_Duchess_of_Norfolk': {'nm': '<span class="mw-page-title-main">Agnes Howard, Duchess of Norfolk</span>', 'url': 'Agnes_Howard,_Duchess_of_Norfolk', 'b': 'c. 1477', 'd': 'May 1545', 'yb': 1477, 'yd': 1545, 's': 'n', 'f': 'Hugh Tilney', 'm': 'Eleanor, daughter of Walter Tailboys', 'g': 0},
+
+'Eleanor, daughter of Walter Tailboys': {'nm': 'Eleanor, daughter of Walter Tailboys', 'f': 'unknown', 'g': 0},
+
+'Hugh Tilney': {'nm': 'Hugh Tilney', 'f': 'unknown', 'g': 1},
+
+'Katherine Moleyns': {'nm': 'Katherine Moleyns', 'f': 'unknown', 'g': 0},
+
+'Monica Louise Bennett': {'nm': 'Monica Louise Bennett', 'f': 'Stanmore Bennett', 'm': 'Carolyn Onstad', 'b': 'Oct 26 1952', 'yb': 1952, 'g': 0}}
