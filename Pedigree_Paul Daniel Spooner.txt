@@ -2344,4 +2344,36 @@
 
 'Katherine Moleyns': {'nm': 'Katherine Moleyns', 'f': 'unknown', 'g': 0},
 
-'Monica Louise Bennett': {'nm': 'Monica Louise Bennett', 'f': 'Stanmore Bennett', 'm': 'Carolyn Onstad', 'b': 'Oct 26 1952', 'yb': 1952, 'g': 0}}
+'Monica Louise Bennett': {'nm': 'Monica Louise Bennett', 'f': 'Stanmore Bennett', 'm': 'Carolyn Onstad', 'b': 'Oct 26 1952', 'yb': 1952, 'g': 0},
+
+'Carolyn Onstad': {'nm': 'Carolyn Onstad', 'm': 'Alta Cordelia Helgeson', 'f': 'Paul Martin Onstad', 'b': 'Feb 12, 1931', 'yb': 1931, 'd': 'Feb 2015', 'g': 0},
+
+'Alta Cordelia Helgeson': {'nm': 'Alta Cordelia Helgeson', 'b': '7 April 1889', 'yb': 1889, 'f': 'Halvor Helgeson', 'm': 'Gina Sophia Olson', 'd': '9 Sept, 1965', 'g': 0},
+
+'Gina Sophia Olson': {'nm': 'Gina Sophia Olson', 'b': '4 Nov 1852', 'yb': 1852, 'd': '24 Oct, 1894', 'yd': 1894, 'f': 'unknown', 'g': 0},
+
+'Halvor Helgeson': {'nm': 'Halvor Helgeson', 'b': '1846', 'yb': 1846, 'd': '1920', 'yd': 1920, 'f': 'unknown', 'g': 1},
+
+'Paul Martin Onstad': {'nm': 'Paul Martin Onstad', 'b': '18 Aug 1888', 'yb': 1888, 'd': '3 May, 1971', 'yd': 1971, 'f': 'Peter Aanstad', 'm': 'Ingrid Christianson', 'g': 1},
+
+'Ingrid Christianson': {'nm': 'Ingrid Christianson', 'd': '1893', 'yd': 1893, 'f': 'unknown', 'g': 0},
+
+'Peter Aanstad': {'nm': 'Peter Aanstad', 'f': 'Peder Aanstad', 'g': 1},
+
+'Peder Aanstad': {'nm': 'Peder Aanstad', 'g': 1},
+
+'Ingeborg (unknown last name)': {'nm': 'Ingeborg (unknown last name)', 'f': 'unknown', 'g': 0},
+
+'Stanmore Bennett': {'nm': 'Stanmore Bennett', 'f': 'Francis Harold "Judge" Bennett', 'm': 'Dorothy Flosstela Kratsch', 'b': '6 June, 1929', 'yb': 1929, 'd': '28 Oct, 2018', 'g': 1},
+
+'Dorothy Flosstela Kratsch': {'nm': 'Dorothy Flosstela Kratsch', 'b': '8 June, 1904', 'yb': 1904, 'd': 'April 1988', 'yd': 1988, 'm': 'Evelyn Hards Kratsch', 'f': 'Charles Kratsch', 'g': 0},
+
+'Evelyn Hards Kratsch': {'nm': 'Evelyn Hards Kratsch', 'm': 'Bertha Hards', 'f': 'unknown', 'g': 0},
+
+'Bertha Hards': {'nm': 'Bertha Hards', 'f': 'unknown', 'g': 0},
+
+'Charles Kratsch': {'nm': 'Charles Kratsch', 'f': 'unknown', 'g': 1},
+
+'Francis Harold "Judge" Bennett': {'nm': 'Francis Harold "Judge" Bennett', 'm': 'Clementine China Wattson', 'd': '1987', 'yd': 1987, 'f': 'unknown', 'g': 1},
+
+'Clementine China Wattson': {'nm': 'Clementine China Wattson', 'f': 'unknown', 'g': 0}}
