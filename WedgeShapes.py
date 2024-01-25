@@ -11,12 +11,7 @@ def rotate(s):
     # Shift the elements one place to the left
     return s[1:] + (s[0],)
 
-allstates = []
-for i in range(4):
-    for j in range(4):
-        for k in range(4):
-            for l in range(4):
-                allstates.append((i, j, k, l))
+allstates = [(i, j, k, l) for i in range(4) for j in range(4) for k in range(4) for l in range(4)]
 
 uniquestates = []
 print(len(allstates), " total states")
