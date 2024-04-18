@@ -135,7 +135,7 @@ Elem_4_Astral_Atmosphere = [["Full Moon", "Crescent Moon", "Gibbous Moon"],
 Tech_1_Transportation = ["Car, Truck, Bus",
                          "Aircraft",
                          "Rail, Train, Trolley",
-                         "Cycle (motor or bi)",
+                         "MotorCycle BiCycle",
                          "Sled, Ski",
                          "Boat, Ship",
                          "Spacecraft",
@@ -292,11 +292,15 @@ print(RecurseChoice(Emotions))
 print("Actions: ", end='')
 print(RecurseChoice(Actions))'''
 
-visual = RecurseChoice(Visual_Elements).replace(": ","-").replace(", ","-").replace(" ","-")
-style = RecurseChoice(Visual_Elements).replace(": ","-").replace(", ","-").replace(" ","-")
-mood   = RecurseChoice(Character_Elements).replace(": ","-").replace(", ","-").replace(" ","-")
+def repl(text):
+    result = text.replace(": ","-").replace(", ","-").replace(" ","-")
+    return result
 
-prompt = f"form of {visual} made of {style} is {mood}, in the style of concept art, fantasy genesis --s 150 --ar 16:9 --c 5 --q 0.5"
+visual = repl(RecurseChoice( Visual_Elements )    )
+style  = repl(RecurseChoice( Visual_Elements )    )
+mood   = repl(RecurseChoice( Character_Elements ) )
+
+prompt = f"form of {visual} made of {style} with the mood {mood}, in the style of concept art, fantasy genesis --s 150 --ar 16:9 --c 5 --q 0.5"
 print(prompt)
 
 try:
