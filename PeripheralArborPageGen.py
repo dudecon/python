@@ -11,18 +11,38 @@ WDOP = f"width:{PGWDTH}px; "
 #WDOP = ""
 BRDOPBS= "border: 3px solid"
 
-DESCRIPTION = """My friend David Moore's wedding. I was the ostensibly "best" man."""
-Image_raw_text = ''' 	Clouds08.JPG 	2008-10-21 21:02 	852K	 
- 	Clouds11.JPG 	2008-10-21 21:01 	579K	 
- 	Flowers01.JPG 	2008-10-21 21:00 	749K	 
- 	Flowers02_001.JPG 	2008-10-21 20:59 	662K	 
- 	Kristi01.JPG 	2008-10-21 21:00 	507K	 
- 	Kristi02.JPG 	2008-10-21 21:01 	372K	 
- 	Paul01.JPG 	2008-10-21 21:02 	753K	 '''
+DESCRIPTION = """Placeholder"""
+Image_raw_text = '''
+C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_1.jpg
+C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_2.jpg
+C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_3.jpg
+C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_4.jpg
+C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_5.jpg
+C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_6.jpg
+C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_7.jpg
+C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_8.jpg
+C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_9.jpg
+C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_10.jpg
+C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_11.jpg
+C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_12.jpg
+C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_13.jpg
+C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_14.jpg
+C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_15.jpg
+C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_16.jpg
+C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_17.jpg
+C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_18.jpg
+C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_19.jpg
+C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_20.jpg
+C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_21.jpg
+C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_22.jpg
+C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_23.jpg
+C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_24.jpg
+'''
 
 PARENTCAT = "Life"
 
 DESCRIPTION = DESCRIPTION.strip().replace("\n\n","\n<br>")
+Image_raw_text = Image_raw_text.strip()
 
 folders = [l.split()[0] for l in Image_raw_text.split(sep='\n') if l.split()[0][-1] == '/']
 images  = [l.split()[0].split(sep='/')[-1] for l in Image_raw_text.split(sep='\n') if l.split()[0][-1] != '/']
@@ -85,6 +105,7 @@ def description(instr):
     space_inserts.sort(reverse=True)
     for i in space_inserts:
         outstr = outstr[:i] + ' ' + outstr[i:]
+    outstr = outstr.replace("_","")
     return outstr
 
 Output_HTML = Header + Title
