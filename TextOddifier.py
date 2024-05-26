@@ -66,8 +66,6 @@ DIA = (852,813,804,797,798,790,811,858,841,803,819,776,853,815,771,840,828,857,
        772,793,851,812,810,854,768,780,774,805,809,808,783,839,846,845,827,
        777,816,799,770)
 
-for d in DIA:
-    print(d,"looks like thi"+chr(d)+"s")
 def oddify(text):
     result = ""
     for i in text:
@@ -78,7 +76,7 @@ def oddify(text):
             result += chr(choice(DIA)) + chr(choice(DIA)) + chr(choice(DIA))
     return result
 
-s = input("enter the text you want to oddify: ")
-
-print(oddify(s))
-input("Press enter when done:")
+if __name__ == '__main__':
+    s = input("enter the text you want to oddify: ")
+    print(oddify(s))
+    input("Press enter when done:")
