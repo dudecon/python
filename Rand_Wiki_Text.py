@@ -22,35 +22,6 @@ from HTML_Cleaner import *
 
 DEBUG = False
 
-try:
-    f = open(SAVEFILE, 'r')
-    raw = f.readline()
-    f.close()
-    rem_pgs = eval(raw)
-except:  # rebuild the list
-    rem_pgs = []
-    from urllib.request import urlopen
-
-    with urlopen(URL) as f:
-        featuredhtm = f.read()
-    # second place you get 'class="hlist"'
-    cursor = featuredhtm.find(b'class="hlist"')
-    cursor = featuredhtm.find(b'class="hlist"', cursor + 1)
-    # then make a list of all the html links
-    sstr = b'<a href="'
-    offset = len(sstr)
-    cursor = featuredhtm.find(sstr, cursor) + offset
-    while cursor > offset:
-        end = featuredhtm.find(b'"', cursor)
-        page = str(featuredhtm[cursor:end])[2:-1]
-        if page[:6] != '/wiki/': break
-        if page.find('User:') > 0: break
-        if page.find('Help:') > 0: break
-        if page.find('Category:') > 0: break
-        page = page[6:]
-        rem_pgs.append(page)
-        cursor = featuredhtm.find(sstr, end) + offset
-
 def prepWiki(rawhtm):
     garbage_starts = rawhtm.find('See also</span>')
     if garbage_starts > 1000:
@@ -61,16 +32,49 @@ def prepWiki(rawhtm):
         rawhtm = excise_content(rawhtm, tg)
     return rawhtm
 
-while True:
-    if len(rem_pgs) == 0:
-        break
-    idx = choice(range(len(rem_pgs)))
-    chosen_page = rem_pgs[idx]
-    #chosen_page = 'Atlanersa'
-    with urllib.request.urlopen(SITE + chosen_page) as response:
+def get_clean_wiki_page(page_name):
+    with urllib.request.urlopen(SITE + page_name) as response:
         wikihtm = response.read()
     page = wikihtm.decode("utf-8")
     page = prepWiki(page)
     page = cln(page)
-    print('\n\n')
-    sprint(page)
+    return page
+
+if __name__ == '__main__':
+    try:
+        f = open(SAVEFILE, 'r')
+        raw = f.readline()
+        f.close()
+        rem_pgs = eval(raw)
+    except:  # rebuild the list
+        rem_pgs = []
+        from urllib.request import urlopen
+
+        with urlopen(URL) as f:
+            featuredhtm = f.read()
+        # second place you get 'class="hlist"'
+        cursor = featuredhtm.find(b'class="hlist"')
+        cursor = featuredhtm.find(b'class="hlist"', cursor + 1)
+        # then make a list of all the html links
+        sstr = b'<a href="'
+        offset = len(sstr)
+        cursor = featuredhtm.find(sstr, cursor) + offset
+        while cursor > offset:
+            end = featuredhtm.find(b'"', cursor)
+            page = str(featuredhtm[cursor:end])[2:-1]
+            if page[:6] != '/wiki/': break
+            if page.find('User:') > 0: break
+            if page.find('Help:') > 0: break
+            if page.find('Category:') > 0: break
+            page = page[6:]
+            rem_pgs.append(page)
+            cursor = featuredhtm.find(sstr, end) + offset
+        
+    while True:
+        if len(rem_pgs) == 0:
+            break
+        idx = choice(range(len(rem_pgs)))
+        chosen_page = rem_pgs[idx]
+        #chosen_page = 'Atlanersa'
+        print('\n\n')
+        sprint(get_clean_wiki_page(chosen_page))
