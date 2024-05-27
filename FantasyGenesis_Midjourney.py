@@ -296,18 +296,18 @@ def repl(text):
     result = text.replace(": ","-").replace(", ","-").replace(" ","-")
     return result
 
-visual = repl(RecurseChoice( Visual_Elements )    )
-style  = repl(RecurseChoice( Visual_Elements )    )
-mood   = repl(RecurseChoice( Character_Elements ) )
+def generate_prompt():
+    visual = repl(RecurseChoice( Visual_Elements )    )
+    style  = repl(RecurseChoice( Visual_Elements )    )
+    mood   = repl(RecurseChoice( Character_Elements ) )
+    prompt = f"form of {visual} made of {style} with the mood {mood}, in the style of concept art, fantasy genesis --s 150 --ar 16:9 --c 5 --q 0.5"
+    print(prompt)
+    input("copy it and press Enter for another")
 
-prompt = f"form of {visual} made of {style} with the mood {mood}, in the style of concept art, fantasy genesis --s 150 --ar 16:9 --c 5 --q 0.5"
-print(prompt)
 
-try:
-    import pyperclip
-    pyperclip.copy(prompt)
-except:
-    pass
+if __name__ == '__main__':
+    while True:
+        generate_prompt()
 
 # Some test stuff
 
@@ -321,3 +321,9 @@ for i in range(Number_of_tries):
     if result == Search_target: print("Target found! Try #{}".format(i))
 
 '''
+'''
+try:
+    import pyperclip
+    pyperclip.copy(prompt)
+except:
+    pass'''
