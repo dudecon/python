@@ -4,6 +4,7 @@ from os import listdir, startfile, path, chdir
 import subprocess, platform
 
 def osopen(filepath):
+    '''Opens the file with whatever the default OS software is'''
     if platform.system() == 'Darwin':       # macOS
         subprocess.call(('open', filepath))
     elif platform.system() == 'Windows':    # Windows
@@ -11,26 +12,7 @@ def osopen(filepath):
     else:                                   # linux variants
         subprocess.call(('xdg-open', filepath))
 
-dir_path = path.dirname(path.realpath(__file__))
-chdir(dir_path)
-thesefiles = listdir()
-image_extensions = ("png","jpg","gif","tiff","webp")
-
-# Make lists of all the images and the text files in the folder
-image_file_list = []
-text_file_list = []
-for f in thesefiles:
-    extension = f.split('.')[-1].lower()
-    if extension in image_extensions:
-        image_file_list.append(f)
-    elif extension == 'txt':
-        text_file_list.append(f)
-
-image_file_names = ['.'.join(img.split('.')[:-1]) for img in image_file_list]
-text_file_names  = ['.'.join(txt.split('.')[:-1]) for txt in  text_file_list]
-
-
-# If missing, generate text files
+# Used to generate text files, and check for un-populated text
 placeholder = u'''This is placeholder text. Please replace all of this with the story of "{}".
 If you prefer to talk instead of type, press ⊞ + H (hold the windows key and press H) to activate speech-to-text in Windows.
 Don't forget to save your changes to this file!
@@ -40,28 +22,42 @@ If this keeps bringing up the same image, it's because you haven't deleted this 
 '''
 checktext = placeholder[:40]
 
-for img in image_file_names:
-    if img not in text_file_names:
-        content = placeholder.format(img)
-        f = open(img + ".txt", 'w', encoding='utf-8')
-        f.write(content)
-        f.close()
-        # the following code de-syncs the file list
-        # text_file_names.append(img)
-        # text_file_list.append(img + ".txt")
+def process_files():
+    dir_path = path.dirname(path.realpath(__file__))
+    chdir(dir_path)
+    thesefiles = listdir()
+    image_extensions = ("png","jpg","jpeg","gif","tiff","webp","bmp")
 
-del(image_file_names)
-del(text_file_list)
-del(text_file_names)
-    
-'''print(image_file_list)
-print(image_file_names)
-print(text_file_list)
-print(text_file_names)'''
+    # Make lists of all the images and the text files in the folder
+    image_file_list = []
+    text_file_list = []
+    for f in thesefiles:
+        extension = f.split('.')[-1].lower()
+        if extension in image_extensions:
+            image_file_list.append(f)
+        elif extension == 'txt':
+            text_file_list.append(f)
+
+    image_file_names = ['.'.join(img.split('.')[:-1]) for img in image_file_list]
+    text_file_names  = ['.'.join(txt.split('.')[:-1]) for txt in  text_file_list]
+
+    for img in image_file_names:
+        if img not in text_file_names:
+            content = placeholder.format(img)
+            f = open(img + ".txt", 'w', encoding='utf-8')
+            f.write(content)
+            f.close()
+
+    # we don't want these hanging around
+    # delete so we don't accidentally reference them
+    del(image_file_names)
+    del(text_file_list)
+    del(text_file_names)
+    return(image_file_list)
 
 descriptions = {}
 # check for unpopulated text files
-def AllDescriptionsPopulated():
+def AllDescriptionsPopulated(image_file_list):
     for imgf in image_file_list:
         name = '.'.join(imgf.split('.')[:-1])
         txtf =  name + '.txt'
@@ -76,6 +72,39 @@ def AllDescriptionsPopulated():
             descriptions[imgf] = content
     return(True)
 
+def photo_title():
+    template = choice(("My {emotion} Photo","{emotion} Memories"))
+    emotion = choice(('Poignant','Beloved'))
+    return(template.format(emotion=emotion))
+
+def photo_title():
+    templates = [
+        "My {emotion} {noun}",
+        "{emotion} Memories",
+        "A {emotion} Moment",
+        "{emotion} {noun}",
+        "Our {emotion} {noun}",
+        "Cherished {noun}",
+        "Timeless {noun}",
+        "A {emotion} {noun}",
+        "{emotion} Times"
+    ]
+    
+    emotions = [
+        'Poignant', 'Beloved', 'Joyful', 'Bittersweet', 'Nostalgic', 'Heartwarming',
+        'Delightful', 'Cherished', 'Memorable', 'Wonderful', 'Magical', 'Precious'
+    ]
+    
+    nouns = [
+        'Photo', 'Moment', 'Time', 'Adventure', 'Experience', 'Memory', 'Journey', 
+        'Story', 'Capture', 'Event', 'Occasion'
+    ]
+    
+    template = choice(templates)
+    emotion = choice(emotions)
+    noun = choice(nouns)
+    
+    return template.format(emotion=emotion, noun=noun)
 
 def description(instr):
     outstr = instr.strip("0123456789_")
@@ -95,22 +124,16 @@ def description(instr):
     outstr = outstr.replace("."," ")
     while "  " in outstr:
         outstr = outstr.replace("  "," ")
+    if len(outstr) < len(instr)/3:
+        outstr = photo_title()
     return outstr
 
 
-def MakePage(html_page_name = "index.htm"):
-    #folders = [l.split()[0] for l in Image_raw_text.split(sep='\n') if l.split()[0][-1] == '/']
-    folders = []
-    images  = image_file_list
-    #dates   = [l.split()[1] for l in Image_raw_text.split(sep='\n') if l.split()[0][-1] != '/']
-    # use the below for files pasted from the local drive
-    #images = [l.split(sep='/')[-1] for l in Image_raw_text.split(sep='\n')]
-
+def MakePage(images, html_page_name = "index.htm"):
     bordcolplt = (0,1,1,2)
     bordcolbs = [0,0,0]
     for i in range(len(bordcolbs)): bordcolbs[i] = choice(bordcolplt)
     bordofstplt = (-1,0,0,1,1)
-    #bordcolbs = [1,1,1]
     TitleText = "Photo Stories".strip()
     DESCRIPTION = TitleText
     PGWDTH = "800"
@@ -127,7 +150,6 @@ def MakePage(html_page_name = "index.htm"):
         off = choice(offsets)
         BGColor += hex(col + off)[2:]
         offsets.remove(off)
-    #BGColor = "d2d2d2"
 
     Header = f'''<!DOCTYPE html>
     <html>
@@ -149,16 +171,8 @@ def MakePage(html_page_name = "index.htm"):
     
     '''
 
-
-
     Output_HTML = Header + Title
-    for fld in folders:
-        desc = description(fld[:-1])
-        Output_HTML += f'''<a href="{fld}"><h3>{desc}</h3></a>
-        <p></p>
-    '''
-
-    if len(images) and len(folders): Output_HTML += "<h3>Images</h3>\n"
+    
     for img in images:
         imgname = ''.join(img.split(sep='.')[:-1])
         imgtitle = description(imgname)
@@ -173,10 +187,10 @@ def MakePage(html_page_name = "index.htm"):
 
     Footer = f'''
 
-    <h3>Made with Photo Stories</h3>
-    <p>This photo memories page was made using the free and open source
-    <a href="./">Photo Memories</a> tool. If you would like to support
-    the development of this software, <a href="./">click here</a>. Thanks for your
+    <h4>Made with Photo Stories</h4>
+    <p style="font-size: 8px;">This photo page was made using the free and open source
+    <a href="https://github.com/dudecon/python/blob/main/PhotoStories.py">Photo Stories</a> tool. If you would like to support
+    the development of this software, <a href="https://paypal.me/PaulSpooner">click here</a>. Thanks for your
     support, and God bless.</p>
     </div>
     </body>
@@ -184,11 +198,12 @@ def MakePage(html_page_name = "index.htm"):
 
     Output_HTML += Footer
     f = open(html_page_name, 'w', encoding='utf-8')
-    f.write(Output_HTML)#.encode('utf8'))
+    f.write(Output_HTML)
     f.close()
 
 if __name__ == '__main__':
-    if AllDescriptionsPopulated():
+    img_files = process_files()
+    if AllDescriptionsPopulated(img_files):
         page_name = "index.htm"
-        MakePage(page_name)
+        MakePage(img_files, page_name)
         osopen(page_name)
