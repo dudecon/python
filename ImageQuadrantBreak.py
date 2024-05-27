@@ -1,6 +1,8 @@
 from os import rename, listdir
 from PIL import Image
 
+dir_path = path.dirname(path.realpath(__file__))
+chdir(dir_path)
 thesefiles = listdir()
 # thesefiles = ("Shrouded Brilliance.01.jpg",)
 targets = (".png",".jpg")
