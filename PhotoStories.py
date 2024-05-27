@@ -31,15 +31,20 @@ text_file_names  = ['.'.join(txt.split('.')[:-1]) for txt in  text_file_list]
 
 
 # If missing, generate text files
-placeholder = '''This is placeholder text. Please replace all of this with the story of "{}".
-Don't forget to save your changes to this file!'''
+placeholder = u'''This is placeholder text. Please replace all of this with the story of "{}".
+If you prefer to talk instead of type, press ⊞ + H (hold the windows key and press H) to activate speech-to-text in Windows.
+Don't forget to save your changes to this file!
+
+If this keeps bringing up the same image, it's because you haven't deleted this boilerplate text yet.
+
+'''
 checktext = placeholder[:40]
 
 for img in image_file_names:
     if img not in text_file_names:
         content = placeholder.format(img)
-        f = open(img + ".txt",'w')
-        f.write(content)
+        f = open(img + ".txt", 'w', encoding='utf-8')
+        f.write(content)#.encode('utf8'))
         f.close()
         text_file_names.append(img)
         text_file_list.append(img + ".txt")
@@ -55,8 +60,8 @@ def AllDescriptionsPopulated():
     for i, name in enumerate(image_file_list):
         txtf =  text_file_list[i]
         imgf = image_file_list[i]
-        f = open(txtf,'r')
-        content = f.read()
+        f = open(txtf, 'r', encoding='utf-8')
+        content = f.read()#.decode('utf8')
         f.close()
         if checktext in content:
             osopen(imgf)
@@ -170,9 +175,8 @@ def MakePage(html_page_name = "index.htm"):
     </html>'''
 
     Output_HTML += Footer
-    f = open(html_page_name, 'w')
-    
-    f.write(Output_HTML)
+    f = open(html_page_name, 'w', encoding='utf-8')
+    f.write(Output_HTML)#.encode('utf8'))
     f.close()
 
 if __name__ == '__main__':
