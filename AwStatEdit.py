@@ -1,6 +1,8 @@
 # Log File Purge Script
 # For reducing the size of the AwStats log files
 from os import listdir
+dir_path = path.dirname(path.realpath(__file__))
+chdir(dir_path)
 workingdir = "/home/father/Documents/StatEdit/"
 thesefiles = listdir(workingdir)
 # thesefiles = ['awstats012011.peripheralarbor.com.txt']
