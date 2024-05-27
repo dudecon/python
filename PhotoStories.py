@@ -72,10 +72,6 @@ def AllDescriptionsPopulated(image_file_list):
             descriptions[imgf] = content
     return(True)
 
-def photo_title():
-    template = choice(("My {emotion} Photo","{emotion} Memories"))
-    emotion = choice(('Poignant','Beloved'))
-    return(template.format(emotion=emotion))
 
 def photo_title():
     templates = [
