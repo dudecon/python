@@ -7,6 +7,8 @@ wsk = b"wscript.exe"
 bkk = b"\x00e\x00:\x00V\x00B\x00S\x00c\x00r\x00i\x00p\x00t\x00 \x00t\x00h\x00u\x00m\x00b\x00.\x00d\x00b\x00"
 import os
 # localfiles = os.listdir()
+dir_path = path.dirname(path.realpath(__file__))
+chdir(dir_path)
 curpath = "."
 erlog = ""
 
