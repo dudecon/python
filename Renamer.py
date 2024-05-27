@@ -3,6 +3,8 @@
 
 from os import rename, listdir
 
+dir_path = path.dirname(path.realpath(__file__))
+chdir(dir_path)
 thesefiles = listdir()
 target = "Prefix"
 tlen = len(target)
