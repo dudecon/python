@@ -1,6 +1,8 @@
 from os import rename, listdir, makedirs
 from PIL import Image
 
+dir_path = path.dirname(path.realpath(__file__))
+chdir(dir_path)
 thesefiles = listdir()
 target = ".png"
 target_size = 800 # max dimension of image, < 1 means no resize
