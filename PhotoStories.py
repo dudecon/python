@@ -120,6 +120,8 @@ def description(instr):
     outstr = outstr.replace("."," ")
     while "  " in outstr:
         outstr = outstr.replace("  "," ")
+    # make up a new title if the cleaned title is
+    # dramatically shorter than the original
     if len(outstr) < len(instr)/3:
         outstr = photo_title()
     return outstr
