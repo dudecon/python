@@ -44,10 +44,15 @@ for img in image_file_names:
     if img not in text_file_names:
         content = placeholder.format(img)
         f = open(img + ".txt", 'w', encoding='utf-8')
-        f.write(content)#.encode('utf8'))
+        f.write(content)
         f.close()
-        text_file_names.append(img)
-        text_file_list.append(img + ".txt")
+        # the following code de-syncs the file list
+        # text_file_names.append(img)
+        # text_file_list.append(img + ".txt")
+
+del(image_file_names)
+del(text_file_list)
+del(text_file_names)
     
 '''print(image_file_list)
 print(image_file_names)
@@ -57,11 +62,11 @@ print(text_file_names)'''
 descriptions = {}
 # check for unpopulated text files
 def AllDescriptionsPopulated():
-    for i, name in enumerate(image_file_list):
-        txtf =  text_file_list[i]
-        imgf = image_file_list[i]
+    for imgf in image_file_list:
+        name = '.'.join(imgf.split('.')[:-1])
+        txtf =  name + '.txt'
         f = open(txtf, 'r', encoding='utf-8')
-        content = f.read()#.decode('utf8')
+        content = f.read()
         f.close()
         if checktext in content:
             osopen(imgf)
@@ -86,7 +91,10 @@ def description(instr):
     space_inserts.sort(reverse=True)
     for i in space_inserts:
         outstr = outstr[:i] + ' ' + outstr[i:]
-    outstr = outstr.replace("_","")
+    outstr = outstr.replace("_"," ")
+    outstr = outstr.replace("."," ")
+    while "  " in outstr:
+        outstr = outstr.replace("  "," ")
     return outstr
 
 
