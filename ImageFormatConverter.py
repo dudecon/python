@@ -1,4 +1,4 @@
-from os import rename, listdir, makedirs
+from os import chdir, path, rename, listdir, makedirs
 from PIL import Image
 
 dir_path = path.dirname(path.realpath(__file__))
@@ -8,7 +8,7 @@ target = ".png"
 target_size = 800 # max dimension of image, < 1 means no resize
 new = ".jpg"
 colorspace = 'RGB' # 'L' is black and white, 'RGB' is color
-filename = "Laser_Decoration_Design " # set to "" to not rename files
+filename = "" # set to "" to not rename files
 
 
 newdirname = "Original_"+target[1:].upper()+"s"
@@ -33,10 +33,10 @@ for f in thesefiles:
             name = filename + str(i) + new
         else:
             name = f[:-tlen] + new
-        image.save(name)
         if True: #move the originals to the backup folder
             m = newdir + f
             rename(f, m)
+        image.save(name)
         print("processed", f)
     else:
         pass
