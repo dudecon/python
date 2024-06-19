@@ -2242,7 +2242,17 @@
 
 'Lewis Herbert Heddon': {'nm': 'Lewis Herbert Heddon', 'b': 'Michigan, 7 Oct 1885', 'd': 'Michigan, United States, 1957', 'g': 1, 'yb': 1885, 'yd': 1957, 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy'},
 
-'Cyrus Peter Heddon': {'nm': 'Cyrus Peter Heddon', 'b': 'United States, 24 Mar 1840', 'd': 'Michigan, USA, 27 Nov 1921', 'g': 1, 'yb': 1840, 'yd': 1921, 'f': 'unknown'},
+'George P Heddon': {'nm': 'George P Heddon', 'b': '27 Mar 1873', 'd': '6 Mar 1916', 'g': 1, 'yb': 1873, 'yd': 1916, 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy'},
+
+'Arthur Percival Heddon': {'nm': 'Arthur Percival Heddon', 'b': '21 Jan 1877', 'd': '5 May 1952', 'g': 1, 'yb': 1877, 'yd': 1952, 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy'},
+
+'Harry Garfield Heddon': {'nm': 'Harry Garfield Heddon', 'b': '29 Apr 1887', 'd': '5 Mar 1963', 'g': 1, 'yb': 1887, 'yd': 1963, 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy'},
+
+'Josephine Heddon': {'nm': 'Josephine Heddon', 'b': 'Michigan, 188?', 'd': 'Michigan, 19??', 'g': 0, 'yb': 188?, 'yd': 19??, 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy', 'notes': 'lived in Live Oak, Ca? Husband served as Post Master for a while?'},
+
+'Emily Heddon':     {'nm': 'Emily Heddon',     'b': 'Michigan, 188?', 'd': 'Michigan, 19??', 'g': 0, 'yb': 188?, 'yd': 19??, 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy'},
+
+'Cyrus Peter Heddon': {'nm': 'Cyrus Peter Heddon', 'b': 'Stafford, Genesee County, New York, United States of America, United States, 24 Mar 1840', 'd': 'Millington, Tuscola County, Michigan, United States of America, USA, 27 Nov 1921', 'g': 1, 'yb': 1840, 'yd': 1921, 'f': 'unknown'},
 
 'Mary R. McCoy': {'nm': 'Mary R. McCoy', 'b': 'New York, USA, 17 Nov 1844', 'd': 'Michigan, USA, 21 Sep 1916', 'g': 0, 'yb': 1844, 'yd': 1916, 'f': 'unknown'},
 
