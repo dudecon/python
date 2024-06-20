@@ -2240,21 +2240,35 @@
 
 'Mary A. (Polly) Bess': {'nm': 'Mary A. (Polly) Bess', 'b': 'Stoddard Co., Missouri, 1865', 'd': 'Stoddard, Missouri, USA, 1912', 'g': 0, 'yb': 1865, 'yd': 1912, 'f': 'unknown'},
 
-'Lewis Herbert Heddon': {'nm': 'Lewis Herbert Heddon', 'b': 'Michigan, 7 Oct 1885', 'd': 'Michigan, United States, 1957', 'g': 1, 'yb': 1885, 'yd': 1957, 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy'},
+'Almira Heddon': {'nm': 'Almira Heddon', 'b': '1869', 'd': '1880', 'g': 0, 'yb': 1869, 'yd': 1880, 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy'},
 
-'George P Heddon': {'nm': 'George P Heddon', 'b': '27 Mar 1873', 'd': '6 Mar 1916', 'g': 1, 'yb': 1873, 'yd': 1916, 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy'},
+'John C. Heddon': {'nm': 'John C. Heddon', 'b': '1870', 'd': '1940', 'g': 1, 'yb': 1870, 'yd': 1940, 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy'},
+
+'George P. Heddon': {'nm': 'George P. Heddon', 'b': '27 Mar 1873', 'd': '6 Mar 1916', 'g': 1, 'yb': 1873, 'yd': 1916, 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy'},
+
+'Clara E. Heddon': {'nm': 'Clara Ellen Heddon', 'b': '1874', 'g': 0, 'yb': 1874 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy'},
 
 'Arthur Percival Heddon': {'nm': 'Arthur Percival Heddon', 'b': '21 Jan 1877', 'd': '5 May 1952', 'g': 1, 'yb': 1877, 'yd': 1952, 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy'},
 
+'Erma A. Heddon': {'nm': 'Erma A. Heddon', 'b': '1878', 'g': 0, 'yb': 1878 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy'},
+
+'Lewis Herbert Heddon': {'nm': 'Lewis Herbert Heddon', 'b': 'Michigan, 7 Oct 1885', 'd': 'Michigan, United States, 1957', 'g': 1, 'yb': 1885, 'yd': 1957, 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy'},
+
 'Harry Garfield Heddon': {'nm': 'Harry Garfield Heddon', 'b': '29 Apr 1887', 'd': '5 Mar 1963', 'g': 1, 'yb': 1887, 'yd': 1963, 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy'},
 
-'Josephine Heddon': {'nm': 'Josephine Heddon', 'b': 'Michigan, 188?', 'd': 'Michigan, 19??', 'g': 0, 'yb': 188?, 'yd': 19??, 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy', 'notes': 'lived in Live Oak, Ca? Husband served as Post Master for a while?'},
+'Cyrus Peter Heddon': {'nm': 'Cyrus Peter Heddon', 'b': 'Stafford, Genesee County, New York, United States of America, United States, 24 Mar 1840', 'd': 'Millington, Tuscola County, Michigan, United States of America, USA, 27 Nov 1921', 'g': 1, 'yb': 1840, 'yd': 1921, 'f': 'Dr. George Heddon', 'm': 'Elizabeth Prescott'},
 
-'Emily Heddon':     {'nm': 'Emily Heddon',     'b': 'Michigan, 188?', 'd': 'Michigan, 19??', 'g': 0, 'yb': 188?, 'yd': 19??, 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy'},
+'Dr. George Heddon': {'nm': 'Dr. George Heddon', 'b': '1814', 'd': '1860', 'g': 1, 'yb': 1814, 'yd': 1860, 'f': 'unknown'},
 
-'Cyrus Peter Heddon': {'nm': 'Cyrus Peter Heddon', 'b': 'Stafford, Genesee County, New York, United States of America, United States, 24 Mar 1840', 'd': 'Millington, Tuscola County, Michigan, United States of America, USA, 27 Nov 1921', 'g': 1, 'yb': 1840, 'yd': 1921, 'f': 'unknown'},
+'Elizabeth Prescott': {'nm': 'Elizabeth Prescott', 'b': '1802', 'd': '1849', 'g': 0, 'yb': 1802, 'yd': 1849, 'f': 'unknown', 'notes': 'Unsure of this information. Perhaps verify?'},
 
-'Mary R. McCoy': {'nm': 'Mary R. McCoy', 'b': 'New York, USA, 17 Nov 1844', 'd': 'Michigan, USA, 21 Sep 1916', 'g': 0, 'yb': 1844, 'yd': 1916, 'f': 'unknown'},
+'Emily L. Heddon': {'nm': 'Emily Louisa Heddon', 'b': '1839', 'd': '1924', 'g': 0, 'yb': 1839, 'yd': 1924, 'f': 'Dr. George Heddon', 'm': 'Elizabeth Prescott'},
+
+'George H. Heddon': {'nm': 'George Henry Heddon', 'b': '1843', 'd': '1920', 'g': 1, 'yb': 1843, 'yd': 1920, 'f': 'Dr. George Heddon', 'm': 'Elizabeth Prescott'},
+
+'Josephine R. Heddon': {'nm': 'Josephine Rose Heddon', 'b': '1847', 'd': '1911', 'g': 0, 'yb': 1847, 'yd': 1911, 'f': 'Dr. George Heddon', 'm': 'Elizabeth Prescott', 'notes': 'lived in Live Oak, Ca? Husband served as Post Master for a while?'},
+
+'Mary R. McCoy': {'nm': 'Mary Roberta McCoy', 'b': 'New York, USA, 17 Nov 1844', 'd': 'Michigan, USA, 21 Sep 1916', 'g': 0, 'yb': 1844, 'yd': 1916, 'f': 'unknown'},
 
 'Evie Emma Lockhart': {'nm': 'Evie Emma Lockhart', 'b': 'MI, USA, 15 April 1885', 'd': 'Michigan, USA, 11/14/1956', 'g': 0, 'yb': 1885, 'yd': 1956, 'f': 'Jeremiah H Lockhart', 'm': 'Nina Estella Lockhart'},
 
