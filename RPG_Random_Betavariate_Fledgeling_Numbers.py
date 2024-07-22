@@ -5,9 +5,9 @@ from math import log, sqrt
 
 def randExpVariate(skew = 1):
     if skew < 1: raise OutOfRange
-    α = Φ**2
-    sk = Φ**α + skew**(2-Φ)
-    growthfactor = log(skew, sk) + Φ**-(2-Φ)
+    α = Φ
+    base = (Φ**2) + (skew**(2-Φ))
+    growthfactor = log(skew, base)
     β = (2-Φ) + Φ**growthfactor
     exponent = betavariate(α,β)*2 - 1
     value = skew**exponent
