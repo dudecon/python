@@ -110,7 +110,7 @@ def get_bible_chapter(book_name="preface", chapter_number = "0"):
 def get_bible_book(book_name="preface", number_of_chapters = 0):
     book = ""
     for i in range(number_of_chapters+1):
-        sleep(choice((40,12,3,144)))
+        sleep(choice((144,40,12,3,1)))
         chap = get_bible_chapter(book_name,str(i))
         if chap is None: continue
         if len(chap) < 50: continue
@@ -123,12 +123,12 @@ def save_book(settings):
     chaps = settings[1]
     h = get_bible_book(name,chaps)
     fnm = name + ".txt"
-    f = open(fnm, mode='w')
+    f = open(fnm, mode='w',encoding="utf-8")
     f.write(h)
     f.close()
     print("saved",fnm)
 
-for info in allbooks:
+for info in allbooks[2:]:
     save_book(info)
 
 #h = get_bible_chapter("2samuel",0)
