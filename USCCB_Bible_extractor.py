@@ -128,7 +128,7 @@ def save_book(settings):
     f.close()
     print("saved",fnm)
 
-for info in allbooks[2:]:
+for info in allbooks:
     save_book(info)
 
 #h = get_bible_chapter("2samuel",0)
