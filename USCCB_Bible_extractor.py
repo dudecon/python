@@ -110,7 +110,7 @@ def get_bible_chapter(book_name="preface", chapter_number = "0"):
 def get_bible_book(book_name="preface", number_of_chapters = 0):
     book = ""
     for i in range(number_of_chapters+1):
-        sleep(choice((144,40,12,3,1)))
+        sleep(choice((12,3,1)))
         chap = get_bible_chapter(book_name,str(i))
         if chap is None: continue
         if len(chap) < 50: continue
