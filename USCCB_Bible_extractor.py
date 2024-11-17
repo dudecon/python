@@ -131,4 +131,4 @@ def save_book(settings):
 for info in allbooks:
     save_book(info)
 
-#h = get_bible_chapter("2samuel",0)
+#h = get_bible_chapter("2samuel","0")
