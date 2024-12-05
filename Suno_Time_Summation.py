@@ -1,7 +1,11 @@
 # Suno Time Adder
 # Adds up all the durations of music in a Suno playlist
 
-SITE = "https://suno.com/playlist/2cf0cd7b-e48e-492d-ad6c-20e1f2182923"
+SITE = "https://suno.com/playlist/2cf0cd7b-e48e-492d-ad6c-20e1f2182923" # Bible
+SITE = "https://suno.com/playlist/c4a5f43a-bad3-4bde-ab14-42992d26f8d0" # Klein
+SITE = "https://suno.com/playlist/4d1bdb98-a96f-4d4a-909c-453034fcea23" # Tradwife
+
+
 DEBUG = True
 
 from urllib.request import urlopen, Request
