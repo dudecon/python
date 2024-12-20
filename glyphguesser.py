@@ -11,7 +11,7 @@ NumGlyphs  = 36
 SeqLen     = 3
 Guesses    = 0
 
-GLYPH_LIBRARY = '''0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀĂĄĆĈĊČĎĐĒĔĖĘĚĜĞĠĢĤĦĨĪĬĮİĲĴĶĸĺļľŀłńņňŊŌŎŐŒŔŖŘŚŜŞŠŢŤŦŨŪŬŮŰŲŴŶŸŹŻŽſƀƁƂƃƄƅƆƇƈƉƊƋƌƍƎƏƐƑƒƓƔƕƖƗƘƙƚƛƜƝƞƟƠơƢƣƤƥƦƧƨƩƪƫƬƭƮƯưƱƲƳƴƵƶƷƸƹƺƻƼƽƾƿǀǁǂǃǄǅǆǇǈǉǊǋǌǍǏǑǓǕǗǙǛǞǠǢǤǦǨǪǬǮǰǱǴǶǷǸǺǼǾȀȂȄȆȈȊȌȎȐȒȔȖȘȚȜȞȠȡȢȤȦȨȪȬȮȰȲȴȵȶȷȸȹȺȻȽȾȿɀɁɃɄɅɆɇɈɊɌɎɐɑɒɓɔɕɖɗɘəɚɛɜɝɞɟɠɡɢɣɤɥɦɧɨɩɪɫɬɭɮɯɰɱɲɳɴɵɶɷɸɹɺɻɼɽɾɿʀʁʂʃʄʅʆʇʈʉʊʋʌʍʎʏʐʑʒʓʔʕʖʗʘʙʚʛʜʝʞʟʠʡʢʣʤʥʦʧʨʩʪʫʬʭʮʯʰʱʲʳʴʵʶʷʸʹʺʻʼʽʾʿˀˁ˂˃˄˅ˆˇˈˉˊˋˌˍˎˏːˑ˒˓˔˕˖˗˘˙˚˛˝˞˟ˠˡˢˣˤˬ˭ˮ˯˰˱˲˳˴˵˶˷˸˹˺˻˼˽˾ͰͱͲͳʹ͵Ͷͷͺͻͼͽ;Ϳ΅Ά·ΈΉΊΏΐΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΤΥΦΧΨΩΪΫάέήίΰαβγδεζηθικλμνξοπρςστυφχψωϊϋόύώϏϐϑϒϓϔϕϖϗϘϚϜϞϠϢϤϥϦϧϨϪϬϮϰϱϲϳϴϵ϶ϷϸϹϺϻϼϽϾϿЀЁЂЃЄЅІЇЈЉЊЋЌЍЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯљњћќѝўџѠѡѢѣѤѥѦѧѨѩѪѫѬѭѮѯѰѱѲѳѴѵѶѷѸѹѺѻѼѽѾѿҀҁ҂҃҄҅҆҇҈҉ҊҌҎҐҒҔҖҘҚҜҞҠҢҤҦҨҪҬҮҰҲҴҶҸҺҼҾӀӁӃӅӇӉӋӍӐӒӔӖӘӚӜӞӠӢӤӦӨӪӬӮӰӲӴӶӸӺӼӾԀԂԄԆԈԊԌԎԐԒԔԖԘԚԜԞԠԢԤԨԪԬԮԲԳԴԵԶԷԸԹԺԻԼԽԾԿՀՁՂՃՄՅՆՇՈՉՊՋՌՍՎՏՐՑՒՓՔՕՖբգդեզէըթժիլխծկհձղճմյնշոչպջռսվտրցւփքօֆև६'''
+GLYPH_LIBRARY = '''1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀĂĄĆĈĊČĎĐĒĔĖĘĚĜĞĠĢĤĦĨĪĬĮİĲĴĶĸĺļľŀłńņňŊŌŎŐŒŔŖŘŚŜŞŠŢŤŦŨŪŬŮŰŲŴŶŸŹŻŽſƀƁƂƃƄƅƆƇƈƉƊƋƌƍƎƏƐƑƒƓƔƕƖƗƘƙƚƛƜƝƞƟƠơƢƣƤƥƦƧƨƩƪƫƬƭƮƯưƱƲƳƴƵƶƷƸƹƺƻƼƽƾƿǀǁǂǃǄǅǆǇǈǉǊǋǌǍǏǑǓǕǗǙǛǞǠǢǤǦǨǪǬǮǰǱǴǶǷǸǺǼǾȀȂȄȆȈȊȌȎȐȒȔȖȘȚȜȞȠȡȢȤȦȨȪȬȮȰȲȴȵȶȷȸȹȺȻȽȾȿɀɁɃɄɅɆɇɈɊɌɎɐɑɒɓɔɕɖɗɘəɚɛɜɝɞɟɠɡɢɣɤɥɦɧɨɩɪɫɬɭɮɯɰɱɲɳɴɵɶɷɸɹɺɻɼɽɾɿʀʁʂʃʄʅʆʇʈʉʊʋʌʍʎʏʐʑʒʓʔʕʖʗʘʙʚʛʜʝʞʟʠʡʢʣʤʥʦʧʨʩʪʫʬʭʮʯʰʱʲʳʴʵʶʷʸʹʺʻʼʽʾʿˀˁ˂˃˄˅ˆˇˈˉˊˋˌˍˎˏːˑ˒˓˔˕˖˗˘˙˚˛˝˞˟ˠˡˢˣˤˬ˭ˮ˯˰˱˲˳˴˵˶˷˸˹˺˻˼˽˾ͰͱͲͳʹ͵Ͷͷͺͻͼͽ;Ϳ΅Ά·ΈΉΊΏΐΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΤΥΦΧΨΩΪΫάέήίΰαβγδεζηθικλμνξοπρςστυφχψωϊϋόύώϏϐϑϒϓϔϕϖϗϘϚϜϞϠϢϤϥϦϧϨϪϬϮϰϱϲϳϴϵ϶ϷϸϹϺϻϼϽϾϿЀЁЂЃЄЅІЇЈЉЊЋЌЍЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯљњћќѝўџѠѡѢѣѤѥѦѧѨѩѪѫѬѭѮѯѰѱѲѳѴѵѶѷѸѹѺѻѼѽѾѿҀҁ҂҃҄҅҆҇҈҉ҊҌҎҐҒҔҖҘҚҜҞҠҢҤҦҨҪҬҮҰҲҴҶҸҺҼҾӀӁӃӅӇӉӋӍӐӒӔӖӘӚӜӞӠӢӤӦӨӪӬӮӰӲӴӶӸӺӼӾԀԂԄԆԈԊԌԎԐԒԔԖԘԚԜԞԠԢԤԨԪԬԮԲԳԴԵԶԷԸԹԺԻԼԽԾԿՀՁՂՃՄՅՆՇՈՉՊՋՌՍՎՏՐՑՒՓՔՕՖբգդեզէըթժիլխծկհձղճմյնշոչպջռսվտրցւփքօֆև६'''
 
 
 def compute_glyphs(num_g, offset=0, randomize=False):
@@ -34,16 +34,16 @@ def choose_sequence(seq_len, glyphs):
 
 def isnumericstr(instr):
     for g in instr:
-        if g not in "0123456789": return False
+        if g not in "1234567890": return False
     return True
 
 
-def isvalidguess(seqtry, true_sequence, glyphs, pr=False):
+def isvalidguess(seqtry, true_sequence, glyphs, pr=True):
     seq_len = len(true_sequence)
     numblyphs = len(glyphs)
     if (numblyphs <= 10) and isnumericstr(seqtry) and not isnumericstr(glyphs):
         try:
-            seqtry = ''.join([glyphs[int(it)] for it in seqtry])
+            seqtry = ''.join([glyphs[(int(it)-1)%numblyphs] for it in seqtry])
             if pr: print(f'   {seqtry} extracted from indicies')
         except: pass
     badglyph = False
@@ -81,7 +81,8 @@ $ to toggle showing correct glyphs in the correct locations
 + to set the number of glyphs in the sequence, and re-roll
 * to set the size of the glyph pool, and re-roll
 ^ to toggle duplicate glyphs, does NOT re-roll
-& to set to Wordle-like rules (but with nonsense words)'''
+& to set to Wordle-like rules (but with nonsense words)
+~ to set to big grid rules'''
 
 print(helpstr)
 allglyphs = compute_glyphs(NumGlyphs)
@@ -91,7 +92,7 @@ cmd = '%'
 while True:
     if len(cmd) == 0: print(helpstr)
     elif cmd[0] == '%':
-        print('the current valid glyph set is as follows:')
+        print(f"there are {NumGlyphs} glyphs, as follows:")
         print(''.join(allglyphs))
         print(f'the secret sequence is {SeqLen} glyphs long')
     elif cmd[0] == '#':
@@ -115,6 +116,19 @@ while True:
         else:
             WHERE = True
             print('correct glyph positions now shown')
+    elif cmd[0] == '~':
+        DUPLICATES = True
+        WHERE = True
+        WHICH = False
+        SeqLen = 60
+        NumGlyphs = 6
+        allglyphs = compute_glyphs(NumGlyphs, 0, True)
+        NumGlyphs = len(allglyphs)
+        secret_sequence = choose_sequence(SeqLen, allglyphs)
+        SeqLen = len(secret_sequence)
+        print(f"there are now {NumGlyphs} glyphs:")
+        print(allglyphs)
+        print(f"the sequence is {SeqLen} glyphs long.")
     elif cmd[0] == '&':
         DUPLICATES = True
         WHERE = True
@@ -201,7 +215,7 @@ while True:
             DUPLICATES = True
             print('the next sequence may contain duplicate glyphs')
     elif isvalidguess(cmd, secret_sequence, allglyphs, False):
-        seq = isvalidguess(cmd, secret_sequence, allglyphs, True)
+        seq = isvalidguess(cmd, secret_sequence, allglyphs, False)
         Guesses += 1
         if seq == secret_sequence:
             print(f"Yes! {seq} is correct! You win!")
@@ -225,13 +239,15 @@ while True:
             lastguess = seq
             if WHERE:
                 goodpositions = '   '
+                measuring = "|_._"*(1 + SeqLen//4)
+                print(goodpositions + measuring[:SeqLen])
                 for i in range(len(secret_sequence)):
                     if secret_sequence[i] == lastguess[i]:
                         goodpositions += lastguess[i]
                     else: goodpositions += " "
-                goodpositions += " are the correct glyphs in the correct locations"
+                # goodpositions += " are the correct glyphs in the correct locations"
                 print(goodpositions)
-            if WHICH:
+            if WHICH and not WHERE:
                 corgl = ''
                 for gl in lastguess:
                     if gl in secret_sequence: corgl += gl
@@ -245,7 +261,7 @@ while True:
                             n += 1
                     if n: print(f'and {n} are in the correct location')
                 else: print('none of those glyphs are in the sequence')
-            elif HOWMANY:
+            elif HOWMANY and not WHERE:
                 n = 0
                 for gl in lastguess:
                     if gl in secret_sequence: n += 1
