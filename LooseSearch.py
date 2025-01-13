@@ -4,11 +4,11 @@ from os import listdir, path, chdir
 from collections import defaultdict
 
 PRINT_MARGIN = 20
-THRESHOLD = 14
+THRESHOLD = 2
 REPEAT_PENALTY = 0.5
-SECTION_LIMIT = 7
+SECTION_LIMIT = 12
 
-words_to_find = {"twelve": 12, "three": 3, "gate": 6, "city": 3, "hand": 4}
+words_to_find = {"led": 5,"spirit": 5,"going": 5,"wind": 5,}
 target_extension = ".txt"
 
 dir_path = path.dirname(path.realpath(__file__))
@@ -23,10 +23,10 @@ def calculate_word_score(raw_word, search_words, partial_penalty=1.618):
     base_length = len(word_text)
     total_score = 0
     for word in search_words:
-        word_score = 0
         if word in word_text:
             penalty = (len(word) / base_length) ** partial_penalty
             word_score = search_words[word] * penalty
+        else: word_score = 0
         total_score += word_score
     return total_score
 
