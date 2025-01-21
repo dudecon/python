@@ -1,9 +1,9 @@
 # Suno Time Adder
 # Adds up all the durations of music in a Suno playlist
 
-SITE = "https://suno.com/playlist/2cf0cd7b-e48e-492d-ad6c-20e1f2182923" # Bible
-SITE = "https://suno.com/playlist/c4a5f43a-bad3-4bde-ab14-42992d26f8d0" # Klein
-SITE = "https://suno.com/playlist/4d1bdb98-a96f-4d4a-909c-453034fcea23" # Tradwife
+albums = ["2cf0cd7b-e48e-492d-ad6c-20e1f2182923", "aa8b969d-9d94-45bf-8c61-0d140af88fac"] # Bible 1 and 2
+# ALBUM = "c4a5f43a-bad3-4bde-ab14-42992d26f8d0" # Klein
+# ALBUM = "4d1bdb98-a96f-4d4a-909c-453034fcea23" # Tradwife
 
 
 DEBUG = True
@@ -61,9 +61,12 @@ def sum_timestamps(tstmps):
     return total
 
 if __name__ == '__main__':
-    tstmps = get_webpage_data()
-    if tstmps:
-        total_seconds = sum_timestamps(tstmps)
-        formatted_total = generate_timestamp(total_seconds)
-        print("Total duration:", formatted_total)
+    total_seconds = 0
+    for ALBUM in albums:
+        SITE = f"https://suno.com/playlist/{ALBUM}"
+        tstmps = get_webpage_data(SITE)
+        if tstmps:
+            total_seconds += sum_timestamps(tstmps)
+    formatted_total = generate_timestamp(total_seconds)
+    print("Total duration:", formatted_total)
     input("enter to exit")
