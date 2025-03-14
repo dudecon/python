@@ -105,7 +105,11 @@ def debase(string):
 
 def b(radix):
     global BASE, GLYPHS
-    BASE = radix
+    if radix < 2:
+        print("Fallback to binary")
+        BASE = 2
+    else:
+        BASE = int(radix)
     GLYPHS = compute_glyphs(BASE)
     print(GLYPHS)
 

@@ -1,4 +1,6 @@
+
 # finds Fibonaci/Lucas like sequences which result in the queried number
+
 def seed_search(seed,targ):
     window = [1,seed]
     while window[1] < targ:
@@ -38,6 +40,15 @@ def find_seed(target):
     return curseed
 
 if __name__ == '__main__':
+    import BaseConverter
+
+    def convert_sequence(s,b):
+        outlist = []
+        BaseConverter.b(b)
+        for i in s:
+            outlist.append(BaseConverter.rebase(i))
+        return ", ".join(outlist)
+
     found = set()
     for i in range(201):
         s = find_seed(i)
@@ -54,6 +65,7 @@ if __name__ == '__main__':
     for i in (666,17):
         s = find_seed(i)
         print(f"lowest seed for {i} is {s}")
-    for j in (5,4,3,1,17,666):
+    for j in (1,3,4,5,6,7,8,17,666):
         sequence = gen_sequence(j)
-        print(f"the seed {j} produces {sequence}")
+        rebased = convert_sequence(sequence,j)
+        print(f"the seed {j} produces {sequence}\nwhich in base {j} is {rebased}")
