@@ -6,10 +6,10 @@ def sprint(page, delayfactor = 0.0035):
     for ln in page.split('\n'):
         ln = ln.strip()
         if len(ln) == 0: continue
-        if ln.find(' ') == -1:
+        if True:#ln.find(' ') == -1:
             for thing in ln:
                 print(thing, end='', flush=True)
-                sleep(delayfactor/6)
+                sleep(delayfactor/2.618)
         else:
             for thing in ln.split(' '):
                 print(thing, end=' ', flush=True)
