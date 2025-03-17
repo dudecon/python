@@ -32,9 +32,11 @@ def find_seed(target):
     if target < 0:
         realtarget *= -1
         print(f"please use a positive number next time. Using {realtarget} instead.")
+    if realtarget == 1:
+        return 1
     # now for the actual search
-    curseed = 1
-    while curseed != realtarget:
+    curseed = 2
+    while curseed != realtarget-1:
         if seed_search(curseed,realtarget): break
         curseed += 1
     return curseed
@@ -50,7 +52,7 @@ if __name__ == '__main__':
         return ", ".join(outlist)
 
     found = set()
-    for i in range(201):
+    for i in range(200):
         s = find_seed(i)
         if s in found:
             continue
@@ -62,10 +64,15 @@ if __name__ == '__main__':
         s = find_seed(i)
         if i != s + 1:
             print(f"lowest seed for {i} is {s}")
-    for i in (666,17):
+    for i in (666,17,144,144000):
         s = find_seed(i)
         print(f"lowest seed for {i} is {s}")
-    for j in (1,3,4,5,6,7,8,17,666):
+    for j in (1,3,4,5,6,7,8,17,66,666):
         sequence = gen_sequence(j)
         rebased = convert_sequence(sequence,j)
         print(f"the seed {j} produces {sequence}\nwhich in base {j} is {rebased}")
+    for k in (7,12,17,22,40):
+        s = find_seed(k)
+        sequence = gen_sequence(s)
+        rebased = convert_sequence(sequence, s)
+        print(f"lowest seed for {k} is {s} which produces {sequence}\nwhich in base {s} is {rebased}")
