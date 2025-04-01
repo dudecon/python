@@ -116,11 +116,12 @@ def iterative_search(root: str, needles: list[str], max_depth: int, match_case: 
 
         # Enqueue each starting path and print it if it matches one of the keywords.
         for item in starting_paths:
+                path = os.path.join(root, item)
                 if check_needles(item, needles, match_case, whole_match):
-                        path = os.path.join(root, item)
-                        print("needle found",path)
+                        print(path)
 
                 # Only add to the queue if we are allowed to traverse deeper.
+                if not os.path.isdir(path): continue
                 if max_depth != 1:
                         paths.put(path)
 
@@ -157,10 +158,9 @@ def iterative_search(root: str, needles: list[str], max_depth: int, match_case: 
                                 raise ex
 
                         # If the entry is a directory, check for keyword matches.
+                        # Print the path if its name matches any of the needles.
+                        if check_needles(entry, needles, match_case, whole_match): print(entry_path)
                         if is_dir:
-                                # Print the directory path if its name matches any of the needles.
-                                if check_needles(entry, needles, match_case, whole_match): print(entry_path)
-                                
                                 # Compute the depth relative to the root.
                                 depth = path_depth(entry_path) - root_depth
                                 # If there's no depth limit or the current depth is within the limit, add to the queue.
