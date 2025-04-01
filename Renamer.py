@@ -1,7 +1,7 @@
 # Rename files to add "_"
 # change to "renames" to create directories, separate with '/'
 
-from os import rename, listdir
+from os import rename, listdir, path
 
 dir_path = path.dirname(path.realpath(__file__))
 chdir(dir_path)
