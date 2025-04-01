@@ -62,17 +62,16 @@ def worker_init():
 def check_needles(haystack: str, needles: list[str], match_case: bool, whole_match: bool) -> bool:
         l_haystack = haystack if match_case else haystack.lower()
 
-        needle_found = False
+        needle_found = True
         for needle in needles:
                 n = needle if match_case else needle.lower()
                 if whole_match:
                         if n == l_haystack:
-                                return True
-                                needle_found = True
-                                break
+                                continue
                 elif n in l_haystack:
-                        return True
-                        needle_found = True
+                        continue
+                else:
+                        needle_found = False
                         break
 
         return needle_found
