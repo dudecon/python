@@ -1,4 +1,5 @@
 #!python3
+# breadth first recursive multithreaded file search
 
 import argparse
 import pathlib
