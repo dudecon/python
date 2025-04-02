@@ -97,7 +97,7 @@ def path_depth(p: str) -> int:
                 return len(parts)
 
 
-def iterative_search(root: str, needles: list[str], max_depth: int, match_case: bool, whole_match: bool, match_all: bool, starting_paths: list[str]) -> None:
+def iterative_search(root: str, needles: list[str], max_depth: int, match_case: bool, whole_match: bool, match_all: bool, match_filenames: bool, starting_paths: list[str]) -> None:
         """
     Perform an iterative, breadth-first search through a directory tree starting from the given root,
     looking for directory names that match any of the provided keywords (needles).
@@ -124,10 +124,12 @@ def iterative_search(root: str, needles: list[str], max_depth: int, match_case: 
         # Initialize a queue for breadth-first search using starting paths.
         paths = Queue()
 
-        # Enqueue each starting path and print it if it matches one of the keywords.
+        # Enqueue each starting path and print it if the name matches
         for item in starting_paths:
                 path = os.path.join(root, item)
-                if check_needles(item, needles, match_case, whole_match, match_all): print(path)
+                if check_needles(item, needles, match_case, whole_match, match_all):
+                    if match_filenames or os.path.isdir(path):
+                        print(path)
 
                 # Only add to the queue if we are allowed to traverse deeper.
                 if not os.path.isdir(path): continue
@@ -167,9 +169,11 @@ def iterative_search(root: str, needles: list[str], max_depth: int, match_case: 
                                 debug(f"Encountered exception while attempting to stat {entry_path}")
                                 raise ex
 
-                        # If the entry is a directory, check for keyword matches.
-                        # Print the path if its name matches any of the needles.
-                        if check_needles(entry, needles, match_case, whole_match, match_all): print(entry_path)
+                        # Check for keyword matches.
+                        # Print the path if its name matches
+                        if check_needles(entry, needles, match_case, whole_match, match_all):
+                            if match_filenames or is_dir:
+                                print(entry_path)
                         if is_dir:
                                 # Compute the depth relative to the root.
                                 depth = path_depth(entry_path) - root_depth
@@ -181,7 +185,7 @@ def iterative_search(root: str, needles: list[str], max_depth: int, match_case: 
 
                                 
 
-def do_search(root_path: str, needles: list[str], max_depth: int, match_case: bool, whole_match: bool, match_all: bool, num_procs: int) -> None:
+def do_search(root_path: str, needles: list[str], max_depth: int, match_case: bool, whole_match: bool, match_all: bool, match_filenames: bool, num_procs: int) -> None:
         """
     Conduct a parallel search for directories containing specified keywords (needles)
     within the directory tree starting at the root_path. The search is distributed
@@ -224,7 +228,7 @@ def do_search(root_path: str, needles: list[str], max_depth: int, match_case: bo
                                         vomit(f"Skipping chunk with length {len(chunk)}")
                                         continue
                                 vomit(f"Starting process for chunk with length {len(chunk)}")
-                                result = pool.apply_async(iterative_search, args=[root_path, needles, max_depth, match_case, whole_match, match_all, chunk])
+                                result = pool.apply_async(iterative_search, args=[root_path, needles, max_depth, match_case, whole_match, match_all, match_filenames, chunk])
                                 results.append(result)
 
                         vomit(f"Started {len(results)} subprocesses")
@@ -291,10 +295,10 @@ if __name__ == "__main__":
             
             if parsed_args.procs > 1 and not DEBUG:
                 print(f"Running with {parsed_args.procs} subprocesses.")
-                do_search(root_path, parsed_args.needle, parsed_args.max_depth, parsed_args.match_case, parsed_args.whole_match, parsed_args.match_all, parsed_args.procs)
+                do_search(root_path, parsed_args.needle, parsed_args.max_depth, parsed_args.match_case, parsed_args.whole_match, parsed_args.match_all, parsed_args.match_filenames, parsed_args.procs)
             else:
                 if DEBUG: print(f"{parsed_args.procs} subprocesses available, but running single-threaded.")
-                iterative_search(root_path, parsed_args.needle, parsed_args.max_depth, parsed_args.match_case, parsed_args.whole_match, parsed_args.match_all, os.listdir(parsed_args.path))
+                iterative_search(root_path, parsed_args.needle, parsed_args.max_depth, parsed_args.match_case, parsed_args.whole_match, parsed_args.match_all, parsed_args.match_filenames, os.listdir(parsed_args.path))
             
             if interactive_mode:
                 parsed_args.needle = input("What else are you looking for? ").split(" ")
