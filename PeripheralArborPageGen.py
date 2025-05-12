@@ -1,5 +1,7 @@
 # Python thingies for website gallery page setup
 from random import choice
+from os import chdir, path, listdir
+
 bordcolplt = (0,1,1,2)
 bordcolbs = [0,0,0]
 for i in range(len(bordcolbs)): bordcolbs[i] = choice(bordcolplt)
@@ -12,40 +14,27 @@ WDOP = f"width:{PGWDTH}px; "
 BRDOPBS= "border: 3px solid"
 
 DESCRIPTION = """Placeholder"""
-Image_raw_text = '''
-C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_1.jpg
-C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_2.jpg
-C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_3.jpg
-C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_4.jpg
-C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_5.jpg
-C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_6.jpg
-C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_7.jpg
-C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_8.jpg
-C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_9.jpg
-C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_10.jpg
-C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_11.jpg
-C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_12.jpg
-C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_13.jpg
-C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_14.jpg
-C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_15.jpg
-C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_16.jpg
-C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_17.jpg
-C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_18.jpg
-C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_19.jpg
-C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_20.jpg
-C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_21.jpg
-C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_22.jpg
-C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_23.jpg
-C:/Users/dudec/Pictures/High_Bookshelf/Midjourney/Laser_Decoration_Design_24.jpg
-'''
 
 PARENTCAT = "Life"
 
 DESCRIPTION = DESCRIPTION.strip().replace("\n\n","\n<br>")
-Image_raw_text = Image_raw_text.strip()
+#Image_raw_text = Image_raw_text.strip()
 
-folders = [l.split()[0] for l in Image_raw_text.split(sep='\n') if l.split()[0][-1] == '/']
-images  = [l.split()[0].split(sep='/')[-1] for l in Image_raw_text.split(sep='\n') if l.split()[0][-1] != '/']
+dir_path = path.dirname(path.realpath(__file__))
+chdir(dir_path)
+thesefiles = listdir()
+target = ".jpg"
+tlen = len(target)
+
+images  = []
+for f in thesefiles:
+    if f[-tlen:] == target:
+        # add the image name to the images list
+        images.append(f)
+
+#folders = [l.split()[0] for l in Image_raw_text.split(sep='\n') if l.split()[0][-1] == '/']
+folders = []
+#images  = [l.split()[0].split(sep='/')[-1] for l in Image_raw_text.split(sep='\n') if l.split()[0][-1] != '/']
 #dates   = [l.split()[1] for l in Image_raw_text.split(sep='\n') if l.split()[0][-1] != '/']
 # use the below for files pasted from the local drive
 #images = [l.split(sep='/')[-1] for l in Image_raw_text.split(sep='\n')]
