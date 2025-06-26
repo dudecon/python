@@ -7,6 +7,7 @@
 BASE = 12
 PREC = 8
 GLYPHS = []
+VERBOSE = False
 
 def compute_glyphs(BASE):
     GLYPHS = []
@@ -111,14 +112,17 @@ def b(radix):
     else:
         BASE = int(radix)
     GLYPHS = compute_glyphs(BASE)
-    print(GLYPHS)
+    if VERBOSE: print(GLYPHS)
 
 if __name__ == '__main__':
-    TestConvert = 135.5
-    TestDozenal = rebase(TestConvert)
-    print("{} converted to base {} is".format(TestConvert,BASE), TestDozenal)
-    ConvertedBack = debase(TestDozenal)
-    print("{} in base {} is".format(TestDozenal,BASE), ConvertedBack, "in decimal")
+    TestConvert = 808888888888888888888888888888888888888888888888888888888888888888888888811118888888118888888888888111111111118811188888888888811111188888881111888888888888111188888888111111188888888888111888888811188111188888888888111888881118888811188888888888111188888888888111888888888888811188888888111111888888888888111811111111111188888888888811888881111111188888888888888888888888888888888888888888888888888888888888888888888881
+    for i in range(2,1235):
+        b(i)
+        TestConversion = rebase(TestConvert)
+        ConvLen = len(TestConversion)
+        print("{} converted to base {} is {} digits long: ".format(TestConvert,BASE,ConvLen), TestConversion)
+    ConvertedBack = debase(TestConversion)
+    print("{} in base {} is".format(TestConvert,BASE), ConvertedBack, "in decimal")
     if TestConvert == ConvertedBack: print("success!")
     else: print("Something went wrong")
     print("Call b(base) to set the radix base,\nand PREC to set the precision.\nCall rebase() to convert,\nand debase() to convert back to decimal.")
