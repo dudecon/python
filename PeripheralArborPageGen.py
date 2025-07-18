@@ -94,7 +94,8 @@ def description(instr):
     space_inserts.sort(reverse=True)
     for i in space_inserts:
         outstr = outstr[:i] + ' ' + outstr[i:]
-    outstr = outstr.replace("_","")
+    outstr = outstr.replace("_"," ")
+    outstr = outstr.replace("  "," ")
     return outstr
 
 Output_HTML = Header + Title
