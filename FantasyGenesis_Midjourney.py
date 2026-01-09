@@ -265,7 +265,10 @@ Character_Elements = [Emotions, Actions]
 
 All_Things = [Visual_Elements, Character_Elements]
 
-from random import choice
+from random import choice, randrange
+import webbrowser
+
+Character_Flag = False
 
 def RecurseChoice(Root):
     # Randomly select from nested lists until you get to
@@ -274,10 +277,13 @@ def RecurseChoice(Root):
         return Root
     else:
         Sub_Root = choice(Root)
+        if Sub_Root == Anima:
+            global Character_Flag
+            Character_Flag = True
         return RecurseChoice(Sub_Root)
 
 #Choose one from each category
-'''
+
 print("Anima: ", end='')
 print(RecurseChoice(Anima))
 print("Veggie: ", end='')
@@ -290,19 +296,48 @@ print(RecurseChoice(Techne))
 print("Emotions: ", end='')
 print(RecurseChoice(Emotions))
 print("Actions: ", end='')
-print(RecurseChoice(Actions))'''
+print(RecurseChoice(Actions))
 
 def repl(text):
     result = text.replace(": ","-").replace(", ","-").replace(" ","-")
     return result
 
 def generate_prompt():
+    global Character_Flag
+    Character_Flag = False
+    WeirdStyle = randrange(80,300)
     visual = repl(RecurseChoice( Visual_Elements )    )
     style  = repl(RecurseChoice( Visual_Elements )    )
-    mood   = repl(RecurseChoice( Character_Elements ) )
-    prompt = f"form of {visual} made of {style} with the mood {mood}, in the style of concept art, fantasy genesis --s 150 --ar 16:9 --c 5 --q 0.5"
+    if Character_Flag:
+        mood   = repl(RecurseChoice( Character_Elements ) )
+        charinfo   = f' with the character mood {mood},'
+        exclude = " character"
+        shape = "character"
+    else:
+        charinfo = f''
+        exclude = " --no characters, people"
+        shape = "shape"
+    prompt = f"concept art of a {visual} {shape}, all parts and surfaces made of {style},{charinfo} in the style of concept art, fantasy genesis{exclude} --c 5 --ar 16:9 --s {WeirdStyle} --weird {WeirdStyle} --draft"
     print(prompt)
-    input("copy it and press Enter for another")
+
+    try:
+        from tkinter import Tk
+        r = Tk()
+        r.withdraw()
+        r.clipboard_clear()
+        r.clipboard_append(prompt)
+        r.update()
+        r.destroy()
+        print("→ Copied to clipboard!")
+    except:
+        print("→ Couldn't copy to clipboard (tkinter issue)")
+
+    try:
+        webbrowser.open("https://www.midjourney.com/imagine")
+    except:
+        print("→ Couldn't open Midjourney.")
+    
+    input("press Enter for another")
 
 
 if __name__ == '__main__':
