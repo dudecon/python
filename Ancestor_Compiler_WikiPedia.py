@@ -24,6 +24,8 @@ INTERFACEHINT += "\nSave (and exit)\nFather, Mother, Born, Died"
 # Version History
 # V 0.1 2021-11-29  Worked on it
 
+if VERBOSE: print(SAVEFILE)
+
 
 from urllib.request import urlopen
 import webbrowser
@@ -631,7 +633,9 @@ def loadfile():
         Total_Pedigree = eval(alldata)
         if VERBOSE: print('file loaded')
     except:
-        if VERBOSE: print('exception found')
+        if VERBOSE: print('exception found while loading file')
+        raise
+
         Total_Pedigree = {}
     if VERBOSE:
         lnpd = len(Total_Pedigree)
