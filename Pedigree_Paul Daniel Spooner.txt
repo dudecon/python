@@ -2378,6 +2378,12 @@
 
 'Halvor Helgeson': {'nm': 'Halvor Helgeson', 'b': '1846', 'yb': 1846, 'd': '1920', 'yd': 1920, 'f': 'unknown', 'g': 1},
 
+'Esther Onstad': {'nm': 'Esther Onstad', 'b': 'c. 1880', 'yb': 1880, 'f': 'Peter Aanstad', 'm': 'Ingrid Christianson', 'g': 0},
+
+'Oliver Onstad': {'nm': 'Oliver Onstad', 'b': 'c. 1882', 'yb': 1882, 'f': 'Peter Aanstad', 'm': 'Ingrid Christianson', 'g': 1},
+
+'Unga Onstad': {'nm': 'Unga Onstad', 'b': 'c. 1885', 'yb': 1885, 'f': 'Peter Aanstad', 'm': 'Ingrid Christianson', 'g': 0},
+
 'Paul Martin Onstad': {'nm': 'Paul Martin Onstad', 'b': '18 Aug 1888', 'yb': 1888, 'd': '3 May, 1971', 'yd': 1971, 'f': 'Peter Aanstad', 'm': 'Ingrid Christianson', 'g': 1},
 
 'Ingrid Christianson': {'nm': 'Ingrid Christianson', 'd': '1893', 'yd': 1893, 'f': 'unknown', 'g': 0},
