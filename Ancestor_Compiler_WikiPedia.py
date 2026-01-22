@@ -623,6 +623,7 @@ def aveGeneration(TP):
 
 Total_Pedigree = {}
 
+import traceback
 
 def loadfile():
     global Total_Pedigree
@@ -633,8 +634,10 @@ def loadfile():
         Total_Pedigree = eval(alldata)
         if VERBOSE: print('file loaded')
     except:
-        if VERBOSE: print('exception found while loading file')
-        raise
+        if VERBOSE:
+            print('exception found while loading file')
+            traceback.print_exc()
+            #raise
 
         Total_Pedigree = {}
     if VERBOSE:
