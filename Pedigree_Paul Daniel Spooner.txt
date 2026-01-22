@@ -2246,11 +2246,11 @@
 
 'George P. Heddon': {'nm': 'George P. Heddon', 'b': '27 Mar 1873', 'd': '6 Mar 1916', 'g': 1, 'yb': 1873, 'yd': 1916, 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy'},
 
-'Clara E. Heddon': {'nm': 'Clara Ellen Heddon', 'b': '1874', 'g': 0, 'yb': 1874 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy'},
+'Clara E. Heddon': {'nm': 'Clara Ellen Heddon', 'b': '1874', 'g': 0, 'yb': 1874, 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy'},
 
 'Arthur Percival Heddon': {'nm': 'Arthur Percival Heddon', 'b': '21 Jan 1877', 'd': '5 May 1952', 'g': 1, 'yb': 1877, 'yd': 1952, 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy'},
 
-'Erma A. Heddon': {'nm': 'Erma A. Heddon', 'b': '1878', 'g': 0, 'yb': 1878 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy'},
+'Erma A. Heddon': {'nm': 'Erma A. Heddon', 'b': '1878', 'g': 0, 'yb': 1878, 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy'},
 
 'Lewis Herbert Heddon': {'nm': 'Lewis Herbert Heddon', 'b': 'Michigan, 7 Oct 1885', 'd': 'Michigan, United States, 1957', 'g': 1, 'yb': 1885, 'yd': 1957, 'f': 'Cyrus Peter Heddon', 'm': 'Mary R. McCoy'},
 
