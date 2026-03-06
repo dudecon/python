@@ -23,6 +23,7 @@ INTERFACEHINT += "\nSave (and exit)\nFather, Mother, Born, Died"
 
 # Version History
 # V 0.1 2021-11-29  Worked on it
+# V 0.2 2026-03-06  More Progress
 
 if VERBOSE: print(SAVEFILE)
 
@@ -30,9 +31,15 @@ if VERBOSE: print(SAVEFILE)
 from urllib.request import urlopen
 import webbrowser
 
+import os
+from pathlib import Path
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+os.chdir(SCRIPT_DIR)
+
 
 def tgx(st, strt, endt):
-    # excise all text between all occurrances of the tag pairs
+    """Remove all substrings between strt and endt (inclusive) repeatedly."""
     while True:
         stpos = st.find(strt)
         if stpos == -1: break
@@ -44,7 +51,7 @@ def tgx(st, strt, endt):
 
 
 def tgcts(st, tg):
-    # return the text enclosed by a tag
+    """Extract text content between the first <tg> and </tg> tags."""
     strt = f"<{tg}"
     endt = f"</{tg}>"
     stpos = st.find(strt)
@@ -57,7 +64,7 @@ def tgcts(st, tg):
 
 
 def alltgcts(st, tg):
-    # return a list of all the text enclosed by the specified tag
+    """Return list of all text contents enclosed by <tg>...</tg> tags."""
     strt = f"<{tg}"
     endt = f"</{tg}>"
     stpos = st.find(strt)
@@ -73,7 +80,7 @@ def alltgcts(st, tg):
 
 
 def cln(st):
-    # clean out markup elements
+    """Strip HTML-like tags, scripts, styles, and normalize whitespace."""
     precull = ('\t',)
     excice = ('head', 'script', 'footer', 'sup', 'noscript', 'nav', 'form', 'cite', 'ol')
     detag = ('html', 'div', 'body', '!DOCTYPE', 'a', '!--', 'img', 'style',
@@ -105,6 +112,7 @@ def cln(st):
 
 
 def extract_dates(p):
+    """Convert raw birth/death strings → cleaned string + year (if possible)."""
     for dk in ('b', 'd'):
         yk = 'y'+dk
         if (dk in p) and (yk not in p):
@@ -114,6 +122,10 @@ def extract_dates(p):
 
 
 def getwikiperson(Url_Name):
+    """
+    Fetch and parse Wikipedia page for a person.
+    Returns dict with name, url, birth, death, father, mother, saint info (if applicable).
+    """
     PIF = {'nm': Url_Name}
     # placeholder in case the site search fails for some reason
     try:
@@ -232,6 +244,10 @@ def getwikiperson(Url_Name):
 
 
 def dataentry(p):
+    """
+    Interactive prompt to fill in missing parent / date information for a person.
+    Returns 'y' if user chooses to save and exit, otherwise None/'n'.
+    """
     validkeys = ("f", "m", "b", "d", "yb", "yd", "nm")
 
     def processkey(k, desc, numeric=False):
@@ -294,6 +310,7 @@ def dataentry(p):
 
 
 def prinfo(p, gen):
+    """Print formatted ancestor relationship line (with optional browser open)."""
     st = ''
     fst = ''
     nm = p['nm']
@@ -318,6 +335,7 @@ def prinfo(p, gen):
 
 
 def DepthOfPedigree(u, Ped, d=0):
+    """Return deepest known ancestor name and its generation depth."""
     totaldepth = d
     deepu = u
     if u == 'unknown': return 'u', 0
@@ -334,6 +352,7 @@ def DepthOfPedigree(u, Ped, d=0):
 
 
 def OldestInPedigree(u, Ped):
+    """Return person with earliest known birth/death year and that year."""
     dtks = ('yb', 'yd')
     smallest_date = 9999
     if u not in Ped: return u, smallest_date
@@ -354,6 +373,10 @@ def OldestInPedigree(u, Ped):
 
 
 def FindInPedigree(u, Ped, name='', d=0, children=None, found=None):
+    """
+    Search pedigree for matching names or saints and print relationship paths.
+    When name='', searches for anyone marked as a saint.
+    """
     if children is None: children = set()
     if found is None: found = {}
     if DEPTH < d:
@@ -397,6 +420,10 @@ def FindInPedigree(u, Ped, name='', d=0, children=None, found=None):
 
 
 def RecurPedigree(u="", Ped=None, d=0, children=None, curgender=1):
+    """
+    Recursively build/extend pedigree starting from u.
+    Returns 's' if user saved & exited during data entry.
+    """
     if Ped is None: Ped = {}
     if children is None: children = set()
     if DEPTH < d:
@@ -438,6 +465,10 @@ def RecurPedigree(u="", Ped=None, d=0, children=None, curgender=1):
 
 
 def gatherdata(tp):
+    """
+    Main data collection loop: recurse + interactively fill missing parents.
+    Returns True if user chose to save & exit.
+    """
     if RecurPedigree(ROOT_NAME, tp, 0, set()) == 's': return True
     print(len(tp), "people recorded")
     print("hand-check the following dead-ends")
@@ -463,6 +494,7 @@ def gatherdata(tp):
 
 
 def checksaints(tp):
+    """Check Wikipedia pages for saint status and ask user for feast day if found."""
     for nm in tp:
         p = tp[nm]
         if 'saint' in p: continue
@@ -491,6 +523,7 @@ def checksaints(tp):
 
 
 def cleandate(datea):
+    """Clean date string and attempt to extract 4-digit year."""
     datea = datea.strip()
     datea = tgx(datea, '(', ')')
     datea = datea.replace('&#8211;', '-')
@@ -547,6 +580,7 @@ def cleandate(datea):
 
 
 def finddatesinname(p):
+    """Look for 'born'/'died' in name or URL and prompt for dates if found."""
     searchstrings = {'died': 'yd', 'born': 'yb'}
     searchinfo = [p['nm']]
     if 'url' in p: searchinfo.append(p['url'])
@@ -563,6 +597,7 @@ def finddatesinname(p):
 
 
 def reprocess(tp):
+    """Extract dates, fix name→parent confusion, report duplicate names."""
     AllNames = {}
     for u in tp:
         p = tp[u]
@@ -592,6 +627,7 @@ def reprocess(tp):
 
 
 def randcestor(tp):
+    """Open random ancestor Wikipedia page and show their relationship to the root."""
     allurls = []
     for u in tp:
         p = tp[u]
@@ -605,6 +641,11 @@ def randcestor(tp):
 
 
 def aveGeneration(TP):
+    """
+    Calculate average father/mother age at child's birth and average lifespan.
+    Returns tuple: (mother avg age at birth, father avg age at birth,
+                    women avg lifespan, men avg lifespan)
+    """
     dtk = 'yb'
     entriesbygender = [0, 0, 0, 0]
     sumbygender = [0, 0, 0, 0]
@@ -637,6 +678,7 @@ Total_Pedigree = {}
 import traceback
 
 def loadfile():
+    """Load pedigree dictionary from SAVEFILE (eval-based NOT SECURE)."""
     global Total_Pedigree
     try:
         f = open(SAVEFILE, 'r')
@@ -657,6 +699,7 @@ def loadfile():
 
 
 def savefile():
+    """Save pedigree dictionary to SAVEFILE in readable-ish format."""
     out = str(Total_Pedigree)
     out = out.replace("}, ", "},\n\n")
     out = out.encode('ascii', 'ignore')
