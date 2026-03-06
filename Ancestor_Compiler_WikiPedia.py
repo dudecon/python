@@ -245,11 +245,21 @@ def dataentry(p):
         p[k] = intermediate
 
     saveandexit = ''
+    if 0:# ('f' not in p) and ('m' not in p):
+        print("unknown parentage")
+        p['f'] = 'unknown'
+        return 'n'
+    if 0:# len(p['nm'].split()) < 2:
+        p['nm'] = p['nm'] + " (obscure)"
+
+    
     if p['nm'][-7:] == "bscure)":
         print("Obscure Figure")
         p['f'] = 'unknown'
         if 'url' in p: del (p['url'])
         return 'n'
+
+    
     for k in validkeys:
         if k in p: print(k, "is", p[k])
     while not saveandexit == 'y':
@@ -440,9 +450,10 @@ def gatherdata(tp):
             if ('f' not in p) and ('m' not in p):
                 if 'url' in p:
                     if UseWebBrowser: webbrowser.open(SITE + p['url'])
-                else:
+                elif "(obscure)" in nm:
                     continue
                 needdata = True
+                print("Entry",nm,"needs data:")
                 saveandexit = dataentry(p)
             if saveandexit == 'y': return True
         if needdata:

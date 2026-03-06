@@ -20,7 +20,7 @@
 
 'Joan_of_Lancaster': {'nm': 'Joan of Lancaster', 'url': 'Joan_of_Lancaster', 'b': 'Norfolk, England, c. 1312', 'd': 'Yorkshire, England, 7 July 1349', 'g': 0, 's': 'n', 'yb': 1312, 'yd': 1349, 'f': 'Henry,_3rd_Earl_of_Lancaster', 'm': 'Maud_Chaworth'},
 
-'Elizabeth de Segrave': {'nm': 'Elizabeth de Segrave', 'g': 0},
+'Elizabeth de Segrave': {'nm': 'Elizabeth de Segrave', 'g': 0, 'f': 'unknown'},
 
 'Elizabeth_Fitzalan,_Duchess_of_Norfolk': {'nm': 'Elizabeth Fitzalan, Duchess of Norfolk', 'url': 'Elizabeth_Fitzalan,_Duchess_of_Norfolk', 'g': 0, 's': 'n', 'f': 'Richard_FitzAlan,_11th_Earl_of_Arundel', 'm': 'Elizabeth_de_Bohun'},
 
@@ -46,7 +46,7 @@
 
 'John_de_Mowbray,_2nd_Baron_Mowbray': {'nm': 'John de Mowbray, 2nd Baron Mowbray', 'url': 'John_de_Mowbray,_2nd_Baron_Mowbray', 'b': '4 September 1286', 'd': '23 March 1322', 'g': 1, 's': 'n', 'yb': 1286, 'yd': 1322, 'f': 'Roger_de_Mowbray,_1st_Baron_Mowbray'},
 
-'Aline de Brewes': {'nm': 'Aline de Brewes', 'g': 0},
+'Aline de Brewes': {'nm': 'Aline de Brewes', 'g': 0, 'f': 'unknown'},
 
 'Henry,_3rd_Earl_of_Lancaster': {'nm': 'Henry, 3rd Earl of Lancaster', 'url': 'Henry,_3rd_Earl_of_Lancaster', 'b': 'c. 1281', 'd': 'Leicester Castle, 22 September 1345', 'g': 1, 's': 'n', 'yb': 1281, 'yd': 1345, 'f': 'Edmund_Crouchback', 'm': 'Blanche_of_Artois'},
 
@@ -104,7 +104,7 @@
 
 'Adelais_of_Amboise': {'nm': 'Adelais of Amboise', 'url': 'Adelais_of_Amboise', 'b': 'c. 840', 'g': 0, 's': 'n', 'yb': 840, 'f': 'unknown', 'm': 'unknown'},
 
-'Roscille de Lochar': {'nm': 'Roscille de Lochar', 'g': 0},
+'Roscille de Lochar': {'nm': 'Roscille de Lochar', 'g': 0, 'f': 'unknown'},
 
 'Gerberge (obscure)': {'nm': 'Gerberga', 'g': 0},
 
@@ -150,17 +150,17 @@
 
 'Gerold_of_Vinzgau': {'nm': 'Gerold of Vinzgau', 'url': 'Gerold_of_Vinzgau', 'b': '725', 'd': '799', 'g': 1, 's': 'n', 'yb': 725, 'yd': 799, 'f': 'unknown'},
 
-'Emma of Alemannia': {'nm': 'Emma of Alemannia', 'g': 0},
+'Emma of Alemannia': {'nm': 'Emma of Alemannia', 'g': 0, 'f': 'unknown'},
 
-'Cunigunda of Laon': {'nm': 'Cunigunda of Laon', 'g': 0},
+'Cunigunda of Laon': {'nm': 'Cunigunda of Laon', 'g': 0, 'f': 'unknown'},
 
 'Bertha (obscure)': {'nm': 'Bertha', 'g': 0},
 
-'Adele of France': {'nm': 'Adele of France', 'g': 0},
+'Adele of France': {'nm': 'Adele of France', 'g': 0, 'f': 'unknown'},
 
-'Adelaide-Werra de Chalon': {'nm': 'Adelaide-Werra de Chalon', 'g': 0},
+'Adelaide-Werra de Chalon': {'nm': 'Adelaide-Werra de Chalon', 'g': 0, 'f': 'unknown'},
 
-'Hildegarde of Sundgau': {'nm': 'Hildegarde of Sundgau', 'g': 0},
+'Hildegarde of Sundgau': {'nm': 'Hildegarde of Sundgau', 'g': 0, 'f': 'unknown'},
 
 'Bertrade_de_Montfort': {'nm': 'Bertrade of Montfort', 'url': 'Bertrade_de_Montfort', 'b': 'c. 1070', 'd': '14 February 1117', 'g': 0, 's': 'n', 'yb': 1070, 'yd': 1117, 'f': 'Simon_I_de_Montfort', 'm': 'Agnes of Evreux'},
 
@@ -174,7 +174,7 @@
 
 'Bertrade (obscure)': {'nm': 'Bertrade', 'g': 0},
 
-'Agnes of Evreux': {'nm': 'Agnes of Evreux', 'g': 0},
+'Agnes of Evreux': {'nm': 'Agnes of Evreux', 'g': 0, 'f': 'unknown'},
 
 'Ermengarde,_Countess_of_Maine': {'nm': 'Eremburga of Maine', 'url': 'Ermengarde,_Countess_of_Maine', 'b': 'c.  1096', 'd': '15 January or 12 October 1126', 'g': 0, 's': 'n', 'yb': 1096, 'yd': 1126, 'f': 'Elias_I,_Count_of_Maine', 'm': 'Mathilda of Chteau-du-Loire'},
 
@@ -182,9 +182,9 @@
 
 'Jean_de_la_Fl%C3%A8che': {'nm': 'Jean de la Flche', 'url': 'Jean_de_la_Fl%C3%A8che', 'b': 'c. 1030', 'd': 'c. 1097', 'g': 1, 's': 'n', 'yb': 1030, 'yd': 1097, 'f': 'Lancelin I de Beaugency', 'm': 'Adelberg de Maine'},
 
-'Paula of Maine': {'nm': 'Paula of Maine', 'g': 0},
+'Paula of Maine': {'nm': 'Paula of Maine', 'g': 0, 'f': 'unknown'},
 
-'Mathilda of Chteau-du-Loire': {'nm': 'Mathilda of Chteau-du-Loire', 'g': 0},
+'Mathilda of Chteau-du-Loire': {'nm': 'Mathilda of Chteau-du-Loire', 'g': 0, 'f': 'unknown'},
 
 'Empress_Matilda': {'nm': 'Empress Matilda', 'url': 'Empress_Matilda', 'b': 'Possibly Winchester or Sutton Courtenay, England, c. 7 February 1102', 'd': 'Rouen, France, 10 September 1167', 'g': 0, 's': 'n', 'yb': 1102, 'yd': 1167, 'f': 'Henry_I,_King_of_England', 'm': 'Matilda_of_Scotland'},
 
@@ -206,7 +206,7 @@
 
 'Berengar_II_of_Neustria': {'nm': 'Berengar II of Neustria', 'url': 'Berengar_II_of_Neustria', 'g': 1, 's': 'n', 'f': 'unknown'},
 
-'Adelind, Adela of Vermandois or Cunegundis': {'nm': 'Adelind, Adela of Vermandois or Cunegundis', 'g': 0},
+'Adelind, Adela of Vermandois or Cunegundis': {'nm': 'Adelind, Adela of Vermandois or Cunegundis', 'g': 0, 'f': 'unknown'},
 
 'Sprota': {'nm': 'Sprota', 'url': 'Sprota', 'g': 0, 's': 'n', 'f': 'unknown'},
 
@@ -266,7 +266,7 @@
 
 'Leuthard_I_of_Paris': {'nm': 'Leuthard I of Paris', 'url': 'Leuthard_I_of_Paris', 'b': 'before 781', 'd': 'before 28 December 815', 'g': 1, 's': 'n', 'yb': 781, 'yd': 815, 'f': 'Gerard_I_of_Paris', 'm': 'Rotrude'},
 
-'Grimhilda': {'nm': 'Grimhilda', 'g': 0},
+'Grimhilda': {'nm': 'Grimhilda', 'g': 0, 'f': 'unknown'},
 
 '%C3%86lfthryth,_Countess_of_Flanders': {'nm': 'lfthryth, Countess of Flanders', 'url': '%C3%86lfthryth,_Countess_of_Flanders', 'b': 'c. 877', 'd': '7 June 929', 'g': 0, 's': 'n', 'yb': 877, 'yd': 929, 'f': 'Alfred_the_Great', 'm': 'Ealhswith'},
 
@@ -294,15 +294,15 @@
 
 'Adele_of_Vermandois': {'nm': 'Adele of Vermandois', 'url': 'Adele_of_Vermandois', 'b': 'c. 910-915', 'd': 'Bruges, 960', 'g': 0, 's': 'n', 'yb': 915, 'yd': 960, 'f': 'Herbert_II,_Count_of_Vermandois', 'm': 'Adle'},
 
-'Adle': {'nm': 'Adle', 'g': 0},
+'Adle': {'nm': 'Adle (obscure)', 'g': 0, 'f': 'unknown'},
 
 'Matilda_of_Saxony,_countess_of_Flanders': {'nm': 'Matilda of Saxony, countess of Flanders', 'url': 'Matilda_of_Saxony,_countess_of_Flanders', 'b': 'c. 935-942', 'd': 'Ghent, 25 May 1008', 'g': 0, 's': 'n', 'yb': 942, 'yd': 1008, 'f': 'Hermann_Billung'},
 
 'Hermann_Billung': {'nm': 'Hermann Billung', 'url': 'Hermann_Billung', 'b': 'c. 900/912', 'd': 'Quedlinburg, 27 March 973', 'g': 1, 's': 'n', 'yb': 912, 'yd': 973, 'f': 'Billung von Stubenskorn', 'm': 'Ermengarde of Nantes'},
 
-'Billung von Stubenskorn': {'nm': 'Billung von Stubenskorn', 'g': 1},
+'Billung von Stubenskorn': {'nm': 'Billung von Stubenskorn', 'g': 1, 'f': 'unknown'},
 
-'Ermengarde of Nantes': {'nm': 'Ermengarde of Nantes', 'g': 0},
+'Ermengarde of Nantes': {'nm': 'Ermengarde of Nantes', 'g': 0, 'f': 'unknown'},
 
 'Rozala_of_Italy': {'nm': 'Rozala of Italy', 'url': 'Rozala_of_Italy', 'b': 'c. 950-960', 'd': 'Ghent, 1003', 'g': 0, 's': 'n', 'yb': 960, 'yd': 1003, 'f': 'Berengar_II_of_Italy', 'm': 'Willa_of_Tuscany'},
 
@@ -384,13 +384,13 @@
 
 'Gisela (obscure)': {'nm': 'Gisela', 'g': 0},
 
-'Oda of Billung': {'nm': 'Oda of Billung', 'g': 0},
+'Oda of Billung': {'nm': 'Oda of Billung', 'g': 0, 'f': 'unknown'},
 
 'Hedwig_of_Babenberg': {'nm': 'Hedwig of Babenberg', 'url': 'Hedwig_of_Babenberg', 'd': '24 December 903', 'g': 0, 's': 'n', 'yd': 903, 'f': 'Henry_of_Franconia', 'm': 'Ingeltrude'},
 
 'Henry_of_Franconia': {'nm': 'Henry, Margrave of the Franks', 'url': 'Henry_of_Franconia', 'd': '28 August 886', 'g': 1, 's': 'n', 'yd': 886, 'f': 'unknown'},
 
-'Ingeltrude wife of Henry': {'nm': 'Ingeltrude', 'g': 0},
+'Ingeltrude wife of Henry': {'nm': 'Ingeltrude', 'g': 0, 'f': 'unknown'},
 
 'Matilda_of_Ringelheim': {'nm': 'Matilda of Ringelheim', 'url': 'Matilda_of_Ringelheim', 'b': 'Enger, Saxony,East Francia, c. 892', 'd': 'Quedlinburg, Saxony,Holy Roman Empire, 14 March 968', 'g': 0, 's': '14 March', 'yb': 892, 'yd': 968, 'f': 'Dietrich_of_Ringelheim', 'm': 'Reinhild'},
 
@@ -402,7 +402,7 @@
 
 'Ranulf_II_of_Aquitaine': {'nm': 'Ranulf II of Aquitaine', 'url': 'Ranulf_II_of_Aquitaine', 'b': 'c. 850', 'd': '5 August 890', 'g': 1, 's': 'n', 'yb': 850, 'yd': 890, 'f': 'Ranulf_I_of_Aquitaine', 'm': 'Rorgon_I,_Count_of_Maine'},
 
-'Emilienne': {'nm': 'Emilienne', 'g': 0},
+'Emilienne': {'nm': 'Emilienne (obscure)', 'g': 0, 'f': 'unknown'},
 
 'Gerloc': {'nm': 'Gerloc', 'url': 'Gerloc', 'b': '912', 'd': '14 October 962', 'g': 0, 's': 'n', 'yb': 912, 'yd': 962, 'f': 'Rollo', 'm': 'Poppa_of_Bayeux'},
 
@@ -434,7 +434,7 @@
 
 'Kenneth_MacAlpin': {'nm': 'Kenneth MacAlpin', 'url': 'Kenneth_MacAlpin', 'b': 'Iona, 810', 'd': 'Forteviot, Perthshire, Scotland, February 13, 858', 'g': 1, 's': 'n', 'yb': 810, 'yd': 858, 'f': 'Alp%C3%ADn_mac_Echdach'},
 
-'Suthen': {'nm': 'Suthen', 'g': 0},
+'Suthen': {'nm': 'Suthen (obscure)', 'g': 0, 'f': 'unknown'},
 
 'Margaret_of_Wessex': {'nm': 'Saint Margaret of Scotland', 'url': 'Margaret_of_Wessex', 'b': 'Kingdom of Hungary, c. 1045', 'd': 'Edinburgh Castle, Edinburgh, Kingdom of Scotland, 16 November 1093', 'g': 0, 's': '16 November or 10 June', 'yb': 1045, 'yd': 1093, 'f': 'Edward_the_Exile', 'm': 'Agatha,_wife_of_Edward_the_Exile'},
 
@@ -490,7 +490,7 @@
 
 'Theobald_the_Elder': {'nm': 'Theobald the Elder', 'url': 'Theobald_the_Elder', 'b': 'France, c.890', 'd': 'France, c.940', 'g': 1, 's': 'n', 'yb': 890, 'yd': 940, 'f': 'unknown'},
 
-'Richende De Bourges': {'nm': 'Richende De Bourges', 'g': 0},
+'Richende De Bourges': {'nm': 'Richende De Bourges', 'g': 0, 'f': 'unknown'},
 
 'Luitgarde_of_Vermandois': {'nm': 'Luitgarde of Vermandois', 'url': 'Luitgarde_of_Vermandois', 'b': 'c. 914', 'd': '9 February 978', 'g': 0, 's': 'n', 'yb': 914, 'yd': 978, 'f': 'Herbert_II,_Count_of_Vermandois', 'm': 'Adele of France'},
 
@@ -504,7 +504,7 @@
 
 'Lambert_of_Chalon': {'nm': 'Lambert of Chalon', 'url': 'Lambert_of_Chalon', 'b': 'before 930', 'd': '22 February 978', 'g': 1, 's': 'n', 'yb': 930, 'yd': 978, 'f': 'Robert of Dijon', 'm': 'Ingeltrude wife of Robert'},
 
-'Ingeltrude wife of Robert': {'nm': 'Ingeltrude', 'g': 0},
+'Ingeltrude wife of Robert': {'nm': 'Ingeltrude', 'g': 0, 'f': 'unknown'},
 
 'Adelaide (obscure)': {'nm': 'Adelaide', 'g': 0},
 
@@ -512,7 +512,7 @@
 
 'Renaud_of_Roucy': {'nm': 'Renaud of Roucy', 'url': 'Renaud_of_Roucy', 'b': 'c. 920', 'd': '10 May 967', 'g': 1, 's': 'n', 'yb': 920, 'yd': 967, 'f': 'unknown'},
 
-'Alberade of Lorraine': {'nm': 'Alberade of Lorraine', 'g': 0},
+'Alberade of Lorraine': {'nm': 'Alberade of Lorraine', 'g': 0, 'f': 'unknown'},
 
 'Hildegarde_of_Burgundy': {'nm': 'Hildegarde of Burgundy', 'url': 'Hildegarde_of_Burgundy', 'g': 0, 's': 'n', 'f': 'unknown'},
 
@@ -534,35 +534,35 @@
 
 'Boson_II_of_Arles': {'nm': 'Boso II of Arles', 'url': 'Boson_II_of_Arles', 'b': '928', 'd': '967', 'g': 1, 's': 'n', 'yb': 928, 'yd': 967, 'f': 'Rotbald of Agel'},
 
-'Rotbald of Agel': {'nm': 'Rotbald of Agel', 'g': 1},
+'Rotbald of Agel': {'nm': 'Rotbald of Agel', 'g': 1, 'f': 'unknown'},
 
-'Constance of Vienne': {'nm': 'Constance of Vienne', 'g': 0},
+'Constance of Vienne': {'nm': 'Constance of Vienne', 'g': 0, 'f': 'unknown'},
 
-'Emilde of Gvaudan': {'nm': 'Emilde of Gvaudan', 'g': 0},
+'Emilde of Gvaudan': {'nm': 'Emilde of Gvaudan', 'g': 0, 'f': 'unknown'},
 
 'Ermengarde_of_Burgundy': {'nm': 'Ermengarde of Burgundy', 'url': 'Ermengarde_of_Burgundy', 'b': 'c. 990', 'd': 'after September 20, 1057', 'g': 0, 's': 'n', 'yb': 990, 'yd': 1057, 'f': 'unknown'},
 
 'Almodis_of_La_Marche': {'nm': 'Almodis of La Marche', 'url': 'Almodis_of_La_Marche', 'b': 'c. 1020', 'd': '1071', 'g': 0, 's': 'n', 'yb': 1020, 'yd': 1071, 'f': 'Bernard I, Count of Marche', 'm': 'Amlie'},
 
-'Bernard I, Count of Marche': {'nm': 'Bernard I, Count of Marche', 'g': 1},
+'Bernard I, Count of Marche': {'nm': 'Bernard I, Count of Marche', 'g': 1, 'f': 'unknown'},
 
-'Amlie': {'nm': 'Amlie', 'g': 0},
+'Amlie': {'nm': 'Amlie (obscure)', 'g': 0, 'f': 'unknown'},
 
-'Emma of Mortain': {'nm': 'Emma of Mortain', 'g': 0},
+'Emma of Mortain': {'nm': 'Emma of Mortain', 'g': 0, 'f': 'unknown'},
 
 'A%C3%A9nor_de_Ch%C3%A2tellerault': {'nm': 'Anor de Chtellerault', 'url': 'A%C3%A9nor_de_Ch%C3%A2tellerault', 'b': 'Chtellerault, c. 1103', 'd': 'Talmont, March 1130', 'g': 0, 's': 'n', 'yb': 1103, 'yd': 1130, 'f': 'Aimery_I,_Viscount_of_Ch%C3%A2tellerault', 'm': 'Dangereuse_de_L%27Isle_Bouchard'},
 
 'Aimery_I,_Viscount_of_Ch%C3%A2tellerault': {'nm': 'Aimery I, Viscount of Chtellerault', 'url': 'Aimery_I,_Viscount_of_Ch%C3%A2tellerault', 'b': 'c. 1075', 'd': 'Notre-Dame de Noyers monastery, in Noutre, 7 November 1151', 'g': 1, 's': 'n', 'yb': 1075, 'yd': 1151, 'f': 'Boson II de Chtellerault', 'm': 'Aleanor de Thouars'},
 
-'Boson II de Chtellerault': {'nm': 'Boson II de Chtellerault', 'g': 1},
+'Boson II de Chtellerault': {'nm': 'Boson II de Chtellerault', 'g': 1, 'f': 'unknown'},
 
-'Aleanor de Thouars': {'nm': 'Aleanor de Thouars', 'g': 0},
+'Aleanor de Thouars': {'nm': 'Aleanor de Thouars', 'g': 0, 'f': 'unknown'},
 
 'Dangereuse_de_L%27Isle_Bouchard': {'nm': "Dangereuse de l'Isle Bouchard", 'url': 'Dangereuse_de_L%27Isle_Bouchard', 'b': '1079', 'd': '1151', 'g': 0, 's': 'n', 'yb': 1079, 'yd': 1151, 'f': "Bartholomew de l'Isle Bouchard", 'm': 'Gerberge de Blaison'},
 
-"Bartholomew de l'Isle Bouchard": {'nm': "Bartholomew de l'Isle Bouchard", 'g': 1},
+"Bartholomew de l'Isle Bouchard": {'nm': "Bartholomew de l'Isle Bouchard", 'g': 1, 'f': 'unknown'},
 
-'Gerberge de Blaison': {'nm': 'Gerberge de Blaison', 'g': 0},
+'Gerberge de Blaison': {'nm': 'Gerberge de Blaison', 'g': 0, 'f': 'unknown'},
 
 'Isabella_of_Angoul%C3%AAme': {'nm': 'Isabella of Angoulme', 'url': 'Isabella_of_Angoul%C3%AAme', 'b': 'c. 1186/c. 1188', 'd': 'Fontevraud Abbey, France, 4 June 1246', 'g': 0, 's': 'n', 'yb': 1188, 'yd': 1246, 'f': 'Aymer,_Count_of_Angoul%C3%AAme', 'm': 'Alice_of_Courtenay'},
 
@@ -610,11 +610,11 @@
 
 'Geva': {'nm': 'Geva(obscure)', 'g': 0, 'f': 'unknown'},
 
-'Hildegarde of Flanders': {'nm': 'Hildegarde of Flanders', 'g': 0},
+'Hildegarde of Flanders': {'nm': 'Hildegarde of Flanders', 'g': 0, 'f': 'unknown'},
 
 'Bernard,_Margrave_of_the_Nordmark': {'nm': 'Bernard, Margrave of the Nordmark', 'url': 'Bernard,_Margrave_of_the_Nordmark', 'd': '1051', 'g': 0, 's': 'n', 'yd': 1051, 'f': 'Bernard I'},
 
-'Bernard I': {'nm': 'Bernard I', 'g': 1},
+'Bernard I': {'nm': 'Bernard I', 'g': 1, 'f': 'unknown'},
 
 'Gertrude_of_Saxony': {'nm': 'Gertrude of Saxony', 'url': 'Gertrude_of_Saxony', 'b': 'c. 1030', 'd': '4 August 1113', 'g': 0, 's': 'n', 'yb': 1030, 'yd': 1113, 'f': 'Bernard_II,_Duke_of_Saxony', 'm': 'Eilika_of_Schweinfurt'},
 
@@ -646,7 +646,7 @@
 
 'Stephanie': {'nm': 'Stephanie(obscure)', 'g': 0, 'f': 'unknown'},
 
-'Elisabeth of Courtenay': {'nm': 'Elisabeth of Courtenay', 'g': 0},
+'Elisabeth of Courtenay': {'nm': 'Elisabeth of Courtenay', 'g': 0, 'f': 'unknown'},
 
 'Eleanor_of_Provence': {'nm': 'Eleanor of Provence', 'url': 'Eleanor_of_Provence', 'b': 'Aix-en-Provence, France, c. 1223', 'd': 'Amesbury, Wiltshire, England, 24/25 June 1291', 'g': 0, 's': 'n', 'yb': 1223, 'yd': 1291, 'f': 'Ramon_Berenguer_IV,_Count_of_Provence', 'm': 'Beatrice_of_Savoy'},
 
@@ -680,11 +680,11 @@
 
 'Raymond_II,_Count_of_Toulouse': {'nm': 'Raymond II, Count of Toulouse', 'url': 'Raymond_II,_Count_of_Toulouse', 'd': '924', 'g': 1, 's': 'n', 'yd': 924, 'f': 'Odo,_Count_of_Toulouse'},
 
-'Letgarda de Rouergue': {'nm': 'Letgarda de Rouergue', 'g': 0},
+'Letgarda de Rouergue': {'nm': 'Letgarda de Rouergue', 'g': 0, 'f': 'unknown'},
 
 'Ermesinde_of_Carcassonne': {'nm': 'Ermesinde of Carcassonne', 'url': 'Ermesinde_of_Carcassonne', 'b': 'c. 975', 'd': '1 March 1058', 'g': 0, 's': 'n', 'yb': 975, 'yd': 1058, 'f': 'Roger_I,_count_of_Carcassonne'},
 
-'Sancha Sanchez': {'nm': 'Sancha Sanchez', 'g': 0},
+'Sancha Sanchez': {'nm': 'Sancha Sanchez', 'g': 0, 'f': 'unknown'},
 
 'Maud_of_Apulia': {'nm': 'Maud of Apulia', 'url': 'Maud_of_Apulia', 'b': 'c. 1060', 'd': 'c. 1112', 'g': 0, 's': 'n', 'yb': 1060, 'yd': 1112, 'f': 'Robert_Guiscard', 'm': 'Sikelgaita'},
 
@@ -710,7 +710,7 @@
 
 'Garc%C3%ADa_Jim%C3%A9nez': {'nm': 'Garca Jimnez of Pamplona', 'url': 'Garc%C3%ADa_Jim%C3%A9nez', 'g': 1, 's': 'n', 'f': 'unknown'},
 
-'Dadildis de Pallars': {'nm': 'Dadildis de Pallars', 'g': 0},
+'Dadildis de Pallars': {'nm': 'Dadildis de Pallars', 'g': 0, 'f': 'unknown'},
 
 'Toda_Azn%C3%A1rez': {'nm': 'Toda of Pamplona', 'url': 'Toda_Azn%C3%A1rez', 'd': '958', 'g': 0, 's': 'n', 'yd': 958, 'f': 'Larraun', 'm': 'Onneca_Fort%C3%BAnez'},
 
@@ -724,13 +724,13 @@
 
 'Gonzalo_Fern%C3%A1ndez_of_Castile': {'nm': 'Gonzalo Fernndez of Castile', 'url': 'Gonzalo_Fern%C3%A1ndez_of_Castile', 'g': 1, 's': 'n', 'f': 'unknown'},
 
-'Muniadona': {'nm': 'Muniadona', 'g': 0},
+'Muniadona': {'nm': 'Muniadona (obscure)', 'g': 0, 'f': 'unknown'},
 
 'Fern%C3%A1n_Gonz%C3%A1lez_of_Castile': {'nm': 'Fernn Gonzlez of Castile', 'url': 'Fern%C3%A1n_Gonz%C3%A1lez_of_Castile', 'b': 'Lara de los Infantes, c. 910', 'd': 'Burgos, 970', 'g': 1, 's': 'n', 'yb': 910, 'yd': 970, 'f': 'Gonzalo_Fern%C3%A1ndez_of_Castile', 'm': 'Muniadona'},
 
 'Jimena_Fern%C3%A1ndez': {'nm': 'Jimena Fernndez', 'url': 'Jimena_Fern%C3%A1ndez', 'b': '970', 'd': '1045', 'g': 0, 's': 'n', 'yb': 970, 'yd': 1045, 'f': 'unknown'},
 
-'Sancha of Aybar': {'nm': 'Sancha of Aybar', 'g': 0},
+'Sancha of Aybar': {'nm': 'Sancha of Aybar', 'g': 0, 'f': 'unknown'},
 
 'Ermesinda_of_Bigorre': {'nm': 'Ermesinda of Bigorre', 'url': 'Ermesinda_of_Bigorre', 'b': '1015', 'd': '1 December 1049', 'g': 0, 's': 'n', 'yb': 1015, 'yd': 1049, 'f': 'unknown'},
 
@@ -738,7 +738,7 @@
 
 'Hilduin_III,_Count_of_Montdidier': {'nm': 'Hilduin III, Count of Montdidier', 'url': 'Hilduin_III,_Count_of_Montdidier', 'd': 'after 1032', 'g': 1, 's': 'n', 'yd': 1032, 'f': 'Hilduin_II,_Count_of_Arcis-sur-Aube'},
 
-'Alice de Roucy': {'nm': 'Alice de Roucy', 'g': 0},
+'Alice de Roucy': {'nm': 'Alice de Roucy', 'g': 0, 'f': 'unknown'},
 
 'Agnes_of_Aquitaine,_wife_of_Ramiro_II_of_Aragon': {'nm': 'Agnes of Aquitaine, wife of Ramiro II of Aragon', 'url': 'Agnes_of_Aquitaine,_wife_of_Ramiro_II_of_Aragon', 'd': 'c. 1159', 'g': 0, 's': 'n', 'yd': 1159, 'f': 'William_IX,_Duke_of_Aquitaine', 'm': 'Philippa,_Countess_of_Toulouse'},
 
@@ -760,11 +760,11 @@
 
 'Garc%C3%ADa_Fern%C3%A1ndez_of_Castile': {'nm': 'Garca Fernndez of Castile', 'url': 'Garc%C3%ADa_Fern%C3%A1ndez_of_Castile', 'b': 'Burgos, c. 938', 'd': 'Medinaceli, 995', 'g': 1, 's': 'n', 'yb': 938, 'yd': 995, 'f': 'Fern%C3%A1n_Gonz%C3%A1lez_of_Castile', 'm': 'Sancha Snchez of Pamplona'},
 
-'Sancha Snchez of Pamplona': {'nm': 'Sancha Snchez of Pamplona', 'g': 0},
+'Sancha Snchez of Pamplona': {'nm': 'Sancha Snchez of Pamplona', 'g': 0, 'f': 'unknown'},
 
 'Ava_de_Ribagorza': {'nm': 'Ava of Ribagora, Countess of Castile', 'url': 'Ava_de_Ribagorza', 'g': 0, 's': 'n', 'f': 'Raymond_I,_Count_of_Pallars_and_Ribagorza', 'm': 'Garsenda Fesenzac'},
 
-'Urraca Gmez': {'nm': 'Urraca Gmez', 'g': 0},
+'Urraca Gmez': {'nm': 'Urraca Gmez', 'g': 0, 'f': 'unknown'},
 
 'Sancha_of_Le%C3%B3n': {'nm': 'Sancha of Len', 'url': 'Sancha_of_Le%C3%B3n', 'b': 'c.1018', 'd': '8 November 1067', 'g': 0, 's': 'n', 'yb': 1018, 'yd': 1067, 'f': 'Alfonso_V_of_Le%C3%B3n', 'm': 'Elvira_Men%C3%A9ndez_(died_1022)'},
 
@@ -786,17 +786,17 @@
 
 'Bermudo_I_of_Asturias': {'nm': 'Bermudo I of Asturias', 'url': 'Bermudo_I_of_Asturias', 'b': 'c. 750', 'd': '797', 'g': 1, 's': 'n', 'yb': 750, 'yd': 797, 'f': 'Fruela_of_Cantabria'},
 
-'Nua': {'nm': 'Nua', 'g': 0},
+'Nua': {'nm': 'Nua (obscure)', 'g': 0, 'f': 'unknown'},
 
-'Jimena of Pamplona': {'nm': 'Jimena of Pamplona', 'g': 0},
+'Jimena of Pamplona': {'nm': 'Jimena of Pamplona', 'g': 0, 'f': 'unknown'},
 
 'Elvira_Men%C3%A9ndez_(died_921)': {'nm': 'Elvira Menndez (died 921)', 'url': 'Elvira_Men%C3%A9ndez_(died_921)', 'd': '921', 'g': 0, 's': 'n', 'yd': 921, 'f': 'Hermenegildo_Guti%C3%A9rrez', 'm': 'Ermesenda Gatnez'},
 
 'Hermenegildo_Guti%C3%A9rrez': {'nm': 'Hermenegildo Gutirrez', 'url': 'Hermenegildo_Guti%C3%A9rrez', 'b': 'c. 850', 'd': 'after May 912', 'g': 1, 's': 'n', 'yb': 850, 'yd': 912, 'f': 'count Gutierre', 'm': 'Elvira (obscure)'},
 
-'Ermesenda Gatnez': {'nm': 'Ermesenda Gatnez', 'g': 0},
+'Ermesenda Gatnez': {'nm': 'Ermesenda Gatnez', 'g': 0, 'f': 'unknown'},
 
-'Adosinda Gutirrez': {'nm': 'Adosinda Gutirrez', 'g': 0},
+'Adosinda Gutirrez': {'nm': 'Adosinda Gutirrez', 'g': 0, 'f': 'unknown'},
 
 'Elvira_of_Castile,_Queen_of_Le%C3%B3n': {'nm': 'Elvira of Castile, Queen of Len', 'url': 'Elvira_of_Castile,_Queen_of_Le%C3%B3n', 'b': 'c. 978', 'd': '1017', 'g': 0, 's': 'n', 'yb': 978, 'yd': 1017, 'f': 'Garc%C3%ADa_Fern%C3%A1ndez_of_Castile', 'm': 'Ava_de_Ribagorza'},
 
@@ -804,11 +804,11 @@
 
 'Menendo_Gonz%C3%A1lez': {'nm': 'Menendo Gonzlez', 'url': 'Menendo_Gonz%C3%A1lez', 'd': '6 October 1008', 'g': 1, 's': 'n', 'yd': 1008, 'f': 'Gonzalo_Men%C3%A9ndez', 'm': 'Ilduara Pelez'},
 
-'Tutadonna': {'nm': 'Tutadonna', 'g': 0},
+'Tutadonna': {'nm': 'Tutadonna (obscure)', 'g': 0, 'f': 'unknown'},
 
 'Constance_of_Burgundy': {'nm': 'Constance of Burgundy', 'url': 'Constance_of_Burgundy', 'b': '8 May 1046', 'd': '1093', 'g': 0, 's': 'n', 'yb': 1046, 'yd': 1093, 'f': 'Robert_I,_Duke_of_Burgundy', 'm': 'Helie de Semur-en-Brionnais'},
 
-'Helie de Semur-en-Brionnais': {'nm': 'Helie de Semur-en-Brionnais', 'g': 0},
+'Helie de Semur-en-Brionnais': {'nm': 'Helie de Semur-en-Brionnais', 'g': 0, 'f': 'unknown'},
 
 'Richeza_of_Poland,_Queen_of_Castile': {'nm': 'Richeza of Poland, Queen of Castile', 'url': 'Richeza_of_Poland,_Queen_of_Castile', 'b': 'c. 1140', 'd': '16 June 1185', 'g': 0, 's': 'n', 'yb': 1140, 'yd': 1185, 'f': 'W%C5%82adys%C5%82aw_II_the_Exile', 'm': 'Agnes_of_Babenberg'},
 
@@ -854,7 +854,7 @@
 
 'Emnilda_of_Lusatia': {'nm': 'Emnilda', 'url': 'Emnilda_of_Lusatia', 'b': 'c. 970-975', 'd': 'Krakw, 1017', 'g': 0, 's': 'n', 'yb': 973, 'yd': 1017, 'f': 'Dobromir of Lusatia'},
 
-'Dobromir of Lusatia': {'nm': 'Dobromir of Lusatia', 'g': 1},
+'Dobromir of Lusatia': {'nm': 'Dobromir of Lusatia', 'g': 1, 'f': 'unknown'},
 
 'Richeza_of_Lotharingia': {'nm': 'Richeza of Lotharingia', 'url': 'Richeza_of_Lotharingia', 'b': 'c. 995/1000', 'd': 'Saalfeld, Germany, 21 March 1063', 'g': 0, 's': 'n', 'yb': 1000, 'yd': 1063, 'f': 'Ezzo,_Count_Palatine_of_Lotharingia', 'm': 'Matilda_of_Germany,_Countess_Palatine_of_Lotharingia'},
 
@@ -866,7 +866,7 @@
 
 'Eberhard_I,_Count_of_Bonngau': {'nm': 'Eberhard I, Count of Bonngau', 'url': 'Eberhard_I,_Count_of_Bonngau', 'b': 'c. 904', 'd': 'c. 937', 'g': 1, 's': 'n', 'yb': 904, 'yd': 937, 'f': 'Erenfried_I', 'm': 'Adelgunde of Burgundy (860902)'},
 
-'Richwara of Zlpichgau': {'nm': 'Richwara of Zlpichgau', 'g': 0},
+'Richwara of Zlpichgau': {'nm': 'Richwara of Zlpichgau', 'g': 0, 'f': 'unknown'},
 
 'Matilda_of_Germany,_Countess_Palatine_of_Lotharingia': {'nm': 'Matilda of Germany, Countess Palatine of Lotharingia', 'url': 'Matilda_of_Germany,_Countess_Palatine_of_Lotharingia', 'b': 'Summer 979', 'd': 'November 1025', 'g': 0, 's': 'n', 'yb': 979, 'yd': 1025, 'f': 'Otto_II,_Holy_Roman_Emperor', 'm': 'Theophanu'},
 
@@ -902,7 +902,7 @@
 
 'Bo%C5%BEena_(K%C5%99esinov%C3%A1)': {'nm': 'Boena (Kesinov)', 'url': 'Bo%C5%BEena_(K%C5%99esinov%C3%A1)', 'd': 'after 1052', 'g': 0, 's': 'n', 'yd': 1052, 'f': 'Kesina'},
 
-'Kesina': {'nm': 'Kesina', 'g': 1},
+'Kesina': {'nm': 'Kesina (obscure)', 'g': 1, 'f': 'unknown'},
 
 'Judith_of_Schweinfurt': {'nm': 'Judith of Schweinfurt', 'url': 'Judith_of_Schweinfurt', 'b': 'before 1003', 'd': '2 August 1058', 'g': 0, 's': 'n', 'yb': 1003, 'yd': 1058, 'f': 'Henry_of_Schweinfurt', 'm': 'Gerberga_of_Gleiberg'},
 
@@ -910,7 +910,7 @@
 
 'Berthold_of_Schweinfurt': {'nm': 'Berthold of Schweinfurt', 'url': 'Berthold_of_Schweinfurt', 'd': '15 February 980', 'g': 1, 's': 'n', 'yd': 980, 'f': 'unknown'},
 
-'Eilika of Walbeck': {'nm': 'Eilika of Walbeck', 'g': 0},
+'Eilika of Walbeck': {'nm': 'Eilika of Walbeck', 'g': 0, 'f': 'unknown'},
 
 'Gerberga_of_Gleiberg': {'nm': 'Gerberga of Gleiberg', 'url': 'Gerberga_of_Gleiberg', 'b': 'c. 970', 'd': 'after 1036', 'g': 0, 's': 'n', 'yb': 970, 'yd': 1036, 'f': 'Herbert_of_Wetterau', 'm': 'Irmtrud of Avalgau (957  1020)'},
 
@@ -936,15 +936,15 @@
 
 'Prince_Csaba': {'nm': 'Prince Csaba', 'url': 'Prince_Csaba', 'g': 1, 's': 'n', 'f': 'Attila'},
 
-'Aracsilla of Emese': {'nm': 'Aracsilla of Emese', 'g': 0},
+'Aracsilla of Emese': {'nm': 'Aracsilla of Emese', 'g': 0, 'f': 'unknown'},
 
 'Emese': {'nm': 'Emese', 'url': 'Emese', 'g': 0, 's': 'n', 'f': 'nedbelia'},
 
-'nedbelia': {'nm': 'nedbelia', 'g': 1},
+'nedbelia': {'nm': 'nedbelia (obscure)', 'g': 1, 'f': 'unknown'},
 
 'Menumorut': {'nm': 'Menumorut', 'url': 'Menumorut', 'g': 0, 's': 'n', 'f': 'unknown'},
 
-'a lady from the Clan Ttony': {'nm': 'a lady from the Clan Ttony', 'g': 0},
+'a lady from the Clan Ttony': {'nm': 'a lady from the Clan Ttony (obscure)', 'g': 0, 'f': 'unknown'},
 
 'Anastasia_of_Kiev': {'nm': 'Anastasia of Kiev', 'url': 'Anastasia_of_Kiev', 'b': 'c. 1023', 'd': '[aged ~51/73]Admont Abbey, Styria, 1074/1096', 'g': 0, 's': 'n', 'yb': 1023, 'yd': 1096, 'f': 'unknown'},
 
@@ -972,13 +972,13 @@
 
 'Conrad,_Duke_of_Lorraine': {'nm': 'Conrad, Duke of Lorraine', 'url': 'Conrad,_Duke_of_Lorraine', 'b': 'c. 922', 'd': 'Lechfeld plain, near Augsburg, Swabia, 10 August 955', 'g': 1, 's': 'n', 'yb': 922, 'yd': 955, 'f': 'Werner_V_(Salian)', 'm': 'Hicha of Swabia'},
 
-'Werner_V_(Salian)': {'nm': 'Werner V (Salian)', 'url': 'Werner_V_(Salian)', 'b': 'c. 899', 'd': 'c. 935', 'g': 1, 's': 'n', 'yb': 899, 'yd': 935, 'f': 'presumably Werner IV', 'm': 'presumably Oda'},
+'Werner_V_(Salian)': {'nm': 'Werner V (Salian)', 'url': 'Werner_V_(Salian)', 'b': 'c. 899', 'd': 'c. 935', 'g': 1, 's': 'n', 'yb': 899, 'yd': 935, 'f': 'Werner IV', 'm': 'Oda (obscure)'},
 
-'presumably Werner IV': {'nm': 'presumably Werner IV', 'g': 1},
+'Werner IV': {'nm': 'Werner IV', 'g': 1, 'f': 'unknown'},
 
-'presumably Oda': {'nm': 'presumably Oda', 'g': 0},
+'Oda (obscure)': {'nm': 'Oda (obscure)', 'g': 0},
 
-'Hicha of Swabia': {'nm': 'Hicha of Swabia', 'g': 0},
+'Hicha of Swabia': {'nm': 'Hicha of Swabia', 'g': 0, 'f': 'unknown'},
 
 'Liutgard_of_Saxony_(died_953)': {'nm': 'Liutgard of Saxony (died 953)', 'url': 'Liutgard_of_Saxony_(died_953)', 'b': 'Magdeburg, Saxony, 932', 'd': 'Mainz, Franconia, 18 November 953', 'g': 0, 's': 'n', 'yb': 932, 'yd': 953, 'f': 'Otto_the_Great', 'm': 'Eadgyth'},
 
@@ -986,7 +986,7 @@
 
 '%C3%86lffl%C3%A6d,_wife_of_Edward_the_Elder': {'nm': 'lffld (wife of Edward the Elder)', 'url': '%C3%86lffl%C3%A6d,_wife_of_Edward_the_Elder', 'g': 0, 's': 'n', 'f': 'thelhelm'},
 
-'thelhelm': {'nm': 'thelhelm', 'g': 1},
+'thelhelm': {'nm': 'thelhelm (obscure)', 'g': 1, 'f': 'unknown'},
 
 'Judith': {'nm': 'Book of Judith(obscure)', 'g': 0, 'f': 'unknown'},
 
@@ -1012,7 +1012,7 @@
 
 'Liutgard_of_Saxony_(died_885)': {'nm': 'Liutgard of Saxony (died 885)', 'url': 'Liutgard_of_Saxony_(died_885)', 'b': 'c.  845', 'd': '17 November 885', 'g': 0, 's': 'n', 'yb': 845, 'yd': 885, 'f': 'Liudolf,_Duke_of_Saxony', 'm': 'Oda Billung'},
 
-'Oda Billung': {'nm': 'Oda Billung', 'g': 0},
+'Oda Billung': {'nm': 'Oda Billung', 'g': 0, 'f': 'unknown'},
 
 'Regelinda_of_Z%C3%BCrich': {'nm': 'Regelinda of Zrich', 'url': 'Regelinda_of_Z%C3%BCrich', 'd': '958', 'g': 0, 's': 'n', 'yd': 958, 'f': 'Eberhard_I,_Count_of_Z%C3%BCrich', 'm': 'Gisela_(mother_of_Regelinda)'},
 
@@ -1020,11 +1020,11 @@
 
 'Adelhard_von_Burc': {'nm': 'Adelhard von Burc', 'url': 'Adelhard_von_Burc', 'd': 'After 1 July 874', 'g': 1, 's': 'n', 'yd': 874, 'f': 'Eberhard_of_Friuli', 'm': 'Gisela,_daughter_of_Louis_the_Pious'},
 
-'Swanaburc': {'nm': 'Swanaburc', 'g': 0},
+'Swanaburc': {'nm': 'Swanaburc (obscure)', 'g': 0, 'f': 'unknown'},
 
 'Gisela_(mother_of_Regelinda)': {'nm': 'Gisela (mother of Regelinda)', 'url': 'Gisela_(mother_of_Regelinda)', 'b': '865', 'd': '911', 'g': 0, 's': 'n', 'yb': 865, 'yd': 911, 'f': 'Liuto von Rheinau', 'm': 'Judith_(daughter_of_Eberhard_of_Friuli)'},
 
-'Liuto von Rheinau': {'nm': 'Liuto von Rheinau', 'g': 1},
+'Liuto von Rheinau': {'nm': 'Liuto von Rheinau', 'g': 1, 'f': 'unknown'},
 
 'Judith_(daughter_of_Eberhard_of_Friuli)': {'nm': 'Judith (daughter of Eberhard of Friuli)', 'url': 'Judith_(daughter_of_Eberhard_of_Friuli)', 'b': '838', 'd': '863', 'g': 0, 's': 'n', 'yb': 838, 'yd': 863, 'f': 'Eberhard_of_Friuli', 'm': 'Gisela,_daughter_of_Louis_the_Pious'},
 
@@ -1052,9 +1052,9 @@
 
 'Humbert_I,_Count_of_Savoy': {'nm': 'Humbert I, Count of Savoy', 'url': 'Humbert_I,_Count_of_Savoy', 'b': 'c. 950 or c. 980', 'd': 'Hermillon, Savoie, France, 1047/1048', 'g': 1, 's': 'n', 'yb': 980, 'yd': 1048, 'f': 'Amadeus, Count of Belley'},
 
-'Amadeus, Count of Belley': {'nm': 'Amadeus, Count of Belley', 'g': 1},
+'Amadeus, Count of Belley': {'nm': 'Amadeus, Count of Belley', 'g': 1, 'f': 'unknown'},
 
-'Ancilla of Lenzburg': {'nm': 'Ancilla of Lenzburg', 'g': 0},
+'Ancilla of Lenzburg': {'nm': 'Ancilla of Lenzburg', 'g': 0, 'f': 'unknown'},
 
 'Adelaide_of_Susa': {'nm': 'Adelaide of Susa', 'url': 'Adelaide_of_Susa', 'b': 'Turin, c. 1014/1020', 'd': '19 December 1091', 'g': 0, 's': 'n', 'yb': 1020, 'yd': 1091, 'f': 'Ulric_Manfred_II_of_Turin', 'm': 'Bertha_of_Milan'},
 
@@ -1068,9 +1068,9 @@
 
 'Garsenda,_Countess_of_Forcalquier': {'nm': 'Garsenda, Countess of Forcalquier', 'url': 'Garsenda,_Countess_of_Forcalquier', 'b': 'c. 1180', 'd': 'c. 1242/1257', 'g': 0, 's': 'n', 'yb': 1180, 'yd': 1257, 'f': 'Rainou of Sabran', 'm': 'Garsenda of Forcalquier'},
 
-'Rainou of Sabran': {'nm': 'Rainou of Sabran', 'g': 1},
+'Rainou of Sabran': {'nm': 'Rainou of Sabran', 'g': 1, 'f': 'unknown'},
 
-'Garsenda of Forcalquier': {'nm': 'Garsenda of Forcalquier', 'g': 0},
+'Garsenda of Forcalquier': {'nm': 'Garsenda of Forcalquier', 'g': 0, 'f': 'unknown'},
 
 'Beatrice_of_Savoy': {'nm': 'Beatrice of Savoy', 'url': 'Beatrice_of_Savoy', 'b': 'in Chteau du Menuet, 1198', 'd': 'in Chteau du Menuet, 1267', 'g': 0, 's': 'n', 'yb': 1198, 'yd': 1267, 'f': 'Thomas_I_of_Savoy', 'm': 'Margaret_of_Geneva'},
 
@@ -1086,15 +1086,15 @@
 
 'Guigues_II_of_Albon': {'nm': 'Guigues II of Albon', 'url': 'Guigues_II_of_Albon', 'b': 'c. 1025', 'd': 'c. 1079', 'g': 1, 's': 'n', 'yb': 1025, 'yd': 1079, 'f': 'Guigues_I_of_Albon', 'm': 'Adelaide (Adelsindis/Adalsendis) (1035 to 1052)'},
 
-'Petronel of Turin': {'nm': 'Petronel of Turin', 'g': 0},
+'Petronel of Turin': {'nm': 'Petronel of Turin', 'g': 0, 'f': 'unknown'},
 
 'Matilda': {'nm': 'Matilda(obscure)', 'g': 0, 'f': 'unknown'},
 
 'Beatrice_of_Viennois': {'nm': 'Beatrice of Viennois', 'url': 'Beatrice_of_Viennois', 'b': 'Vienne, France, 1160', 'd': 'Champagne-et-Fontaine, Aquitaine, France, 1230', 'g': 0, 's': 'n', 'yb': 1160, 'yd': 1230, 'f': 'Graud I, Count of Mcon', 'm': 'Maurette de Salins'},
 
-'Graud I, Count of Mcon': {'nm': 'Graud I, Count of Mcon', 'g': 1},
+'Graud I, Count of Mcon': {'nm': 'Graud I, Count of Mcon', 'g': 1, 'f': 'unknown'},
 
-'Maurette de Salins': {'nm': 'Maurette de Salins', 'g': 0},
+'Maurette de Salins': {'nm': 'Maurette de Salins', 'g': 0, 'f': 'unknown'},
 
 'Margaret_of_Geneva': {'nm': 'Margaret of Geneva', 'url': 'Margaret_of_Geneva', 'b': 'Geneva, c. 1180', 'd': 'Paris, Kingdom of France, 1252', 'g': 0, 's': 'n', 'yb': 1180, 'yd': 1252, 'f': 'William_I,_Count_of_Geneva', 'm': 'Beatrice de Faucigny'},
 
@@ -1102,13 +1102,13 @@
 
 'Amadeus_I_of_Geneva': {'nm': 'Amadeus I of Geneva', 'url': 'Amadeus_I_of_Geneva', 'b': '1098', 'd': '1178', 'g': 1, 's': 'n', 'yb': 1098, 'yd': 1178, 'f': 'Aymon I of Geneva', 'm': 'Ida Faucigny'},
 
-'Aymon I of Geneva': {'nm': 'Aymon I of Geneva', 'g': 1},
+'Aymon I of Geneva': {'nm': 'Aymon I of Geneva', 'g': 1, 'f': 'unknown'},
 
-'Ida Faucigny': {'nm': 'Ida Faucigny', 'g': 0},
+'Ida Faucigny': {'nm': 'Ida Faucigny', 'g': 0, 'f': 'unknown'},
 
-'Matilda de Cuiseaux': {'nm': 'Matilda de Cuiseaux', 'g': 0},
+'Matilda de Cuiseaux': {'nm': 'Matilda de Cuiseaux', 'g': 0, 'f': 'unknown'},
 
-'Beatrice de Faucigny': {'nm': 'Beatrice de Faucigny', 'g': 0},
+'Beatrice de Faucigny': {'nm': 'Beatrice de Faucigny', 'g': 0, 'f': 'unknown'},
 
 'Blanche_of_Artois': {'nm': 'Blanche of Artois', 'url': 'Blanche_of_Artois', 'b': '1248', 'd': 'Paris, France, 2 May 1302', 'g': 0, 's': 'n', 'yb': 1248, 'yd': 1302, 'f': 'Robert_I,_Count_of_Artois', 'm': 'Matilda_of_Brabant,_Countess_of_Artois'},
 
@@ -1134,9 +1134,9 @@
 
 'Bertha_of_Burgundy': {'nm': 'Bertha of Burgundy', 'url': 'Bertha_of_Burgundy', 'b': '964', 'd': '16 January 1010', 'g': 0, 's': 'n', 'yb': 964, 'yd': 1010, 'f': 'Conrad_of_Burgundy', 'm': 'Matilda_of_France'},
 
-'Ermengarde of Auvergne': {'nm': 'Ermengarde of Auvergne', 'g': 0},
+'Ermengarde of Auvergne': {'nm': 'Ermengarde of Auvergne', 'g': 0, 'f': 'unknown'},
 
-'Garsinde du Maine': {'nm': 'Garsinde du Maine', 'g': 0},
+'Garsinde du Maine': {'nm': 'Garsinde du Maine', 'g': 0, 'f': 'unknown'},
 
 'Adela_of_Normandy': {'nm': 'Adela of Normandy', 'url': 'Adela_of_Normandy', 'b': 'Normandy, France, c. 1067', 'd': 'Marcigny-sur-Loire, France, 8 March 1137', 'g': 0, 's': 'n', 'yb': 1067, 'yd': 1137, 'f': 'William_the_Conqueror', 'm': 'Matilda_of_Flanders'},
 
@@ -1144,11 +1144,11 @@
 
 'Engelbert,_Duke_of_Carinthia': {'nm': 'Engelbert, Duke of Carinthia', 'url': 'Engelbert,_Duke_of_Carinthia', 'd': 'Seeon Abbey, 13 April 1141', 'g': 1, 's': 'n', 'yd': 1141, 'f': 'Engelbert I of Sponheim', 'm': 'Hedwig'},
 
-'Engelbert I of Sponheim': {'nm': 'Engelbert I of Sponheim', 'g': 1},
+'Engelbert I of Sponheim': {'nm': 'Engelbert I of Sponheim', 'g': 1, 'f': 'unknown'},
 
 'Hedwig': {'nm': 'Hedwig(obscure)', 'g': 0, 'f': 'unknown'},
 
-'Uta of Passau': {'nm': 'Uta of Passau', 'g': 0},
+'Uta of Passau': {'nm': 'Uta of Passau', 'g': 0, 'f': 'unknown'},
 
 'Isabelle_of_Hainaut': {'nm': 'Isabella of Hainault', 'url': 'Isabelle_of_Hainaut', 'b': 'Valenciennes, France, 5 April 1170', 'd': 'Paris, France, 15 March 1190', 'g': 0, 's': 'n', 'yb': 1170, 'yd': 1190, 'f': 'Baldwin_V,_Count_of_Hainaut', 'm': 'Margaret_I,_Countess_of_Flanders'},
 
@@ -1164,13 +1164,13 @@
 
 'Richilde,_Countess_of_Mons_and_Hainaut': {'nm': 'Richilde, Countess of Hainaut', 'url': 'Richilde,_Countess_of_Mons_and_Hainaut', 'b': 'c. 1018', 'd': 'Mesen, 15 March 1086', 'g': 0, 's': 'n', 'yb': 1018, 'yd': 1086, 'f': 'Reinier of Hasnon', 'm': 'Adelheid of Egisheim'},
 
-'Reinier of Hasnon': {'nm': 'Reinier of Hasnon', 'g': 1},
+'Reinier of Hasnon': {'nm': 'Reinier of Hasnon', 'g': 1, 'f': 'unknown'},
 
-'Adelheid of Egisheim': {'nm': 'Adelheid of Egisheim', 'g': 0},
+'Adelheid of Egisheim': {'nm': 'Adelheid of Egisheim', 'g': 0, 'f': 'unknown'},
 
 'Ida,_Countess_of_Hainaut': {'nm': 'Ida, Countess of Hainaut', 'url': 'Ida,_Countess_of_Hainaut', 'd': '1139', 'g': 0, 's': 'n', 'yd': 1139, 'f': 'Henry_II,_Count_of_Louvain', 'm': 'Adela of Thuringa'},
 
-'Yolande de Wassenberg': {'nm': 'Yolande de Wassenberg', 'g': 0},
+'Yolande de Wassenberg': {'nm': 'Yolande de Wassenberg', 'g': 0, 'f': 'unknown'},
 
 'Alice_of_Namur': {'nm': 'Alice of Namur', 'url': 'Alice_of_Namur', 'd': 'Valenciennes, July 1169', 'g': 0, 's': 'n', 'yd': 1169, 'f': 'Godfrey_I_of_Namur', 'm': 'Ermesinde_of_Luxembourg,_Countess_of_Namur'},
 
@@ -1184,9 +1184,9 @@
 
 'Charles,_Duke_of_Lower_Lorraine': {'nm': 'Charles, Duke of Lower Lorraine', 'url': 'Charles,_Duke_of_Lower_Lorraine', 'b': 'Laon, 953', 'd': 'Orlans, 22 June 993', 'g': 1, 's': 'n', 'yb': 953, 'yd': 993, 'f': 'Louis_IV_of_France', 'm': 'Gerberga_of_Saxony'},
 
-'Regelinde of Verdun': {'nm': 'Regelinde of Verdun', 'g': 0},
+'Regelinde of Verdun': {'nm': 'Regelinde of Verdun', 'g': 0, 'f': 'unknown'},
 
-'Ida of Saxony': {'nm': 'Ida of Saxony', 'g': 0},
+'Ida of Saxony': {'nm': 'Ida of Saxony', 'g': 0, 'f': 'unknown'},
 
 'Ermesinde_of_Luxembourg,_Countess_of_Namur': {'nm': 'Ermesinde of Luxembourg, Countess of Namur', 'url': 'Ermesinde_of_Luxembourg,_Countess_of_Namur', 'b': 'c. 1080', 'd': '24 June 1143', 'g': 0, 's': 'n', 'yb': 1080, 'yd': 1143, 'f': 'Conrad_I,_Count_of_Luxembourg', 'm': 'Clementia_of_Aquitaine'},
 
@@ -1204,7 +1204,7 @@
 
 'Gerhard_IV_of_Metz': {'nm': 'House of Lorraine', 'url': 'House_of_Lorraine', 'g': 1, 's': 'n', 'f': 'unknown'},
 
-'Hedwige of Namur': {'nm': 'Hedwige of Namur', 'g': 0},
+'Hedwige of Namur': {'nm': 'Hedwige of Namur', 'g': 0, 'f': 'unknown'},
 
 'Gertrude_of_Flanders,_Duchess_of_Lorraine': {'nm': 'Gertrude of Flanders, Duchess of Lorraine', 'url': 'Gertrude_of_Flanders,_Duchess_of_Lorraine', 'b': 'c. 1070', 'd': '1117', 'g': 0, 's': 'n', 'yb': 1070, 'yd': 1117, 'f': 'Robert_I,_Count_of_Flanders', 'm': 'Gertrude_of_Saxony'},
 
@@ -1236,9 +1236,9 @@
 
 'Margaret_of_L%27Aigle': {'nm': "Margaret of L'Aigle", 'url': 'Margaret_of_L%27Aigle', 'd': '25 May 1141', 'g': 0, 's': 'n', 'yd': 1141, 'f': "Gilbert of L'Aigle", 'm': 'Juliana du Perche'},
 
-"Gilbert of L'Aigle": {'nm': "Gilbert of L'Aigle", 'g': 1},
+"Gilbert of L'Aigle": {'nm': "Gilbert of L'Aigle", 'g': 1, 'f': 'unknown'},
 
-'Juliana du Perche': {'nm': 'Juliana du Perche', 'g': 0},
+'Juliana du Perche': {'nm': 'Juliana du Perche', 'g': 0, 'f': 'unknown'},
 
 'Eleanor_of_England,_Queen_of_Castile': {'nm': 'Eleanor of England, Queen of Castile', 'url': 'Eleanor_of_England,_Queen_of_Castile', 'b': 'Domfront Castle, Normandy, c. 1161', 'd': 'Burgos, Castile, 31 October 1214', 'g': 0, 's': 'n', 'yb': 1161, 'yd': 1214, 'f': 'Henry_II,_King_of_England', 'm': 'Eleanor,_Duchess_of_Aquitaine'},
 
@@ -1266,25 +1266,25 @@
 
 'Reginar,_Duke_of_Lorraine': {'nm': 'Reginar Longneck', 'url': 'Reginar,_Duke_of_Lorraine', 'b': 'c. 850', 'd': '915', 'g': 1, 's': 'n', 'yb': 850, 'yd': 915, 'f': 'unknown'},
 
-'Hersinda': {'nm': 'Hersinda', 'g': 0},
+'Hersinda': {'nm': 'Hersinda (obscure)', 'g': 0, 'f': 'unknown'},
 
-'Adelaide of Burgundy': {'nm': 'Adelaide of Burgundy', 'g': 0},
+'Adelaide of Burgundy': {'nm': 'Adelaide of Burgundy', 'g': 0, 'f': 'unknown'},
 
 'Adela': {'nm': 'Adela(obscure)', 'g': 0, 'f': 'unknown'},
 
 'Gerberga_of_Lower_Lorraine': {'nm': 'Gerberga of Lower Lorraine', 'url': 'Gerberga_of_Lower_Lorraine', 'b': 'c. 975', 'd': 'c. 1019', 'g': 0, 's': 'n', 'yb': 975, 'yd': 1019, 'f': 'Charles,_Duke_of_Lower_Lorraine', 'm': 'Adelaide/Agnes de Vermandois'},
 
-'Adelaide/Agnes de Vermandois': {'nm': 'Adelaide/Agnes de Vermandois', 'g': 0},
+'Adelaide/Agnes de Vermandois': {'nm': 'Adelaide/Agnes de Vermandois', 'g': 0, 'f': 'unknown'},
 
-'Oda of Verdun': {'nm': 'Oda of Verdun', 'g': 0},
+'Oda of Verdun': {'nm': 'Oda of Verdun', 'g': 0, 'f': 'unknown'},
 
-'Adle of Orthen (Verdun)': {'nm': 'Adle of Orthen (Verdun)', 'g': 0},
+'Adle of Orthen (Verdun)': {'nm': 'Adle of Orthen (Verdun)', 'g': 0, 'f': 'unknown'},
 
-'Ida of Chiny': {'nm': 'Ida of Chiny', 'g': 0},
+'Ida of Chiny': {'nm': 'Ida of Chiny', 'g': 0, 'f': 'unknown'},
 
-'Luitgarde of Sulzbach': {'nm': 'Luitgarde of Sulzbach', 'g': 0},
+'Luitgarde of Sulzbach': {'nm': 'Luitgarde of Sulzbach', 'g': 0, 'f': 'unknown'},
 
-'Margaret of Limburg': {'nm': 'Margaret of Limburg', 'g': 0},
+'Margaret of Limburg': {'nm': 'Margaret of Limburg', 'g': 0, 'f': 'unknown'},
 
 'Mathilde_of_Flanders': {'nm': 'Matilda of Boulogne, Duchess of Brabant', 'url': 'Mathilde_of_Flanders', 'b': '1170', 'd': '16 October 1210', 'g': 0, 's': 'n', 'yb': 1170, 'yd': 1210, 'f': 'Matthew,_Count_of_Boulogne', 'm': 'Marie_I,_Countess_of_Boulogne'},
 
@@ -1312,7 +1312,7 @@
 
 'Lutgardis_of_Luxemburg': {'nm': 'Lutgardis of Luxemburg', 'url': 'Lutgardis_of_Luxemburg', 'b': '955', 'd': 'or possibly later, c. 1005', 'g': 0, 's': 'n', 'yb': 955, 'yd': 1005, 'f': 'Sigfried,_Count_of_the_Ardennes', 'm': 'Hedwig_of_Nordgau'},
 
-'Matilda of Louvain': {'nm': 'Matilda of Louvain', 'g': 0},
+'Matilda of Louvain': {'nm': 'Matilda of Louvain', 'g': 0, 'f': 'unknown'},
 
 'Ida_of_Lorraine': {'nm': 'Ida of Lorraine', 'url': 'Ida_of_Lorraine', 'b': 'c.\u20091040', 'd': '13 April 1113', 'g': 0, 's': 'n', 'yb': 1040, 'yd': 1113, 'f': 'Godfrey_the_Bearded', 'm': 'Doda (obscure)'},
 
@@ -1330,7 +1330,7 @@
 
 'Frederick_of_B%C3%BCren': {'nm': 'Frederick of Bren', 'url': 'Frederick_of_B%C3%BCren', 'g': 1, 's': 'n', 'f': 'unknown'},
 
-'Hildegard of Egisheim-Dagsburg': {'nm': 'Hildegard of Egisheim-Dagsburg', 'g': 0},
+'Hildegard of Egisheim-Dagsburg': {'nm': 'Hildegard of Egisheim-Dagsburg', 'g': 0, 'f': 'unknown'},
 
 'Judith_of_Bavaria,_Duchess_of_Swabia': {'nm': 'Judith of Bavaria, Duchess of Swabia', 'url': 'Judith_of_Bavaria,_Duchess_of_Swabia', 'b': 'Bavaria, Holy Roman Empire, 19 May 1100', 'd': 'Germany, 27 Aug 1130', 'g': 0, 's': 'n', 'yb': 1100, 'yd': 1130, 'f': 'Henry_IX_of_Bavaria', 'm': 'Wulfhilde_of_Saxony'},
 
@@ -1346,7 +1346,7 @@
 
 'Otbert_I,_Margrave_of_Milan': {'nm': 'Oberto I', 'url': 'Otbert_I,_Margrave_of_Milan', 'd': '15 October 975', 'g': 1, 's': 'n', 'yd': 975, 'f': 'Adalberto_the_Margrave'},
 
-'Railend': {'nm': 'Railend', 'g': 0},
+'Railend': {'nm': 'Railend (obscure)', 'g': 0, 'f': 'unknown'},
 
 'Adela_of_Milan': {'nm': 'Adela of Milan', 'url': 'Adela_of_Milan', 'b': 'c. 975', 'd': 'after 1012', 'g': 0, 's': 'n', 'yb': 975, 'yd': 1012, 'f': 'unknown'},
 
@@ -1356,11 +1356,11 @@
 
 'Rudolf_II,_Count_of_Altdorf': {'nm': 'Rudolf II, Count of Altdorf', 'url': 'Rudolf_II,_Count_of_Altdorf', 'd': 'c. 990', 'g': 1, 's': 'n', 'yd': 990, 'f': 'Rudolf I, count of Altdorf'},
 
-'Ita of hningen': {'nm': 'Ita of hningen', 'g': 0},
+'Ita of hningen': {'nm': 'Ita of hningen', 'g': 0, 'f': 'unknown'},
 
 'Imiza_of_Luxembourg': {'nm': 'Imiza of Luxembourg', 'url': 'Imiza_of_Luxembourg', 'b': 'c. 990/1000', 'd': '/6, after c. 1055', 'g': 0, 's': 'n', 'yb': 1000, 'yd': 1055, 'f': 'Frederick_of_Luxembourg', 'm': 'Ermentrude of Gleiberg'},
 
-'Ermentrude of Gleiberg': {'nm': 'Ermentrude of Gleiberg', 'g': 0},
+'Ermentrude of Gleiberg': {'nm': 'Ermentrude of Gleiberg', 'g': 0, 'f': 'unknown'},
 
 'Judith_of_Flanders_(died_1095)': {'nm': 'Judith of Flanders (died 1095)', 'url': 'Judith_of_Flanders_(died_1095)', 'b': 'Bruges, 1030/1035', 'd': '5 March 1095', 'g': 0, 's': 'n', 'yb': 1035, 'yd': 1095, 'f': 'Baldwin_IV,_Count_of_Flanders', 'm': 'Eleanor_of_Normandy'},
 
@@ -1384,7 +1384,7 @@
 
 'B%C3%A9la_I_of_Hungary': {'nm': 'Bla I of Hungary', 'url': 'B%C3%A9la_I_of_Hungary', 'b': 'between 1015 and 1020', 'd': 'at the Kinizsa Creek, Kingdom of Hungary, 11 September 1063', 'g': 1, 's': 'n', 'yb': 1020, 'yd': 1063, 'f': 'Vazul', 'm': 'Unknown woman from Ttony kindred'},
 
-'Unknown woman from Ttony kindred': {'nm': 'Unknown woman from Ttony kindred', 'g': 0},
+'Unknown woman from Ttony kindred': {'nm': 'Unknown woman from Ttony kindred', 'g': 0, 'f': 'unknown'},
 
 'Richeza_of_Poland,_Queen_of_Hungary': {'nm': 'Richeza of Poland, Queen of Hungary', 'url': 'Richeza_of_Poland,_Queen_of_Hungary', 'b': '22 September 1013', 'd': '21 May 1075', 'g': 0, 's': 'n', 'yb': 1013, 'yd': 1075, 'f': 'Mieszko_II_Lambert', 'm': 'Richeza_of_Lotharingia'},
 
@@ -1394,7 +1394,7 @@
 
 'Stephen_I,_Count_of_Burgundy': {'nm': 'Stephen I, Count of Burgundy', 'url': 'Stephen_I,_Count_of_Burgundy', 'b': '1065', 'd': 'Ramla, 17 May 1102', 'g': 1, 's': 'n', 'yb': 1065, 'yd': 1102, 'f': 'William_I,_Count_of_Burgundy', 'm': 'Stephanie'},
 
-'Beatrix of Lorraine': {'nm': 'Beatrix of Lorraine', 'g': 0},
+'Beatrix of Lorraine': {'nm': 'Beatrix of Lorraine', 'g': 0, 'f': 'unknown'},
 
 'Agatha_of_Lorraine': {'nm': 'Agatha of Lorraine', 'url': 'Agatha_of_Lorraine', 'b': 'c. 1120', 'd': 'April 1147', 'g': 0, 's': 'n', 'yb': 1120, 'yd': 1147, 'f': 'Simon_I,_Duke_of_Lorraine', 'm': 'Adelaide_of_Leuven'},
 
@@ -1402,15 +1402,15 @@
 
 'Hedwig_of_Formbach': {'nm': 'Hedwig of Formbach', 'url': 'Hedwig_of_Formbach', 'b': 'c. 1058', 'd': 'c. 1090', 'g': 0, 's': 'n', 'yb': 1058, 'yd': 1090, 'f': 'Frederick of Formbach', 'm': 'Gertrude of Haldensleben'},
 
-'Frederick of Formbach': {'nm': 'Frederick of Formbach', 'g': 1},
+'Frederick of Formbach': {'nm': 'Frederick of Formbach', 'g': 1, 'f': 'unknown'},
 
-'Gertrude of Haldensleben': {'nm': 'Gertrude of Haldensleben', 'g': 0},
+'Gertrude of Haldensleben': {'nm': 'Gertrude of Haldensleben', 'g': 0, 'f': 'unknown'},
 
 'Adelaide_of_Leuven': {'nm': 'Adelaide of Leuven', 'url': 'Adelaide_of_Leuven', 'd': 'c.  1158', 'g': 0, 's': 'n', 'yd': 1158, 'f': 'Henry_III_of_Leuven', 'm': 'Gertrude_of_Flanders,_Duchess_of_Lorraine'},
 
 'Henry_III_of_Leuven': {'nm': 'Henry III, Count of Louvain', 'url': 'Henry_III_of_Leuven', 'd': 'Tournai, 1095', 'g': 1, 's': 'n', 'yd': 1095, 'f': 'Henry_II,_Count_of_Louvain', 'm': 'Adela of Orthen'},
 
-'Adela of Orthen': {'nm': 'Adela of Orthen', 'g': 0},
+'Adela of Orthen': {'nm': 'Adela of Orthen', 'g': 0, 'f': 'unknown'},
 
 'Irene_Angelina': {'nm': 'Irene Angelina', 'url': 'Irene_Angelina', 'b': 'Constantinople, Byzantine Empire, c. 1181', 'd': 'Hohenstaufen Castle, Holy Roman Empire, 27 August 1208', 'g': 0, 's': 'n', 'yb': 1181, 'yd': 1208, 'f': 'Isaac_II_Angelos'},
 
@@ -1420,7 +1420,7 @@
 
 'Euphrosyne_Kastamonitissa': {'nm': 'Euphrosyne Kastamonitissa', 'url': 'Euphrosyne_Kastamonitissa', 'g': 0, 's': 'n', 'f': 'unknown'},
 
-'Patrick de Chaworth, Lord of Kidwelly': {'nm': 'Patrick de Chaworth, Lord of Kidwelly', 'g': 1},
+'Patrick de Chaworth, Lord of Kidwelly': {'nm': 'Patrick de Chaworth, Lord of Kidwelly', 'g': 1, 'f': 'unknown'},
 
 'Isabella_de_Beauchamp': {'nm': 'Isabella de Beauchamp', 'url': 'Isabella_de_Beauchamp', 'b': 'Warwickshire, England, c. 1263', 'd': 'before 30 May 1306', 'g': 0, 's': 'n', 'yb': 1263, 'yd': 1306, 'f': 'William_de_Beauchamp,_9th_Earl_of_Warwick', 'm': 'Maud_FitzJohn'},
 
@@ -1434,7 +1434,7 @@
 
 'Aveline_Fitz_Peter,_Countess_of_Essex': {'nm': 'Aveline Fitz Peter, Countess of Essex', 'url': 'Aveline_Fitz_Peter,_Countess_of_Essex', 'b': 'c. 1178', 'd': '1225', 'g': 0, 's': 'n', 'yb': 1178, 'yd': 1225, 'f': 'Roger_de_Clare,_2nd_Earl_of_Hertford', 'm': 'Matilda de St. Hilaire'},
 
-'Isabel Bigod': {'nm': 'Isabel Bigod', 'g': 0},
+'Isabel Bigod': {'nm': 'Isabel Bigod', 'g': 0, 'f': 'unknown'},
 
 'Richard_Fitzalan,_1st_Earl_of_Arundel': {'nm': 'Richard Fitzalan, 1st Earl of Arundel', 'url': 'Richard_Fitzalan,_1st_Earl_of_Arundel', 'b': '3 February 1267', 'd': '9 March 1302', 'g': 1, 's': 'n', 'yb': 1267, 'yd': 1302, 'f': 'John_Fitzalan_(12461272)', 'm': 'Isabella_Mortimer,_lady_of_Clun_and_Oswestry'},
 
@@ -1444,9 +1444,9 @@
 
 'Manfred_III_of_Saluzzo': {'nm': 'Manfred III of Saluzzo', 'url': 'Manfred_III_of_Saluzzo', 'd': '1244', 'g': 1, 's': 'n', 'yd': 1244, 'f': 'Boniface of Saluzzo', 'm': 'Maria di Torres'},
 
-'Boniface of Saluzzo': {'nm': 'Boniface of Saluzzo', 'g': 1},
+'Boniface of Saluzzo': {'nm': 'Boniface of Saluzzo', 'g': 1, 'f': 'unknown'},
 
-'Maria di Torres': {'nm': 'Maria di Torres', 'g': 0},
+'Maria di Torres': {'nm': 'Maria di Torres', 'g': 0, 'f': 'unknown'},
 
 'Beatrice_of_Savoy,_Marchioness_of_Saluzzo': {'nm': 'Beatrice of Savoy, Marchioness of Saluzzo', 'url': 'Beatrice_of_Savoy,_Marchioness_of_Saluzzo', 'b': 'before 4 March 1223', 'd': '10 May before 1259', 'g': 0, 's': 'n', 'yb': 1223, 'yd': 1259, 'f': 'Amadeus_IV_of_Savoy', 'm': 'Marguerite_of_Burgundy,_Countess_of_Savoy'},
 
@@ -1466,25 +1466,25 @@
 
 'Robert_I,_Duke_of_Burgundy': {'nm': 'Robert I, Duke of Burgundy', 'url': 'Robert_I,_Duke_of_Burgundy', 'b': '1011', 'd': 'Fleurey-sur-Ouche, 21 March 1076', 'g': 1, 's': 'n', 'yb': 1011, 'yd': 1076, 'f': 'Robert_II_of_France', 'm': 'Constance_of_Arles'},
 
-'Helie of Semur': {'nm': 'Helie of Semur', 'g': 0},
+'Helie of Semur': {'nm': 'Helie of Semur', 'g': 0, 'f': 'unknown'},
 
 'Sibylla_of_Burgundy,_Duchess_of_Burgundy': {'nm': 'Sibylla of Burgundy, Duchess of Burgundy', 'url': 'Sibylla_of_Burgundy,_Duchess_of_Burgundy', 'b': '1060', 'd': '1103', 'g': 0, 's': 'n', 'yb': 1060, 'yd': 1103, 'f': 'William_I,_Count_of_Burgundy', 'm': 'Stephanie'},
 
-'Matilda of Turenne': {'nm': 'Matilda of Turenne', 'g': 0},
+'Matilda of Turenne': {'nm': 'Matilda of Turenne', 'g': 0, 'f': 'unknown'},
 
-'Marie of Champagne': {'nm': 'Marie of Champagne', 'g': 0},
+'Marie of Champagne': {'nm': 'Marie of Champagne', 'g': 0, 'f': 'unknown'},
 
 'B%C3%A9atrice_of_Albon': {'nm': 'Beatrice of Albon', 'url': 'B%C3%A9atrice_of_Albon', 'b': '1161', 'd': '1228', 'g': 0, 's': 'n', 'yb': 1161, 'yd': 1228, 'f': 'Guigues_V_of_Albon'},
 
-'Luigia di Ceva': {'nm': 'Luigia di Ceva', 'g': 0},
+'Luigia di Ceva': {'nm': 'Luigia di Ceva', 'g': 0, 'f': 'unknown'},
 
 'William_de_Warenne_(1256-1286)': {'nm': 'William de Warenne (12561286)', 'url': 'William_de_Warenne_(1256-1286)', 'b': '9 February 1256', 'd': '15 December 1286', 'g': 1, 's': 'n', 'yb': 1256, 'yd': 1286, 'f': 'John_de_Warenne,_6th_Earl_of_Surrey', 'm': 'Alice_de_Lusignan,_Countess_of_Surrey'},
 
-'Joan de Vere': {'nm': 'Joan de Vere', 'g': 0},
+'Joan de Vere': {'nm': 'Joan de Vere', 'g': 0, 'f': 'unknown'},
 
 'Humphrey_de_Bohun,_3rd_Earl_of_Hereford': {'nm': 'Humphrey de Bohun, 3rd Earl of Hereford', 'url': 'Humphrey_de_Bohun,_3rd_Earl_of_Hereford', 'b': 'c. 1249', 'd': 'Pleshey, Essex, England, 31 December 1298', 'g': 1, 's': 'n', 'yb': 1249, 'yd': 1298, 'f': 'unknown'},
 
-'Maud de Fiennes': {'nm': 'Maud de Fiennes', 'g': 0},
+'Maud de Fiennes': {'nm': 'Maud de Fiennes', 'g': 0, 'f': 'unknown'},
 
 'Edward_I_of_England': {'nm': 'Edward I of England', 'url': 'Edward_I_of_England', 'b': 'Palace of Westminster, London, England, 17/18 June 1239', 'd': 'Burgh by Sands, Cumberland, England, 7 July 1307', 'g': 1, 's': 'n', 'yb': 1239, 'yd': 1307, 'f': 'Henry_III_of_England', 'm': 'Eleanor_of_Provence'},
 
@@ -1518,9 +1518,9 @@
 
 'Alberic_II,_Count_of_Dammartin': {'nm': 'Alberic II, Count of Dammartin', 'url': 'Alberic_II,_Count_of_Dammartin', 'd': '1183', 'g': 1, 's': 'n', 'yd': 1183, 'f': 'Alberic_I,_Count_of_Dammartin', 'm': 'Adela, daughter of Hugh I'},
 
-'Clmence de Bar': {'nm': 'Clmence de Bar', 'g': 0},
+'Clmence de Bar': {'nm': 'Clmence de Bar', 'g': 0, 'f': 'unknown'},
 
-'Mathildis of Clermont': {'nm': 'Mathildis of Clermont', 'g': 0},
+'Mathildis of Clermont': {'nm': 'Mathildis of Clermont', 'g': 0, 'f': 'unknown'},
 
 'Marie,_Countess_of_Ponthieu': {'nm': 'Marie, Countess of Ponthieu', 'url': 'Marie,_Countess_of_Ponthieu', 'b': '17 April 1199', 'd': '21 September 1250', 'g': 0, 's': 'n', 'yb': 1199, 'yd': 1250, 'f': 'William_IV_of_Ponthieu', 'm': 'Alys,_Countess_of_the_Vexin'},
 
@@ -1538,9 +1538,9 @@
 
 'Helie_of_Burgundy': {'nm': 'Helie of Burgundy', 'url': 'Helie_of_Burgundy', 'b': 'c. 1080', 'd': 'Perseigne Abbey in Neufchtel-en-Saosnois, 28 February 1141', 'g': 0, 's': 'n', 'yb': 1080, 'yd': 1141, 'f': 'Odo_I,_Duke_of_Burgundy', 'm': 'Sibylla_of_Burgundy,_Duchess_of_Burgundy'},
 
-'Ida': {'nm': 'Ida(obscure)', 'g': 0},
+'Ida': {'nm': 'Ida(obscure) (obscure)', 'g': 0, 'f': 'unknown'},
 
-'Beatrice de St Pol': {'nm': 'Beatrice de St Pol', 'g': 0},
+'Beatrice de St Pol': {'nm': 'Beatrice de St Pol', 'g': 0, 'f': 'unknown'},
 
 'Alys,_Countess_of_the_Vexin': {'nm': 'Alys of France, Countess of Vexin', 'url': 'Alys,_Countess_of_the_Vexin', 'b': '4 October 1160', 'd': 'c. 1220', 'g': 0, 's': 'n', 'yb': 1160, 'yd': 1220, 'f': 'Louis_VII_of_France', 'm': 'Constance_of_Castile'},
 
@@ -1568,13 +1568,13 @@
 
 'Rohese_Giffard': {'nm': 'Rohese Giffard', 'url': 'Rohese_Giffard', 'd': 'after 1113', 'g': 0, 's': 'n', 'yd': 1113, 'f': 'unknown'},
 
-'Adeliza de Claremont': {'nm': 'Adeliza de Claremont', 'g': 0},
+'Adeliza de Claremont': {'nm': 'Adeliza de Claremont', 'g': 0, 'f': 'unknown'},
 
-'Alice de Gernon': {'nm': 'Alice de Gernon', 'g': 0},
+'Alice de Gernon': {'nm': 'Alice de Gernon', 'g': 0, 'f': 'unknown'},
 
-'Maud de St. Hillary': {'nm': 'Maud de St. Hillary', 'g': 0},
+'Maud de St. Hillary': {'nm': 'Maud de St. Hillary', 'g': 0, 'f': 'unknown'},
 
-'Amice Fitz William, suo jure Countess of Gloucester': {'nm': 'Amice Fitz William, suo jure Countess of Gloucester', 'g': 0},
+'Amice Fitz William, suo jure Countess of Gloucester': {'nm': 'Amice Fitz William, suo jure Countess of Gloucester', 'g': 0, 'f': 'unknown'},
 
 'Isabel_Marshal': {'nm': 'Isabel Marshal', 'url': 'Isabel_Marshal', 'b': 'Pembroke Castle, Wales, 9 October 1200', 'd': 'Berkhamsted Castle, Hertfordshire, England, 17 January 1240', 'g': 0, 's': 'n', 'yb': 1200, 'yd': 1240, 'f': 'William_Marshal,_1st_Earl_of_Pembroke', 'm': 'Isabel_de_Clare,_4th_Countess_of_Pembroke'},
 
@@ -1582,7 +1582,7 @@
 
 'John_Marshal_(Marshal_of_England)': {'nm': 'John Marshal (Marshal of England)', 'url': 'John_Marshal_(Marshal_of_England)', 'b': 'c. 1105', 'd': '1165', 'g': 1, 's': 'n', 'yb': 1105, 'yd': 1165, 'f': 'unknown'},
 
-'Sybilla of Salisbury': {'nm': 'Sybilla of Salisbury', 'g': 0},
+'Sybilla of Salisbury': {'nm': 'Sybilla of Salisbury', 'g': 0, 'f': 'unknown'},
 
 'Isabel_de_Clare,_4th_Countess_of_Pembroke': {'nm': 'Isabel de Clare, 4th Countess of Pembroke', 'url': 'Isabel_de_Clare,_4th_Countess_of_Pembroke', 'b': 'Leinster, c. 1172', 'd': 'Chepstow, Wales, 11 March 1220', 'g': 0, 's': 'n', 'yb': 1172, 'yd': 1220, 'f': 'Richard_de_Clare,_2nd_Earl_of_Pembroke', 'm': 'Aoife_of_Leinster'},
 
@@ -1594,13 +1594,13 @@
 
 'Donnchadh_mac_Murchada': {'nm': 'Donnchadh mac Murchada', 'url': 'Donnchadh_mac_Murchada', 'g': 1, 's': 'n', 'f': 'unknown'},
 
-"Orlaith ingen O'Braenain": {'nm': "Orlaith ingen O'Braenain", 'g': 0},
+"Orlaith ingen O'Braenain": {'nm': "Orlaith ingen O'Braenain", 'g': 0, 'f': 'unknown'},
 
 'Mor_O%27Toole': {'nm': 'Mr N Tuathail', 'url': 'Mor_O%27Toole', 'b': 'Castledermot, County Kildare, Ireland, c. 1114', 'd': 'Ireland, 1191', 'g': 0, 's': 'n', 'yb': 1114, 'yd': 1191, 'f': 'Muitchertach Ua Tuathail', 'm': 'Cacht  N Morda'},
 
-'Muitchertach Ua Tuathail': {'nm': 'Muitchertach Ua Tuathail', 'g': 1},
+'Muitchertach Ua Tuathail': {'nm': 'Muitchertach Ua Tuathail', 'g': 1, 'f': 'unknown'},
 
-'Cacht  N Morda': {'nm': 'Cacht  N Morda', 'g': 0},
+'Cacht  N Morda': {'nm': 'Cacht  N Morda', 'g': 0, 'f': 'unknown'},
 
 'Maud_de_Lacy': {'nm': 'Maud de Lacy, Countess of Gloucester', 'url': 'Maud_de_Lacy', 'b': 'Lincoln, Lincolnshire, England, 25 January 1223', 'd': '/9, 1287/10 March 1288', 'g': 0, 's': 'n', 'yb': 1223, 'yd': 1288, 'f': 'John_de_Lacy,_2nd_Earl_of_Lincoln', 'm': 'Margaret_de_Quincy'},
 
@@ -1608,13 +1608,13 @@
 
 'Margaret_de_Quincy': {'nm': 'Margaret de Quincy, Countess of Lincoln', 'url': 'Margaret_de_Quincy', 'b': 'England, c. 1206', 'd': 'Hampstead, March 1266', 'g': 0, 's': 'n', 'yb': 1206, 'yd': 1266, 'f': 'Robert de Quincy', 'm': 'Hawise_of_Chester,_Countess_of_Lincoln'},
 
-'Robert de Quincy': {'nm': 'Robert de Quincy', 'g': 1},
+'Robert de Quincy': {'nm': 'Robert de Quincy', 'g': 1, 'f': 'unknown'},
 
 'Hawise_of_Chester,_Countess_of_Lincoln': {'nm': 'Hawise of Chester, 1st Countess of Lincoln', 'url': 'Hawise_of_Chester,_Countess_of_Lincoln', 'b': 'Chester, Cheshire, England, 1180', 'd': '6 June 1241/3 May 1243', 'g': 0, 's': 'n', 'yb': 1180, 'yd': 1243, 'f': 'Hugh_de_Kevelioc,_5th_Earl_of_Chester', 'm': 'Bertrade de Montfort of Evreux'},
 
 'Hugh_de_Kevelioc,_5th_Earl_of_Chester': {'nm': 'Hugh of Cyfeiliog, 5th Earl of Chester', 'url': 'Hugh_de_Kevelioc,_5th_Earl_of_Chester', 'b': '1147', 'g': 1, 's': 'n', 'yb': 1147, 'f': 'Ranulf_de_Gernon,_4th_Earl_of_Chester', 'm': 'Maud_of_Gloucester,_Countess_of_Chester'},
 
-'Bertrade de Montfort of Evreux': {'nm': 'Bertrade de Montfort of Evreux', 'g': 0},
+'Bertrade de Montfort of Evreux': {'nm': 'Bertrade de Montfort of Evreux', 'g': 0, 'f': 'unknown'},
 
 'Juliana_FitzGerald': {'nm': 'Juliana FitzGerald, Lady of Thomond', 'url': 'Juliana_FitzGerald', 'b': 'Dublin, Ireland, c. 1263', 'd': '24 September 1300', 'g': 0, 's': 'n', 'yb': 1263, 'yd': 1300, 'f': 'Maurice_FitzGerald,_3rd_Lord_of_Offaly', 'm': 'Maud_de_Prendergast'},
 
@@ -1626,15 +1626,15 @@
 
 'Eve_de_Bermingham': {'nm': 'Eve de Bermingham, Lady of Offaly', 'url': 'Eve_de_Bermingham', 'b': 'unknown', 'd': 'Ireland, Between June 1223/December 1226', 'g': 0, 's': 'n', 'yd': 1226, 'f': 'Robert de Bermingham', 'm': 'unknown'},
 
-'Robert de Bermingham': {'nm': 'Robert de Bermingham', 'g': 1},
+'Robert de Bermingham': {'nm': 'Robert de Bermingham', 'g': 1, 'f': 'unknown'},
 
-'Juliana de Grenville': {'nm': 'Juliana de Grenville', 'g': 0},
+'Juliana de Grenville': {'nm': 'Juliana de Grenville', 'g': 0, 'f': 'unknown'},
 
 'Maud_de_Prendergast': {'nm': 'Maud de Prendergast', 'url': 'Maud_de_Prendergast', 'b': 'Ireland, 17 March 1242', 'd': 'before 1273', 'g': 0, 's': 'n', 'yb': 1242, 'yd': 1273, 'f': 'Sir Gerald de Prendergast', 'm': 'Matilda de Burgh'},
 
-'Sir Gerald de Prendergast': {'nm': 'Sir Gerald de Prendergast', 'g': 1},
+'Sir Gerald de Prendergast': {'nm': 'Sir Gerald de Prendergast', 'g': 1, 'f': 'unknown'},
 
-'Matilda de Burgh': {'nm': 'Matilda de Burgh', 'g': 0},
+'Matilda de Burgh': {'nm': 'Matilda de Burgh', 'g': 0, 'f': 'unknown'},
 
 'William_de_Mowbray': {'nm': 'William de Mowbray', 'url': 'William_de_Mowbray', 'b': 'Thirsk Castle, Thirsk, Yorkshire, Kingdom of England, 1173', 'd': 'Isle of Axholme, Epworth, Lincolnshire, Kingdom of England, 1224', 'g': 1, 's': 'n', 'yb': 1173, 'yd': 1224, 'f': 'Nigel de Mowbray', 'm': 'Mabel'},
 
@@ -1644,13 +1644,13 @@
 
 'Gunselm_de_Badlesmere': {'nm': 'Gunselm de Badlesmere', 'url': 'Gunselm_de_Badlesmere', 'b': 'c. 1232', 'd': 'c.1301', 'g': 1, 's': 'n', 'yb': 1232, 'yd': 1301, 'f': 'Bartholomew de Badlesmere'},
 
-'Bartholomew de Badlesmere': {'nm': 'Bartholomew de Badlesmere', 'g': 1},
+'Bartholomew de Badlesmere': {'nm': 'Bartholomew de Badlesmere', 'g': 1, 'f': 'unknown'},
 
-'Joan FitzBernard': {'nm': 'Joan FitzBernard', 'g': 0},
+'Joan FitzBernard': {'nm': 'Joan FitzBernard', 'g': 0, 'f': 'unknown'},
 
 'Hugues_du_Perche': {'nm': 'Hugues du Perche', 'url': 'Hugues_du_Perche', 'g': 1, 's': 'n', 'f': 'Fulcois,_the_Count_of_Perche', 'm': 'Melisende,_Viscountess_of_Chteaudun'},
 
-'Batrice de Mcon': {'nm': 'Batrice de Mcon', 'g': 0},
+'Batrice de Mcon': {'nm': 'Batrice de Mcon', 'g': 0, 'f': 'unknown'},
 
 'Pepin_of_Landen': {'nm': 'Pepin of Landen', 'url': 'Pepin_of_Landen', 'b': 'c. 580', 'd': '27 February 640', 'g': 1, 's': 'n', 'yb': 580, 'yd': 640, 'f': 'unknown'},
 
@@ -1658,19 +1658,19 @@
 
 'Bertrada_of_Pr%C3%BCm': {'nm': 'Bertrada of Prm', 'url': 'Bertrada_of_Pr%C3%BCm', 'b': 'c. 670', 'd': 'after 721', 'g': 0, 's': 'n', 'yb': 670, 'yd': 721, 'f': 'unknown'},
 
-'Lancelin I de Beaugency': {'nm': 'Lancelin I de Beaugency', 'g': 1},
+'Lancelin I de Beaugency': {'nm': 'Lancelin I de Beaugency', 'g': 1, 'f': 'unknown'},
 
-'Adelberg de Maine': {'nm': 'Adelberg de Maine', 'g': 0},
+'Adelberg de Maine': {'nm': 'Adelberg de Maine', 'g': 0, 'f': 'unknown'},
 
 'Fulbert_of_Falaise': {'nm': 'Fulbert of Falaise', 'url': 'Fulbert_of_Falaise', 'g': 1, 's': 'n', 'f': 'unknown'},
 
-'Warin I': {'nm': 'Warin I', 'g': 1},
+'Warin I': {'nm': 'Warin I', 'g': 1, 'f': 'unknown'},
 
 'Adalindis (obscure)': {'nm': 'Adalindis (obscure)', 'g': 0, 'f': 'unknown'},
 
 'Wacho': {'nm': 'Wacho', 'url': 'Wacho', 'd': '539', 'g': 1, 's': 'n', 'yd': 539, 'f': 'Unichis (obscure)'},
 
-'Austrigusa or Ostrogotha the Gepid': {'nm': 'Austrigusa or Ostrogotha the Gepid', 'g': 0},
+'Austrigusa or Ostrogotha the Gepid': {'nm': 'Austrigusa or Ostrogotha the Gepid', 'g': 0, 'f': 'unknown'},
 
 'Gerard_I_of_Paris': {'nm': 'Gerard I of Paris', 'url': 'Gerard_I_of_Paris', 'd': '779', 'g': 1, 's': 'n', 'yd': 779, 'f': 'unknown'},
 
@@ -1686,7 +1686,7 @@
 
 'Conrad_I_of_Auxerre': {'nm': 'Conrad I, Count of Auxerre', 'url': 'Conrad_I_of_Auxerre', 'd': 'c. 864', 'g': 1, 's': 'n', 'yd': 864, 'f': 'Welf_(father_of_Judith)'},
 
-'Waldrada, daughter of Adalhelm of Autun': {'nm': 'Waldrada, daughter of Adalhelm of Autun', 'g': 0},
+'Waldrada, daughter of Adalhelm of Autun': {'nm': 'Waldrada, daughter of Adalhelm of Autun', 'g': 0, 'f': 'unknown'},
 
 'Unruoch_III': {'nm': 'Unruoch III of Friuli', 'url': 'Unruoch_III', 'b': 'c. 840', 'd': '874', 'g': 1, 's': 'n', 'yb': 840, 'yd': 874, 'f': 'Eberhard_of_Friuli', 'm': 'Gisela,_daughter_of_Louis_the_Pious'},
 
@@ -1704,11 +1704,11 @@
 
 'Alp%C3%ADn_mac_Echdach': {'nm': 'Alpn mac Echdach', 'url': 'Alp%C3%ADn_mac_Echdach', 'd': 'Galloway, Scotland, 20 July 834', 'g': 1, 's': 'n', 'yd': 834, 'f': 'unknown'},
 
-'Robert of Dijon': {'nm': 'Robert of Dijon', 'g': 1},
+'Robert of Dijon': {'nm': 'Robert of Dijon', 'g': 1, 'f': 'unknown'},
 
 'William_VI_of_Angoul%C3%AAme': {'nm': 'William VI, Count of Angoulme', 'url': 'William_VI_of_Angoul%C3%AAme', 'd': '1179', 'g': 1, 's': 'n', 'yd': 1179, 'f': 'Wulgrin_II,_Count_of_Angoulme', 'm': 'Poncia daugher of Roger and Almondis'},
 
-'Marguerite de Turenne': {'nm': 'Marguerite de Turenne', 'g': 0},
+'Marguerite de Turenne': {'nm': 'Marguerite de Turenne', 'g': 0, 'f': 'unknown'},
 
 'Anna_Porphyrogenita': {'nm': 'Anna Porphyrogenita', 'url': 'Anna_Porphyrogenita', 'b': "Constantinople, Purple chamber of the Byzantine Emperor's Palace, Byzantine Empire, March 13, 963", 'd': 'Kiev, Grand Principality of Kiev, c. 1011', 'g': 0, 's': 'n', 'yb': 963, 'yd': 1011, 'f': 'Romanos_II', 'm': 'Theophano_(born_Anastaso)'},
 
@@ -1720,7 +1720,7 @@
 
 'Romanos_I': {'nm': 'Romanos I Lekapenos', 'url': 'Romanos_I', 'b': 'Lakape, c. 870', 'd': '15 June 948', 'g': 1, 's': 'n', 'yb': 870, 'yd': 948, 'f': 'Theophylaktos Abastaktos'},
 
-'Theophylaktos Abastaktos': {'nm': 'Theophylaktos Abastaktos', 'g': 1},
+'Theophylaktos Abastaktos': {'nm': 'Theophylaktos Abastaktos', 'g': 1, 'f': 'unknown'},
 
 'Theodora_(wife_of_Romanos_I)': {'nm': 'Theodora (wife of Romanos I)', 'url': 'Theodora_(wife_of_Romanos_I)', 'd': '20 February 922', 'g': 0, 's': 'n', 'yd': 922, 'f': 'unknown'},
 
@@ -1730,7 +1730,7 @@
 
 'Roger_I,_count_of_Carcassonne': {'nm': 'Roger I of Carcassonne', 'url': 'Roger_I,_count_of_Carcassonne', 'd': '1012', 'g': 1, 's': 'n', 'yd': 1012, 'f': 'Arnaud I', 'm': 'Arsinde_of_Carcassonne'},
 
-'Arnaud I': {'nm': 'Arnaud I', 'g': 1},
+'Arnaud I': {'nm': 'Arnaud I', 'g': 1, 'f': 'unknown'},
 
 'Arsinde_of_Carcassonne': {'nm': 'Arsinde', 'url': 'Arsinde_of_Carcassonne', 'b': '920', 'd': '970', 'g': 0, 's': 'n', 'yb': 920, 'yd': 970, 'f': "d'Acfred de Carcassonne"},
 
@@ -1738,11 +1738,11 @@
 
 'Tancred_of_Hauteville': {'nm': 'Tancred of Hauteville', 'url': 'Tancred_of_Hauteville', 'b': 'c. 980', 'd': '1041', 'g': 1, 's': 'n', 'yb': 980, 'yd': 1041, 'f': 'unknown'},
 
-'Fressenda': {'nm': 'Fressenda', 'g': 0},
+'Fressenda': {'nm': 'Fressenda (obscure)', 'g': 0, 'f': 'unknown'},
 
 'Sikelgaita': {'nm': 'Sikelgaita', 'url': 'Sikelgaita', 'b': '1040', 'd': '16 April 1090', 'g': 0, 's': 'n', 'yb': 1040, 'yd': 1090, 'f': 'Guaimar_IV_of_Salerno'},
 
-'Gilbert I of Gvaudan': {'nm': 'Gilbert I of Gvaudan', 'g': 1},
+'Gilbert I of Gvaudan': {'nm': 'Gilbert I of Gvaudan', 'g': 1, 'f': 'unknown'},
 
 'Gerberga_of_Provence': {'nm': 'Gerberga, Countess of Provence', 'url': 'Gerberga_of_Provence', 'b': 'c. 1060', 'd': '1115', 'g': 0, 's': 'n', 'yb': 1060, 'yd': 1115, 'f': 'Geoffrey_I_of_Provence', 'm': 'Etiennette'},
 
@@ -1750,31 +1750,31 @@
 
 'William_II_of_Provence': {'nm': 'William II, Count of Provence', 'url': 'William_II_of_Provence', 'b': 'late 980', 'd': '4 March 1019', 'g': 1, 's': 'n', 'yb': 980, 'yd': 1019, 'f': 'William_I_of_Provence', 'm': 'Adelaide-Blanche_of_Anjou'},
 
-'Etiennette': {'nm': 'Etiennette', 'g': 0},
+'Etiennette': {'nm': 'Etiennette (obscure)', 'g': 0, 'f': 'unknown'},
 
-'count Gutierre': {'nm': 'count Gutierre', 'g': 1},
+'count Gutierre': {'nm': 'count Gutierre', 'g': 1, 'f': 'unknown'},
 
 'Elvira (obscure)': {'nm': 'Elvira (obscure)', 'g': 0, 'f': 'unknown'},
 
 'Gonzalo_Men%C3%A9ndez': {'nm': 'Gonzalo Menndez', 'url': 'Gonzalo_Men%C3%A9ndez', 'd': '997', 'b': 'c. 950', 'g': 1, 's': 'n', 'yb': 950, 'yd': 997, 'f': 'Hermenegildo_Gonzlez', 'm': 'Mumadona_Dias'},
 
-'Ilduara Pelez': {'nm': 'Ilduara Pelez', 'g': 0},
+'Ilduara Pelez': {'nm': 'Ilduara Pelez', 'g': 0, 'f': 'unknown'},
 
-'Boleslaw Hevelli Stodoransky - prince of Hevelli': {'nm': 'Boleslaw Hevelli Stodoransky - prince of Hevelli', 'g': 1},
+'Boleslaw Hevelli Stodoransky - prince of Hevelli': {'nm': 'Boleslaw Hevelli Stodoransky - prince of Hevelli', 'g': 1, 'f': 'unknown'},
 
 'Erenfried_I': {'nm': 'Erenfried I', 'url': 'Erenfried_I', 'g': 1, 's': 'n', 'f': 'unknown'},
 
 'Odo,_Count_of_Toulouse': {'nm': 'Odo, Count of Toulouse', 'url': 'Odo,_Count_of_Toulouse', 'g': 1, 's': 'n', 'f': 'unknown'},
 
-'Galindo_Aznrez_II': {'nm': 'Galindo_Aznrez_II', 'g': 1},
+'Galindo_Aznrez_II': {'nm': 'Galindo_Aznrez_II (obscure)', 'g': 1, 'f': 'unknown'},
 
-'Sancha Garcs of Pamplona': {'nm': 'Sancha Garcs of Pamplona', 'g': 0},
+'Sancha Garcs of Pamplona': {'nm': 'Sancha Garcs of Pamplona', 'g': 0, 'f': 'unknown'},
 
 'Hilduin_II,_Count_of_Arcis-sur-Aube': {'nm': 'Hilduin II, Count of Arcis-sur-Aube', 'url': 'Hilduin_II,_Count_of_Arcis-sur-Aube', 'd': 'after 993', 'g': 1, 's': 'n', 'yd': 993, 'f': 'unknown'},
 
 'Raymond_I,_Count_of_Pallars_and_Ribagorza': {'nm': 'Raymond I, Count of Pallars and Ribagorza', 'url': 'Raymond_I,_Count_of_Pallars_and_Ribagorza', 'g': 1, 's': 'n', 'f': 'Count Lupus'},
 
-'Garsenda Fesenzac': {'nm': 'Garsenda Fesenzac', 'g': 0},
+'Garsenda Fesenzac': {'nm': 'Garsenda Fesenzac', 'g': 0, 'f': 'unknown'},
 
 'Fruela_of_Cantabria': {'nm': 'Fruela of Cantabria', 'url': 'Fruela_of_Cantabria', 'd': 'c. 758', 'g': 1, 's': 'n', 'yd': 758, 'f': 'Peter_of_Cantabria'},
 
@@ -1784,17 +1784,17 @@
 
 'Herbert_of_Wetterau': {'nm': 'Herbert of Wetterau', 'url': 'Herbert_of_Wetterau', 'b': 'c. 930', 'd': '992', 'g': 1, 's': 'n', 'yb': 930, 'yd': 992, 'f': 'Odo_of_Wetterau', 'm': 'Cunigunde daughter of Herbert I'},
 
-'Irmtrud of Avalgau (957  1020)': {'nm': 'Irmtrud of Avalgau (957  1020)', 'g': 0},
+'Irmtrud of Avalgau (957  1020)': {'nm': 'Irmtrud of Avalgau (957  1020)', 'g': 0, 'f': 'unknown'},
 
 'Attila': {'nm': 'Attila', 'url': 'Attila', 'b': 'Unknown date, c. 406', 'd': 'c. March 453', 'g': 1, 's': 'n', 'yb': 406, 'yd': 453, 'f': 'Mundzuk'},
 
 'Mundzuk': {'nm': 'Mundzuk', 'url': 'Mundzuk', 'g': 1, 's': 'n', 'f': 'unknown'},
 
-'Adalbert II the Illustrious, Count of Thurgau': {'nm': 'Adalbert II the Illustrious, Count of Thurgau', 'g': 1},
+'Adalbert II the Illustrious, Count of Thurgau': {'nm': 'Adalbert II the Illustrious, Count of Thurgau', 'g': 1, 'f': 'unknown'},
 
-'Judith of Friuli': {'nm': 'Judith of Friuli', 'g': 0},
+'Judith of Friuli': {'nm': 'Judith of Friuli', 'g': 0, 'f': 'unknown'},
 
-'Wulfhard of Flavigny': {'nm': 'Wulfhard of Flavigny', 'g': 1},
+'Wulfhard of Flavigny': {'nm': 'Wulfhard of Flavigny', 'g': 1, 'f': 'unknown'},
 
 'Suzanne of Paris': {'nm': 'Suzanne of Paris', 'g': 0, 'f': 'Beggo,_Count_of_Toulouse'},
 
@@ -1806,15 +1806,15 @@
 
 'Sigifred_of_Lucca': {'nm': 'Sigifred of Lucca', 'url': 'Sigifred_of_Lucca', 'd': 'after 940', 'g': 1, 's': 'n', 'yd': 940, 'f': 'unknown'},
 
-'Ildegarda_dei_Supponidi': {'nm': 'Ildegarda_dei_Supponidi', 'g': 0},
+'Ildegarda_dei_Supponidi': {'nm': 'Ildegarda_dei_Supponidi (obscure)', 'g': 0, 'f': 'unknown'},
 
-'Obertenghi dynasty': {'nm': 'Obertenghi dynasty', 'g': 1},
+'Obertenghi dynasty': {'nm': 'Obertenghi dynasty', 'g': 1, 'f': 'unknown'},
 
 'Guigues_I_of_Albon': {'nm': 'Guigues I of Albon', 'url': 'Guigues_I_of_Albon', 'b': 'c. 1000', 'd': 'Cluny, 1070', 'g': 1, 's': 'n', 'yb': 1000, 'yd': 1070, 'f': "Guigues d'Albon", 'm': 'Gotelana de Clrieux'},
 
-'Adelaide (Adelsindis/Adalsendis) (1035 to 1052)': {'nm': 'Adelaide (Adelsindis/Adalsendis) (1035 to 1052)', 'g': 0},
+'Adelaide (Adelsindis/Adalsendis) (1035 to 1052)': {'nm': 'Adelaide (Adelsindis/Adalsendis) (1035 to 1052)', 'g': 0, 'f': 'unknown'},
 
-'Adela of Thuringa': {'nm': 'Adela of Thuringa', 'g': 0},
+'Adela of Thuringa': {'nm': 'Adela of Thuringa', 'g': 0, 'f': 'unknown'},
 
 'Robert_of_Namur_(died_981)': {'nm': 'Robert of Namur (died 981)', 'url': 'Robert_of_Namur_(died_981)', 'd': '981', 'g': 1, 's': 'n', 'yd': 981, 'f': 'unknown'},
 
@@ -1822,9 +1822,9 @@
 
 'William_VII,_Duke_of_Aquitaine': {'nm': 'William VII, Duke of Aquitaine', 'url': 'William_VII,_Duke_of_Aquitaine', 'd': 'autumn 1058', 'b': '1023', 'g': 1, 's': 'n', 'yb': 1023, 'yd': 1058, 'f': 'William_V,_Duke_of_Aquitaine', 'm': 'Agnes_of_Burgundy,_Duchess_of_Aquitaine'},
 
-'Ermensinde de Longwy': {'nm': 'Ermensinde de Longwy', 'g': 0},
+'Ermensinde de Longwy': {'nm': 'Ermensinde de Longwy', 'g': 0, 'f': 'unknown'},
 
-'Jimena_Daz': {'nm': 'Jimena_Daz', 'g': 0},
+'Jimena_Daz': {'nm': 'Jimena_Daz (obscure)', 'g': 0, 'f': 'unknown'},
 
 'Adelolf,_Count_of_Boulogne': {'nm': 'Adelolf, Count of Boulogne', 'url': 'Adelolf,_Count_of_Boulogne', 'd': '13 November 933', 'g': 1, 's': 'n', 'yd': 933, 'f': 'Baldwin_II,_Count_of_Flanders', 'm': '%C3%86lfthryth,_Countess_of_Flanders'},
 
@@ -1850,9 +1850,9 @@
 
 'Welf_I': {'nm': 'Welf I', 'url': 'Welf_I', 'd': 'before 876', 'g': 1, 's': 'n', 'yd': 876, 'f': 'unknown'},
 
-'Matilda de St. Hilaire': {'nm': 'Matilda de St. Hilaire', 'g': 0},
+'Matilda de St. Hilaire': {'nm': 'Matilda de St. Hilaire', 'g': 0, 'f': 'unknown'},
 
-'John_Fitzalan_(12461272)': {'nm': 'John_Fitzalan_(12461272)', 'g': 1},
+'John_Fitzalan_(12461272)': {'nm': 'John_Fitzalan_(12461272) (obscure)', 'g': 1, 'f': 'unknown'},
 
 'Isabella_Mortimer,_lady_of_Clun_and_Oswestry': {'nm': 'Isabella Mortimer, lady of Clun and Oswestry', 'url': 'Isabella_Mortimer,_lady_of_Clun_and_Oswestry', 'b': 'Wigmore Castle, Herefordshire, After 1247', 'd': 'Before 1 April 1292', 'g': 0, 's': 'n', 'yb': 1247, 'yd': 1292, 'f': 'Roger_Mortimer,_1st_Baron_Mortimer', 'm': 'Maud_de_Braose,_Baroness_Mortimer'},
 
@@ -1882,7 +1882,7 @@
 
 'Hugh_IX_of_Lusignan': {'nm': 'Hugh IX of Lusignan', 'url': 'Hugh_IX_of_Lusignan', 'd': '5 November 1219', 'b': 'c. 1165', 'g': 1, 's': 'n', 'yb': 1165, 'yd': 1219, 'f': 'Hugh (c. 1141)', 'm': 'Orengarde wife of Hugh'},
 
-'Agathe de Preuilly': {'nm': 'Agathe de Preuilly', 'g': 0},
+'Agathe de Preuilly': {'nm': 'Agathe de Preuilly', 'g': 0, 'f': 'unknown'},
 
 'Alberic_I,_Count_of_Dammartin': {'nm': 'Alberic I, Count of Dammartin', 'url': 'Alberic_I,_Count_of_Dammartin', 'd': 'after 1162', 'g': 1, 's': 'n', 'yd': 1162, 'f': 'Gilbert de Mello', 'm': 'Richilde de Clermont'},
 
@@ -1894,7 +1894,7 @@
 
 'Fulcois,_the_Count_of_Perche': {'nm': 'Fulcuich', 'url': 'Fulcois,_the_Count_of_Perche', 'g': 1, 's': 'n', 'f': 'unknown'},
 
-'Melisende,_Viscountess_of_Chteaudun': {'nm': 'Melisende,_Viscountess_of_Chteaudun', 'g': 0},
+'Melisende,_Viscountess_of_Chteaudun': {'nm': 'Melisende,_Viscountess_of_Chteaudun (obscure)', 'g': 0, 'f': 'unknown'},
 
 'Unichis (obscure)': {'nm': 'Unichis (obscure)', 'g': 1, 'f': 'unknown'},
 
@@ -1920,7 +1920,7 @@
 
 'Gilbert_de_Clare,_1st_Earl_of_Pembroke': {'nm': 'Gilbert de Clare, 1st Earl of Pembroke', 'url': 'Gilbert_de_Clare,_1st_Earl_of_Pembroke', 'b': 'Tonbridge, c. 1100', 'd': '6 January 1148', 'g': 1, 's': 'n', 'yb': 1100, 'yd': 1148, 'f': 'Gilbert_Fitz_Richard', 'm': 'Alice de Claremont'},
 
-'Alice de Claremont': {'nm': 'Alice de Claremont', 'g': 0},
+'Alice de Claremont': {'nm': 'Alice de Claremont', 'g': 0, 'f': 'unknown'},
 
 'Ranulf_de_Gernon,_4th_Earl_of_Chester': {'nm': 'Ranulf de Gernon, 4th Earl of Chester', 'url': 'Ranulf_de_Gernon,_4th_Earl_of_Chester', 'b': 'Guernon castle, Calvados, France, 1099', 'd': 'Cheshire, England, 16 December 1153', 'g': 1, 's': 'n', 'yb': 1099, 'yd': 1153, 'f': 'Ranulf_le_Meschin,_3rd_Earl_of_Chester', 'm': 'Lucy_of_Bolingbroke'},
 
@@ -1934,39 +1934,39 @@
 
 'Hamo_Dapifer': {'nm': 'Hamo Dapifer', 'url': 'Hamo_Dapifer', 'd': 'c. 1100', 'g': 1, 's': 'n', 'yd': 1100, 'f': 'Hamon_Dentatus'},
 
-'Sybil de Montgomery': {'nm': 'Sybil de Montgomery', 'g': 0},
+'Sybil de Montgomery': {'nm': 'Sybil de Montgomery', 'g': 0, 'f': 'unknown'},
 
-'Count Gauzlin I of Maine': {'nm': 'Count Gauzlin I of Maine', 'g': 1},
+'Count Gauzlin I of Maine': {'nm': 'Count Gauzlin I of Maine', 'g': 1, 'f': 'unknown'},
 
 'Adeltrude (obscure)': {'nm': 'Adeltrude (obscure)', 'g': 0, 'f': 'unknown'},
 
-'Wulgrin_II,_Count_of_Angoulme': {'nm': 'Wulgrin_II,_Count_of_Angoulme', 'g': 1},
+'Wulgrin_II,_Count_of_Angoulme': {'nm': 'Wulgrin_II,_Count_of_Angoulme (obscure)', 'g': 1, 'f': 'unknown'},
 
-'Poncia daugher of Roger and Almondis': {'nm': 'Poncia daugher of Roger and Almondis', 'g': 0},
+'Poncia daugher of Roger and Almondis': {'nm': 'Poncia daugher of Roger and Almondis', 'g': 0, 'f': 'unknown'},
 
-"d'Acfred de Carcassonne": {'nm': "d'Acfred de Carcassonne", 'g': 1},
+"d'Acfred de Carcassonne": {'nm': "d'Acfred de Carcassonne", 'g': 1, 'f': 'unknown'},
 
 'Guaimar_IV_of_Salerno': {'nm': 'Guaimar IV of Salerno', 'url': 'Guaimar_IV_of_Salerno', 'b': 'c. 1013', 'd': 'c. 3 June 1052', 'g': 1, 's': 'n', 'yb': 1013, 'yd': 1052, 'f': 'Guaimar_III_of_Salerno', 'm': 'Gaitelgrima, daughter of Duke Pandulf II'},
 
-'Hermenegildo_Gonzlez': {'nm': 'Hermenegildo_Gonzlez', 'g': 1},
+'Hermenegildo_Gonzlez': {'nm': 'Hermenegildo_Gonzlez (obscure)', 'g': 1, 'f': 'unknown'},
 
 'Mumadona_Dias': {'nm': 'Mumadona Dias', 'url': 'Mumadona_Dias', 'd': '968', 'g': 0, 's': 'n', 'yd': 968, 'f': 'Diogo_Fernandes_(count)', 'm': 'countess Onega'},
 
-'Adelgunde of Burgundy (860902)': {'nm': 'Adelgunde of Burgundy (860902)', 'g': 0},
+'Adelgunde of Burgundy (860902)': {'nm': 'Adelgunde of Burgundy (860902)', 'g': 0, 'f': 'unknown'},
 
 'Odo_of_Wetterau': {'nm': 'Odo of Wetterau', 'url': 'Odo_of_Wetterau', 'b': 'c. 895', 'd': '2 December 949', 'g': 1, 's': 'n', 'yb': 895, 'yd': 949, 'f': 'unknown'},
 
 'Cunigunde daughter of Herbert I': {'nm': 'Cunigunde daughter of Herbert I', 'g': 0, 'f': 'Herbert_I,_Count_of_Vermandois', 'm': 'Bertha de Morvis'},
 
-'Count Lupus': {'nm': 'Count Lupus', 'g': 1},
+'Count Lupus': {'nm': 'Count Lupus', 'g': 1, 'f': 'unknown'},
 
-'Bertha de Morvis': {'nm': 'Bertha de Morvis', 'g': 0},
+'Bertha de Morvis': {'nm': 'Bertha de Morvis', 'g': 0, 'f': 'unknown'},
 
-'Roger, Count of Auriate': {'nm': 'Roger, Count of Auriate', 'b': 'c. 906', 'd': 'c. 935', 'g': 1, 'yb': 906, 'yd': 935},
+'Roger, Count of Auriate': {'nm': 'Roger, Count of Auriate', 'b': 'c. 906', 'd': 'c. 935', 'g': 1, 'yb': 906, 'yd': 935, 'f': 'unknown'},
 
-"Guigues d'Albon": {'nm': "Guigues d'Albon", 'g': 1},
+"Guigues d'Albon": {'nm': "Guigues d'Albon", 'g': 1, 'f': 'unknown'},
 
-'Gotelana de Clrieux': {'nm': 'Gotelana de Clrieux', 'g': 0},
+'Gotelana de Clrieux': {'nm': 'Gotelana de Clrieux', 'g': 0, 'f': 'unknown'},
 
 'Gerhard_I_of_Metz': {'nm': 'Gerhard I of Metz', 'url': 'Gerhard_I_of_Metz', 'b': 'c. 875', 'd': '22 June 910', 'g': 1, 's': 'n', 'yb': 875, 'yd': 910, 'f': 'Adalhard_of_Metz'},
 
@@ -1974,7 +1974,7 @@
 
 'Roger_Mortimer_of_Wigmore': {'nm': 'Roger Mortimer of Wigmore', 'url': 'Roger_Mortimer_of_Wigmore', 'b': 'before 1153', 'd': 'before 8 July 1214', 'g': 1, 's': 'n', 'yb': 1153, 'yd': 1214, 'f': 'Hugh_de_Mortimer', 'm': 'Matilda Le Meschin'},
 
-'Isabel de Ferrers': {'nm': 'Isabel de Ferrers', 'g': 0},
+'Isabel de Ferrers': {'nm': 'Isabel de Ferrers', 'g': 0, 'f': 'unknown'},
 
 'Llywelyn_the_Great': {'nm': 'Llywelyn the Great', 'url': 'Llywelyn_the_Great', 'b': 'Dolwyddelan, Kingdom of Gwynedd, c. 1173', 'd': 'Cistercian Aberconwy Abbey, Principality of Wales, 11 April 1240', 'g': 1, 's': 'n', 'yb': 1173, 'yd': 1240, 'f': 'unknown'},
 
@@ -1984,11 +1984,11 @@
 
 'Reginald_de_Braose': {'nm': 'Reginald de Braose', 'url': 'Reginald_de_Braose', 'b': '19 September 1182', 'd': 'June 1228', 'g': 1, 's': 'n', 'yb': 1182, 'yd': 1228, 'f': 'William_de_Braose,_4th_Lord_of_Bramber', 'm': 'Maud_de_Braose'},
 
-'Grecia Briwere': {'nm': 'Grecia Briwere', 'g': 0},
+'Grecia Briwere': {'nm': 'Grecia Briwere', 'g': 0, 'f': 'unknown'},
 
 'Guigues_IV_of_Albon': {'nm': 'Guigues IV of Albon', 'url': 'Guigues_IV_of_Albon', 'd': '28 June 1142', 'g': 1, 's': 'n', 'yd': 1142, 'f': 'Guigues_III_of_Albon', 'm': 'Matilda (obscure)'},
 
-'Margaret of Mcon': {'nm': 'Margaret of Mcon', 'g': 0},
+'Margaret of Mcon': {'nm': 'Margaret of Mcon', 'g': 0, 'f': 'unknown'},
 
 'Hamelin_de_Warenne,_Earl_of_Surrey': {'nm': 'Hamelin de Warenne, Earl of Surrey', 'url': 'Hamelin_de_Warenne,_Earl_of_Surrey', 'b': 'c. 1130', 'd': '7 May 1202', 'g': 1, 's': 'n', 'yb': 1130, 'yd': 1202, 'f': 'Geoffrey_Plantagenet,_Count_of_Anjou'},
 
@@ -1996,11 +1996,11 @@
 
 'Hugh (c. 1141)': {'nm': 'Hugh (c. 1141)', 'g': 1, 'f': 'Hugh_VIII_of_Lusignan'},
 
-'Orengarde wife of Hugh': {'nm': 'Orengarde wife of Hugh', 'g': 0},
+'Orengarde wife of Hugh': {'nm': 'Orengarde wife of Hugh', 'g': 0, 'f': 'unknown'},
 
 'Hugh_VIII_of_Lusignan': {'nm': 'Hugh VIII of Lusignan', 'url': 'Hugh_VIII_of_Lusignan', 'b': 'c. 1110', 'd': '1165 or 1171', 'g': 1, 's': 'n', 'yb': 1110, 'yd': 1171, 'f': 'Hugh_VII_of_Lusignan', 'm': 'Sarracena de Lezay'},
 
-'Gilbert de Mello': {'nm': 'Gilbert de Mello', 'g': 1},
+'Gilbert de Mello': {'nm': 'Gilbert de Mello', 'g': 1, 'f': 'unknown'},
 
 'Richilde de Clermont': {'nm': 'Richilde de Clermont', 'g': 0, 'f': 'Hugh_I,_Count_of_Clermont-en-Beauvaisis', 'm': 'Margaret, daughter of Hilduin IV'},
 
@@ -2020,7 +2020,7 @@
 
 'Sigramnus,_Count_of_Hesbaye': {'nm': 'Sigramnus, Count of Hesbaye', 'url': 'Sigramnus,_Count_of_Hesbaye', 'g': 1, 's': 'n', 'f': 'unknown'},
 
-'Hardouin of Burgundy': {'nm': 'Hardouin of Burgundy', 'g': 1},
+'Hardouin of Burgundy': {'nm': 'Hardouin of Burgundy', 'g': 1, 'f': 'unknown'},
 
 'Guaimar_III_of_Salerno': {'nm': 'Guaimar III of Salerno', 'url': 'Guaimar_III_of_Salerno', 'b': 'c. 983', 'd': 'c. 1029', 'g': 1, 's': 'n', 'yb': 983, 'yd': 1029, 'f': 'John_II_of_Salerno'},
 
@@ -2036,17 +2036,17 @@
 
 'Diogo_Fernandes_(count)': {'nm': 'Diogo Fernandes (count)', 'url': 'Diogo_Fernandes_(count)', 'd': 'before 1 December 928', 'g': 1, 's': 'n', 'yd': 928, 'f': 'unknown'},
 
-'countess Onega': {'nm': 'countess Onega', 'g': 0},
+'countess Onega': {'nm': 'countess Onega', 'g': 0, 'f': 'unknown'},
 
 'Adalhard_of_Metz': {'nm': 'Adalhard of Metz', 'url': 'Adalhard_of_Metz', 'b': 'c. 840', 'd': '2 January 890', 'g': 1, 's': 'n', 'yb': 840, 'yd': 890, 'f': 'Adalard_the_Seneschal'},
 
 'Adalard_the_Seneschal': {'nm': 'Adalard the Seneschal', 'url': 'Adalard_the_Seneschal', 'g': 1, 's': 'n', 'f': 'Leuthard_I_of_Paris'},
 
-'Ingeltrude': {'nm': 'Ingeltrude(obscure)', 'g': 0},
+'Ingeltrude': {'nm': 'Ingeltrude(obscure) (obscure)', 'g': 0, 'f': 'unknown'},
 
 'Hugh_de_Mortimer': {'nm': 'Hugh de Mortimer', 'url': 'Hugh_de_Mortimer', 'b': 'c. 1100', 'd': '26 February 1180', 'g': 1, 's': 'n', 'yb': 1100, 'yd': 1180, 'f': 'Ranulph_de_Mortimer'},
 
-'Matilda Le Meschin': {'nm': 'Matilda Le Meschin', 'g': 0},
+'Matilda Le Meschin': {'nm': 'Matilda Le Meschin', 'g': 0, 'f': 'unknown'},
 
 'William_de_Braose,_4th_Lord_of_Bramber': {'nm': 'William de Braose, 4th Lord of Bramber', 'url': 'William_de_Braose,_4th_Lord_of_Bramber', 'd': 'Corbeil, Kingdom of France, 9 August 1211', 'g': 1, 's': 'n', 'yd': 1211, 'f': 'William_de_Braose,_3rd_Lord_of_Bramber', 'm': 'Bertha_of_Hereford'},
 
@@ -2066,11 +2066,11 @@
 
 'Bernard_de_Neufmarch%C3%A9': {'nm': 'Bernard de Neufmarch', 'url': 'Bernard_de_Neufmarch%C3%A9', 'b': 'c.\u20091050', 'd': 'c.\u20091125', 'g': 1, 's': 'n', 'yb': 1050, 'yd': 1125, 'f': 'Geoffrey de Neufmarch', 'm': 'Ada de Hugleville'},
 
-'Nest ferch Osbern': {'nm': 'Nest ferch Osbern', 'g': 0},
+'Nest ferch Osbern': {'nm': 'Nest ferch Osbern', 'g': 0, 'f': 'unknown'},
 
 'Maud_de_Braose': {'nm': 'Maud de Braose', 'url': 'Maud_de_Braose', 'b': 'France, c. 1155', 'd': 'Corfe Castle, Dorset, England, 1210', 'g': 0, 's': 'n', 'yb': 1155, 'yd': 1210, 'f': 'Bernard de St. Valry', 'm': 'Matilda'},
 
-'Bernard de St. Valry': {'nm': 'Bernard de St. Valry', 'g': 1},
+'Bernard de St. Valry': {'nm': 'Bernard de St. Valry', 'g': 1, 'f': 'unknown'},
 
 'Matilda (obscure)': {'nm': 'Matilda (obscure)', 'g': 0, 'f': 'unknown'},
 
@@ -2088,15 +2088,15 @@
 
 'Hugh_VII_of_Lusignan': {'nm': 'Hugh VII of Lusignan', 'url': 'Hugh_VII_of_Lusignan', 'b': '1065', 'd': '1151', 'g': 1, 's': 'n', 'yb': 1065, 'yd': 1151, 'f': 'Hugh_VI_of_Lusignan'},
 
-'Sarracena de Lezay': {'nm': 'Sarracena de Lezay', 'g': 0},
+'Sarracena de Lezay': {'nm': 'Sarracena de Lezay', 'g': 0, 'f': 'unknown'},
 
-'Renaud I of Clermont (10101088)': {'nm': 'Renaud I of Clermont (10101088)', 'g': 1},
+'Renaud I of Clermont (10101088)': {'nm': 'Renaud I of Clermont (10101088)', 'g': 1, 'f': 'unknown'},
 
-'Seigneur de Ramerupt': {'nm': 'Seigneur de Ramerupt', 'g': 0},
+'Seigneur de Ramerupt': {'nm': 'Seigneur de Ramerupt', 'g': 0, 'f': 'unknown'},
 
 'Ranulf_de_Briquessart': {'nm': 'Ranulf de Briquessart', 'url': 'Ranulf_de_Briquessart', 'b': 'c. 1050', 'd': 'c. 1089', 'g': 1, 's': 'n', 'yb': 1050, 'yd': 1089, 'f': 'unknown'},
 
-'Margaret Goz': {'nm': 'Margaret Goz', 'g': 0},
+'Margaret Goz': {'nm': 'Margaret Goz', 'g': 0, 'f': 'unknown'},
 
 'Landulf_II_of_Benevento': {'nm': 'Landulf II of Benevento', 'url': 'Landulf_II_of_Benevento', 'd': '961', 'g': 1, 's': 'n', 'yd': 961, 'f': 'Landulf_I_of_Benevento', 'm': 'Gemma, daughter of Athanasius'},
 
@@ -2106,9 +2106,9 @@
 
 'Adeliza (obscure)': {'nm': 'Adeliza (obscure)', 'g': 0},
 
-'Geoffrey de Neufmarch': {'nm': 'Geoffrey de Neufmarch', 'g': 1},
+'Geoffrey de Neufmarch': {'nm': 'Geoffrey de Neufmarch', 'g': 1, 'f': 'unknown'},
 
-'Ada de Hugleville': {'nm': 'Ada de Hugleville', 'g': 0},
+'Ada de Hugleville': {'nm': 'Ada de Hugleville', 'g': 0, 'f': 'unknown'},
 
 'William_de_Warenne,_2nd_Earl_of_Surrey': {'nm': 'William de Warenne, 2nd Earl of Surrey', 'url': 'William_de_Warenne,_2nd_Earl_of_Surrey', 'd': '11 May 1138', 'g': 1, 's': 'n', 'yd': 1138, 'f': 'unknown'},
 
@@ -2144,13 +2144,13 @@
 
 'Herbert_III,_Count_of_Vermandois': {'nm': 'Herbert III, Count of Vermandois', 'url': 'Herbert_III,_Count_of_Vermandois', 'b': '953', 'd': '1015', 'g': 1, 's': 'n', 'yb': 953, 'yd': 1015, 'f': 'Adalbert_I,_Count_of_Vermandois', 'm': 'Gerberge_of_Lorraine'},
 
-'Ermengarde of Bar-sur-Seine': {'nm': 'Ermengarde of Bar-sur-Seine', 'g': 0},
+'Ermengarde of Bar-sur-Seine': {'nm': 'Ermengarde of Bar-sur-Seine', 'g': 0, 'f': 'unknown'},
 
-'Count Nocher III of Bar-sur-Aube': {'nm': 'Count Nocher III of Bar-sur-Aube', 'g': 1},
+'Count Nocher III of Bar-sur-Aube': {'nm': 'Count Nocher III of Bar-sur-Aube', 'g': 1, 'f': 'unknown'},
 
 'Hugh_IV_of_Lusignan': {'nm': 'Hugh IV of Lusignan', 'url': 'Hugh_IV_of_Lusignan', 'd': 'c. 1026', 'g': 1, 's': 'n', 'yd': 1026, 'f': 'Hugh_III_of_Lusignan', 'm': 'Arsendis de Vivonne'},
 
-'Landenulf, gastald of Teano': {'nm': 'Landenulf, gastald of Teano', 'g': 1},
+'Landenulf, gastald of Teano': {'nm': 'Landenulf, gastald of Teano', 'g': 1, 'f': 'unknown'},
 
 'Gregory_III_of_Naples': {'nm': 'Gregory III of Naples', 'url': 'Gregory_III_of_Naples', 'd': 'March 870', 'g': 1, 's': 'n', 'yd': 870, 'f': 'Sergius_I_of_Naples', 'm': 'Drusa (obscure)'},
 
@@ -2162,7 +2162,7 @@
 
 'Hugh_III_of_Lusignan': {'nm': 'Hugh III of Lusignan', 'url': 'Hugh_III_of_Lusignan', 'g': 1, 's': 'n', 'f': 'Hugh_II_of_Lusignan'},
 
-'Arsendis de Vivonne': {'nm': 'Arsendis de Vivonne', 'g': 0},
+'Arsendis de Vivonne': {'nm': 'Arsendis de Vivonne', 'g': 0, 'f': 'unknown'},
 
 'Sergius_I_of_Naples': {'nm': 'Sergius I of Naples', 'url': 'Sergius_I_of_Naples', 'd': '864', 'g': 1, 's': 'n', 'yd': 864, 'f': 'unknown'},
 
@@ -2170,7 +2170,7 @@
 
 'Gilbert,_Duke_of_Lorraine': {'nm': 'Gilbert, Duke of Lorraine', 'url': 'Gilbert,_Duke_of_Lorraine', 'b': '890', 'd': '2 October 939', 'g': 1, 's': 'n', 'yb': 890, 'yd': 939, 'f': 'Reginar,_Duke_of_Lorraine', 'm': 'Alberada'},
 
-'Alberada': {'nm': '<i>Alberada</i>(obscure)', 'g': 0},
+'Alberada': {'nm': '<i>Alberada</i>(obscure) (obscure)', 'g': 0, 'f': 'unknown'},
 
 'Hugh_II_of_Lusignan': {'nm': 'Hugh II of Lusignan', 'url': 'Hugh_II_of_Lusignan', 'b': 'c. 912', 'd': '967', 'g': 1, 's': 'n', 'yb': 912, 'yd': 967, 'f': 'Hugh_I_of_Lusignan'},
 
@@ -2180,15 +2180,15 @@
 
 'Nigel_d%27Aubigny': {'nm': "Nigel d'Aubigny", 'url': 'Nigel_d%27Aubigny', 'd': 'unknown, 21 November 1129', 'g': 1, 's': 'n', 'yd': 1129, 'f': "Roger d'Aubigny", 'm': 'Amice or Avice'},
 
-"Roger d'Aubigny": {'nm': "Roger d'Aubigny", 'g': 1},
+"Roger d'Aubigny": {'nm': "Roger d'Aubigny", 'g': 1, 'f': 'unknown'},
 
-'Amice or Avice': {'nm': 'Amice or Avice', 'g': 0},
+'Amice or Avice': {'nm': 'Amice or Avice', 'g': 0, 'f': 'unknown'},
 
-'Gundreda de Gournay': {'nm': 'Gundreda de Gournay', 'g': 0},
+'Gundreda de Gournay': {'nm': 'Gundreda de Gournay', 'g': 0, 'f': 'unknown'},
 
 'William_(III)_de_Beauchamp': {'nm': 'William (III) de Beauchamp', 'url': 'William_(III)_de_Beauchamp', 'b': 'c. 1215', 'd': '1269', 'g': 1, 's': 'n', 'yb': 1215, 'yd': 1269, 'f': 'Walter_de_Beauchamp_(justice)', 'm': 'Johanna Mortimer (d.1225)'},
 
-'Isabel de Mauduit': {'nm': 'Isabel de Mauduit', 'g': 0},
+'Isabel de Mauduit': {'nm': 'Isabel de Mauduit', 'g': 0, 'f': 'unknown'},
 
 'Walter_de_Beauchamp_(justice)': {'nm': 'Walter de Beauchamp (justice)', 'url': 'Walter_de_Beauchamp_(justice)', 'b': 'c. 1192', 'd': '1236', 'g': 1, 's': 'n', 'yb': 1192, 'yd': 1236, 'f': 'William II de Beauchamp of Elmley'},
 
@@ -2210,11 +2210,11 @@
 
 'Malusha': {'nm': 'Malusha', 'url': 'Malusha', 'b': 'Lyubech, Rypky district, Ukraine, 944', 'd': '1000', 'g': 0, 's': 'n', 'yb': 944, 'yd': 1000, 'f': 'Malk of Lyubech'},
 
-'Malk of Lyubech': {'nm': 'Malk of Lyubech', 'g': 1},
+'Malk of Lyubech': {'nm': 'Malk of Lyubech', 'g': 1, 'f': 'unknown'},
 
 'Sir William Tendring': {'nm': 'Sir William Tendring', 'g': 1, 'f': 'unknown'},
 
-'Katherine Mylde': {'nm': 'Katherine Mylde', 'g': 0},
+'Katherine Mylde': {'nm': 'Katherine Mylde', 'g': 0, 'f': 'unknown'},
 
 'Paul Daniel Spooner': {'nm': 'Paul Daniel Spooner', 'b': '11 Jan 1984', 'g': 1, 'yb': 1984, 'f': 'Ronald Craig Spooner', 'm': 'Monica Louise Bennett'},
 
@@ -2272,7 +2272,7 @@
 
 'Evie Emma Lockhart': {'nm': 'Evie Emma Lockhart', 'b': 'MI, USA, 15 April 1885', 'd': 'Michigan, USA, 11/14/1956', 'g': 0, 'yb': 1885, 'yd': 1956, 'f': 'Jeremiah H Lockhart', 'm': 'Nina Estella Lockhart'},
 
-'Jeremiah H Lockhart': {'nm': 'Jeremiah H Lockhart', 'b': 'Ontario, Canada, 5 Mar 1862', 'd': 'Michigan, 29 May 1939', 'g': 1, 'yb': 1862, 'yd': 1939, 'f': 'unknown'},
+'Jeremiah H Lockhart': {'nm': 'Jeremiah H Lockhart', 'b': 'Ontario, Canada, 5 Mar 1862', 'd': 'Michigan, 29 May 1939', 'g': 1, 'yb': 1862, 'yd': 1939, 'f': 'William Henry Lockhart', 'm': 'Sarah Harris'},
 
 'Nina Estella Lockhart': {'nm': 'Nina Estella Lockhart', 'b': 'Michigan, 16 Apr 1864', 'd': 'Michigan, USA, 14 Nov 1943', 'g': 0, 'yb': 1864, 'yd': 1943, 'f': 'Roderick Madison Rice', 'm': 'Emma Catherine Lathrop'},
 
@@ -2390,7 +2390,7 @@
 
 'Peter Aanstad': {'nm': 'Peter Aanstad', 'f': 'Peder Aanstad', 'g': 1},
 
-'Peder Aanstad': {'nm': 'Peder Aanstad', 'g': 1},
+'Peder Aanstad': {'nm': 'Peder Aanstad', 'g': 1, 'f': 'unknown'},
 
 'Ingeborg (unknown last name)': {'nm': 'Ingeborg (unknown last name)', 'f': 'unknown', 'g': 0},
 
@@ -2402,8 +2402,12 @@
 
 'Bertha Hards': {'nm': 'Bertha Hards', 'f': 'unknown', 'g': 0},
 
-'Charles Kratsch': {'nm': 'Charles Kratsch', 'f': 'unknown', 'g': 1},
+'Charles Kratsch': {'nm': 'Charles Kratsch', 'd': 'c. 1960', 'yd': 1960, 'f': 'unknown', 'g': 1},
 
 'Francis Harold "Judge" Bennett': {'nm': 'Francis Harold "Judge" Bennett', 'm': 'Clementine China Wattson', 'd': '1987', 'yd': 1987, 'f': 'unknown', 'g': 1},
 
-'Clementine China Wattson': {'nm': 'Clementine China Wattson', 'f': 'unknown', 'g': 0}}
+'Clementine China Wattson': {'nm': 'Clementine China Wattson', 'f': 'unknown', 'g': 0},
+
+'Sarah Harris': {'nm': 'Sarah Harris', 'b': '1831', 'yb': 1831, 'd': '1909', 'yd': 1909, 'f': 'unknown', 'g': 0},
+
+'William Henry Lockhart': {'nm': 'William Henry Lockhart', 'b': '1829', 'yb': 1829, 'f': 'unknown', 'g': 1}}
