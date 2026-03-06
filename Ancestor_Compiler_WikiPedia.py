@@ -243,7 +243,7 @@ def getwikiperson(Url_Name):
     return PIF
 
 
-def dataentry(p):
+def dataentry(p, autoexit = True):
     """
     Interactive prompt to fill in missing parent / date information for a person.
     Returns 'y' if user chooses to save and exit, otherwise None/'n'.
@@ -251,14 +251,41 @@ def dataentry(p):
     validkeys = ("f", "m", "b", "d", "yb", "yd", "nm")
 
     def processkey(k, desc, numeric=False):
-        if k in p: print(p[k])
-        intermediate = input(desc + ":")
-        if intermediate == '': return  # no entry maintains existing data
-        if numeric:
-            intermediate = int(intermediate)
-        else:
-            intermediate = intermediate.split('/')[-1]
-        p[k] = intermediate
+        current = p.get(k, "(not set)")
+        print(f"Current {desc}: {current}")
+        while True:
+            val = input(f"{desc}: ").strip()
+            
+            if not val:
+                return  # keep existing / no change
+
+            if val in ("ERASE",'-'):
+                if k == 'nm':
+                    print("Nice try, but you can't erase someone's name")
+                    continue
+                elif input("Are you sure? type 'Y' (case sensitive)") == "Y":
+                    del p[k]
+                    print(f"Key {k} removed")
+                    break
+
+            if numeric:
+                if val.lstrip('-').isdigit():
+                    p[k] = int(val)
+                    break
+                else:
+                    print("Please enter a valid integer year (e.g. 1453, -300).")
+                    continue
+
+            # Name / URL fields – minimal validation
+            elif len(val) == 1 and val.lower() not in ('?'):
+                print("Name too short — enter at least 2 characters, '?', or leave blank.")
+                continue
+            elif k in ('f', 'm', 'nm') and ('http' in val.lower() or 'wiki' in val.lower()):
+                print("For name or parents enter the plain name or wiki page title only (not full URL).")
+                continue
+
+            p[k] = val
+            break
 
     saveandexit = ''
     if 0:# ('f' not in p) and ('m' not in p):
@@ -278,9 +305,9 @@ def dataentry(p):
     
     for k in validkeys:
         if k in p: print(k, "is", p[k])
-    while not saveandexit == 'y':
+    while saveandexit != 'y':
         extract_dates(p)
-        choice = input(">:").lower()
+        choice = input("edit >:").lower()
         if choice == "n" or choice == "u":
             print("Unknown Parentage")
             p['f'] = 'unknown'
@@ -294,16 +321,32 @@ def dataentry(p):
         elif choice == "s":
             print("Save and Exit")
             saveandexit = 'y'
+        elif choice == "q":
+            print("Exit without saving to disk")
+            saveandexit = 'n'
+            break
+            
         elif choice in validkeys:
-            num = (choice in ('yb', 'yd'))
-            processkey(choice, choice, num)
-        elif (choice == "") or (choice == "?"):
+            numeric = choice in ('yb', 'yd')
+            desc_map = {
+                'f':  'Father (wiki title or name)',
+                'm':  'Mother (wiki title or name)',
+                'b':  'Birth (full text)',
+                'd':  'Death (full text)',
+                'yb': 'Birth year',
+                'yd': 'Death year',
+                'nm': 'Name'
+            }
+            processkey(choice, desc_map.get(choice, choice), numeric=numeric)
+            
+        elif choice in ('', '?', 'h', 'help'):
             print(INTERFACEHINT)
+            print("  q     = quit without saving")
             for k in validkeys:
                 if k in p: print(k, "is", p[k])
         else:
-            break
-        if ('b' in p) and ('d' in p) and ('f' in p) and ('m' in p):
+            print("unknown command, '?', 'h', 'help' for help.")
+        if autoexit and all(k in p for k in ('b', 'd', 'f', 'm')):
             # we've got all the data we could resonably expect
             break
     return saveandexit
@@ -467,30 +510,145 @@ def RecurPedigree(u="", Ped=None, d=0, children=None, curgender=1):
 def gatherdata(tp):
     """
     Main data collection loop: recurse + interactively fill missing parents.
-    Returns True if user chose to save & exit.
+    Returns True if user chose to save & exit during any phase.
     """
-    if RecurPedigree(ROOT_NAME, tp, 0, set()) == 's': return True
-    print(len(tp), "people recorded")
-    print("hand-check the following dead-ends")
-    print(INTERFACEHINT)
-    saveandexit = False
+    if RecurPedigree(ROOT_NAME, tp, 0, set()) == 's':
+        return True
+
+    print(f"\n{len(tp)} people recorded")
+    showhelp = True
+
     while True:
-        needdata = False
-        for nm in tp:
+        # Phase 1: automatic dead-end filling
+        dead_ends = []
+        for nm in sorted(tp):
             p = tp[nm]
             if ('f' not in p) and ('m' not in p):
-                if 'url' in p:
-                    if UseWebBrowser: webbrowser.open(SITE + p['url'])
-                elif "(obscure)" in nm:
+                if "(obscure)" in nm:
                     continue
-                needdata = True
-                print("Entry",nm,"needs data:")
+                dead_ends.append((nm, p))
+
+        if dead_ends:
+            print("\nHand-check the following dead-ends:")
+            print(INTERFACEHINT)
+            needdata = False
+            for nm, p in dead_ends:
+                print(f"\nEntry: {nm}")
+                if 'url' in p:
+                    if UseWebBrowser:
+                        webbrowser.open(SITE + p['url'])
                 saveandexit = dataentry(p)
-            if saveandexit == 'y': return True
-        if needdata:
-            if RecurPedigree(ROOT_NAME, tp, 0, set()) == 's': return True
-        else:
+                if saveandexit == 'y':
+                    return True
+                needdata = True
+
+            # After processing current dead-ends → try to recurse again
+            if needdata:
+                if RecurPedigree(ROOT_NAME, tp, 0, set()) == 's':
+                    return True
+            continue  # loop back to find new dead-ends
+
+        # Phase 2: no more dead-ends → offer manual editing
+        if showhelp:
+            print("\nNo more automatic dead-ends found.")
+            print("Manual editing mode. Available commands:")
+            print("  e / edit <name or substring>   → find and edit matching entries")
+            print("  list                       → show all entries (numbered)")
+            print("  show <number or name>      → display one entry")
+            print("  s / save                   → save changes to disk and exit gatherdata")
+            print("  x / q / exit               → quit editing (changes remain in memory)")
+            print("  r / l / reload                 → reload from disk (discard in-memory changes)")
+            print("  ? / help                   → show this help")
+            showhelp = False
+
+        cmd = input("\ngather >: ").strip().lower()
+
+        if cmd in ('x', 'exit', 'q'):
             return False
+
+        elif cmd in ('s', 'save'):
+            return True
+        
+        elif cmd in ('r', 'l', 'reload'):
+            print("Reloading pedigree from disk — unsaved changes will be lost.")
+            loadfile()
+            tp = Total_Pedigree
+            continue
+
+        elif cmd == '?' or cmd == 'help':
+            showhelp = True
+            continue
+
+        elif cmd == 'list':
+            print("\nAll entries:")
+            for i, nm in enumerate(sorted(tp), 1):
+                p = tp[nm]
+                parents = ""
+                if 'f' in p or 'm' in p:
+                    parents = f"  (f:{p.get('f','?')}, m:{p.get('m','?')})"
+                print(f"{i:4d}. {nm}{parents}")
+            continue
+
+        elif cmd.startswith('show '):
+            arg = cmd[5:].strip()
+            found = []
+            try:
+                idx = int(arg) - 1
+                names = sorted(tp)
+                if 0 <= idx < len(names):
+                    found = [names[idx]]
+            except ValueError:
+                # name/substring search
+                arg_lower = arg.lower()
+                found = [nm for nm in tp if arg_lower in nm.lower()]
+
+            if not found:
+                print("No matching entry.")
+                continue
+
+            for nm in found:
+                print(f"\n--- {nm} ---")
+                p = tp[nm]
+                for k in sorted(p):
+                    print(f"  {k:3}: {p[k]}")
+            continue
+
+        elif cmd.startswith('edit ') or cmd.startswith('e '):
+            arg = ' '.join(cmd.split(" ")[1:])
+            if not arg:
+                print("Usage: edit <name or substring>")
+                continue
+
+            matches = [nm for nm in tp if arg.lower() in nm.lower()]
+            if not matches:
+                print("No matching entries found.")
+                continue
+
+            if len(matches) > 1:
+                print(f"Multiple matches ({len(matches)}):")
+                for i, nm in enumerate(matches, 1):
+                    print(f"  {i}. {nm}")
+                try:
+                    sel = int(input("Select number to edit (or Enter to cancel): "))
+                    if not (1 <= sel <= len(matches)):
+                        continue
+                    to_edit = matches[sel-1]
+                except:
+                    continue
+            else:
+                to_edit = matches[0]
+                print(f"Editing: {to_edit}")
+
+            if UseWebBrowser and 'url' in tp[to_edit]:
+                webbrowser.open(SITE + tp[to_edit]['url'])
+
+            if dataentry(tp[to_edit],False) == 'y':
+                return True
+
+            continue
+
+        else:
+            print("Unknown command. Type ? for help.")
 
 
 def checksaints(tp):
@@ -528,7 +686,7 @@ def cleandate(datea):
     datea = tgx(datea, '(', ')')
     datea = datea.replace('&#8211;', '-')
     datea = datea.replace('&#8201;', ' ')
-    datea = datea.replace('&#160;', ' ')
+    datea = datea.replace('&#160;', ' ').strip()
     if len(datea) < 3: return '', ''
     if not datea[-3:].isnumeric():
         e = len(datea)
@@ -542,15 +700,8 @@ def cleandate(datea):
             pre = datea[e:].strip('.,;:?').strip() + ', '
             if len(pre) < 4: pre = ''
             newdatea = pre + datea[:e].strip('.,;:?').strip()
-        ##            print(newdatea)
-        ##            return newdatea
         else:
             newdatea = datea
-    ##            print(datea)
-    ##            newdatea = input(':')
-    ##            return newdatea
-    # now we have what we hope is a valid date at the end.
-    # extract the number and do some more checks.
     else:
         newdatea = datea
     e = len(newdatea)
@@ -564,19 +715,22 @@ def cleandate(datea):
         year = int(newdatea[s:e])
     except:
         year = 9999
-    if year > 1990:
-        print((newdatea, year))
-        revised_datea = input('new data:')
-        if revised_datea == '':
-            return newdatea, ''
-        newdatea = revised_datea
-        year = input('new year:')
-        if year != '':
-            try:
-                year = int(year)
-            except:
-                year = ''
-    return newdatea, year
+    if year > 1990 or year < 500:
+        if year > 1990: print(f"Modern-looking date detected: {datea!r} → year {year}")
+        if year < 500: print(f"Very old-looking date detected: {datea!r} → year {year}")
+        revised = input("Corrected date string (Enter to keep): ").strip()
+        if revised:
+            datea = revised
+            yr_input = input("Corrected year (Enter to keep): ").strip()
+            if yr_input.isdigit():
+                year = int(yr_input)
+            elif yr_input:
+                year = ''   # clear if nonsense
+        # No else: keep original year if user just presses Enter
+
+    datea = datea.strip(' ,.;:-')
+
+    return datea, year
 
 
 def finddatesinname(p):
@@ -713,7 +867,7 @@ loadfile()
 INPUTLOOPHELP = 'Find, Info, Save, Load, eXit, Reprocess, Gather data, rAndom wiki page, open Web page\n'
 keep_at_it = True
 while keep_at_it:
-    c = input(">:").lower()
+    c = input("main >:").lower()
     if c == 's':
         savefile()
     elif c == 'l':
