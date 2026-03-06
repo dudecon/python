@@ -30,6 +30,8 @@ if VERBOSE: print(SAVEFILE)
 
 from urllib.request import urlopen
 import webbrowser
+from time import sleep
+from random import choice
 
 import os
 from pathlib import Path
@@ -131,6 +133,7 @@ def getwikiperson(Url_Name):
     try:
         with urlopen(SITE + Url_Name) as wkpg:
             html = wkpg.read()
+            sleep(choice((1.618,1,0.618)))
     except:
         return PIF
     page = html.decode("utf-8")
@@ -296,7 +299,7 @@ def dataentry(p, autoexit = True):
         p['nm'] = p['nm'] + " (obscure)"
 
     
-    if p['nm'][-7:] == "bscure)":
+    if p.get('nm', '').endswith('bscure)'):
         print("Obscure Figure")
         p['f'] = 'unknown'
         if 'url' in p: del (p['url'])
@@ -456,6 +459,10 @@ def FindInPedigree(u, Ped, name='', d=0, children=None, found=None):
         # we're back to the root level
         fdln = len(found)
         print(f'{fdln} records found')
+        global UseWebBrowser
+        if fdln > 3 and UseWebBrowser:
+            print('turning off wiki page opening')
+            UseWebBrowser = False
         for u in found:
             gen = found[u]
             p = Ped[u]
@@ -524,7 +531,7 @@ def gatherdata(tp):
         for nm in sorted(tp):
             p = tp[nm]
             if ('f' not in p) and ('m' not in p):
-                if "(obscure)" in nm:
+                if p.get('nm', '').endswith('bscure)'):
                     continue
                 dead_ends.append((nm, p))
 
@@ -790,7 +797,6 @@ def randcestor(tp):
     numchoices = len(allurls)
     chosenurl = choice(allurls)
     print(f'{chosenurl} selected from {numchoices} options')
-    if UseWebBrowser: webbrowser.open(SITE + chosenurl)
     FindInPedigree(ROOT_NAME, tp, chosenurl)
 
 
@@ -829,27 +835,23 @@ def aveGeneration(TP):
 
 Total_Pedigree = {}
 
-import traceback
+import ast
 
 def loadfile():
     """Load pedigree dictionary from SAVEFILE (eval-based NOT SECURE)."""
     global Total_Pedigree
     try:
-        f = open(SAVEFILE, 'r')
-        alldata = f.read()
-        f.close()
-        Total_Pedigree = eval(alldata)
-        if VERBOSE: print('file loaded')
-    except:
+        with open(SAVEFILE, encoding='utf-8') as f:
+            alldata = f.read()
+        Total_Pedigree = ast.literal_eval(alldata)
         if VERBOSE:
-            print('exception found while loading file')
-            traceback.print_exc()
-            #raise
-
+            print('file loaded')
+    except Exception as e:
+        if VERBOSE:
+            print(f'Load failed: {e.__class__.__name__}: {e}')
         Total_Pedigree = {}
     if VERBOSE:
-        lnpd = len(Total_Pedigree)
-        print(f'{lnpd} entries in pedigree')
+        print(f'{len(Total_Pedigree)} entries in pedigree')
 
 
 def savefile():
@@ -857,7 +859,7 @@ def savefile():
     out = str(Total_Pedigree)
     out = out.replace("}, ", "},\n\n")
     out = out.encode('ascii', 'ignore')
-    f = open(SAVEFILE, 'wb')
+    f = open(SAVEFILE, 'wb', encoding='utf-8')
     f.write(out)
     f.close()
 
