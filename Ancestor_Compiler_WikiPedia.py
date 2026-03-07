@@ -118,7 +118,7 @@ def extract_dates(p):
     for dk in ('b', 'd'):
         yk = 'y'+dk
         if (dk in p) and (yk not in p):
-            p[dk], p[yk] = cleandate(p[dk])
+            p[dk], p[yk] = cleandate(dk,p)
             if len(p[dk]) < 3: del (p[dk])
             if p[yk] == '': del (p[yk])
 
@@ -687,8 +687,9 @@ def checksaints(tp):
             p['s'] = 'n'
 
 
-def cleandate(datea):
+def cleandate(key,person):
     """Clean date string and attempt to extract 4-digit year."""
+    datea = person[key]
     datea = datea.strip()
     datea = tgx(datea, '(', ')')
     datea = datea.replace('&#8211;', '-')
@@ -721,18 +722,23 @@ def cleandate(datea):
     try:
         year = int(newdatea[s:e])
     except:
-        year = 9999
+        year = 999999
     if year > 1990 or year < 500:
-        if year > 1990: print(f"Modern-looking date detected: {datea!r} → year {year}")
-        if year < 500: print(f"Very old-looking date detected: {datea!r} → year {year}")
+        print("person named", person['nm'], "data for", key)
+        if year == 999999: print(f"no date found in {datea!r}")
+        elif year > 1990: print(f"Modern-looking date detected: {datea!r} → year {year}")
+        elif year < 500: print(f"Very old-looking date detected: {datea!r} → year {year}")
         revised = input("Corrected date string (Enter to keep): ").strip()
         if revised:
             datea = revised
             yr_input = input("Corrected year (Enter to keep): ").strip()
             if yr_input.isdigit():
                 year = int(yr_input)
+            
             elif yr_input:
                 year = ''   # clear if nonsense
+        elif year == 999999:
+            year = ''   # failure to parse, no entry
         # No else: keep original year if user just presses Enter
 
     datea = datea.strip(' ,.;:-')
@@ -859,7 +865,7 @@ def savefile():
     out = str(Total_Pedigree)
     out = out.replace("}, ", "},\n\n")
     out = out.encode('ascii', 'ignore')
-    f = open(SAVEFILE, 'wb', encoding='utf-8')
+    f = open(SAVEFILE, 'wb')
     f.write(out)
     f.close()
 
