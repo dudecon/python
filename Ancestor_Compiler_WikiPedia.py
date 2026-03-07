@@ -531,7 +531,7 @@ def gatherdata(tp):
         for nm in sorted(tp):
             p = tp[nm]
             if ('f' not in p) and ('m' not in p):
-                if p.get('nm', '').endswith('bscure)'):
+                if p.get('nm', '').endswith('bscure)') or nm.endswith('bscure)'):
                     continue
                 dead_ends.append((nm, p))
 
